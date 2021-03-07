@@ -21,3 +21,4 @@ bundle.js.map
 .byebug_history
 
 .ruby-version
+config/master.key
