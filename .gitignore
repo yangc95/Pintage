@@ -20,6 +20,4 @@ bundle.js.map
 /yarn-error.log
 .byebug_history
 
-Gemfile.lock
-package-lock.json
 .ruby-version
