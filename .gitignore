@@ -10,8 +10,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
-!/log/.keep
-!/tmp/.keep
+/log/.keep
+/tmp/.keep
+/vendor/.keep
 
 node_modules/
 bundle.js
@@ -22,3 +23,5 @@ bundle.js.map
 
 .ruby-version
 config/master.key
+
+.DS_Store
