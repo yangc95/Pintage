@@ -15,8 +15,9 @@
 /vendor/.keep
 
 node_modules/
-bundle.js
+/app/bundle.js
 bundle.js.map
+bundle.js
 
 /yarn-error.log
 .byebug_history

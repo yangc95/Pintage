@@ -7,13 +7,13 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: [/\.jsx?$/],
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
-          presets: ['es2015', 'react']
+          presets: ['@babel/preset-env', '@babel/react']
         }
       }
     ]
