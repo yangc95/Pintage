@@ -19,8 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = createStore();
   }
-  
-
 
   // TEST START
   // window.dispatch = store.dispatch;

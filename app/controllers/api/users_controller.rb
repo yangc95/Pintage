@@ -17,26 +17,26 @@ class Api::UsersController < ApplicationController
 		end
 	end
 
-	def update
-		@user = User.find(params[:id])
-		if @user && @user.update(user_params)
-			render :show
-		elsif !@user
-			render json: ['Could not locate user'], status: 400
-		else
-			render json: @user.errors.full_messages, status: 401
-		end
-	end
+	# def update
+	# 	@user = User.find(params[:id])
+	# 	if @user && @user.update(user_params)
+	# 		render :show
+	# 	elsif !@user
+	# 		render json: ['Could not locate user'], status: 400
+	# 	else
+	# 		render json: @user.errors.full_messages, status: 401
+	# 	end
+	# end
 
-	def destroy
-		@user = User.find(params[:id])
-		if @user
-			@user.destroy
-			render :show
-		else
-			render ['Could not find user']
-		end
-	end
+	# def destroy
+	# 	@user = User.find(params[:id])
+	# 	if @user
+	# 		@user.destroy
+	# 		render :show
+	# 	else
+	# 		render ['Could not find user']
+	# 	end
+	# end
 
 	private
 
