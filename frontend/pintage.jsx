@@ -4,7 +4,7 @@ import createStore from './store/store';
 import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
-  let store;
+  let store = createStore();
   if (window.currentUser) {
     const preloadedState = {
       entities: {
@@ -17,14 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
     store = createStore(preloadedState);
     delete window.currentUser;
   } else {
-    store = configureStore();
+    store = createStore();
   }
   
 
 
   // TEST START
-  window.dispatch = store.dispatch;
-  window.getState = store.getState;
+  // window.dispatch = store.dispatch;
+  // window.getState = store.getState;
   // ReactDOM.render(<h1>Hi</h1>, root);
   // TEST END
   
