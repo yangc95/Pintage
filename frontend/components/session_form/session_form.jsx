@@ -30,37 +30,46 @@ class SessionForm extends React.Component {
 	// }
 
 	render() {
+		const { formType } = this.props; 
+		const { username, email, password } = this.state;
+
 		return (
-			<div>
-				<form onSubmit={this.handleSubmit}>
-					This will be the Nav Bar
-					<br />
-					{this.props.navLink}
-					<div>
-						<label>Username:
+			<div className="signin-modal is-open">
+				<form className="signin-modal-form" onSubmit={this.handleSubmit}>
+					
+					<span className="signin-modal-close js-modal-close">&times;</span>
+
+					<img src={window.logoURL}/>
+					<p>{formType} below</p>
+					<h1>Welcome to Pintage</h1>
+					<p>Find new ideas to try</p>
+
+					<div className="input">
+						<label>
 							<input 
 								type="text"
-								value={this.state.username}
+								value={username}
 								onChange={this.update('username')}
 							/>
 						</label>
-						<label>Email:
+						<label>
 							<input 
 								type="email"
-								value={this.state.email}
+								value={email}
 								onChange={this.update('email')}
 							/>
 						</label>
-						<label>Password:
+						<label>
 							<input 
 								type="password"
-								value={this.state.password}
+								value={password}
 								onChange={this.update('password')}
 							/>
 						</label>
-						<button>{this.props.formType}</button>
+						<button className="submit">{formType}</button>
 					</div>
 				</form>
+				<div className="signin-modal-screen js-modal-close"></div>
 			</div>
 		);
 	}

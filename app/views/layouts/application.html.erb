@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pintage</title>
+    <title>Application</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <script type="text/javascript">
+      window.logoURL = "<%= image_url('pinterest.logo.png') %>";
+    </script>
+  
     <%= javascript_include_tag 'application' %>
+  
     <% if current_user %>
       <script>
         window.currentUser = {
@@ -16,9 +21,27 @@
         }; 
       </script>
     <% end %>
+
+
   </head>
 
   <body>
     <%= yield %>
+
+    <script>
+      $(function(){
+
+        $("body").on("click", ".js-modal-open", function(event){
+          event.preventDefault();
+          $(".signin-modal").addClass("is-open");
+        });
+
+        $("body").on("click", ".js-modal-close", function(event){
+          event.preventDefault();
+          $(".signin-modal").removeClass("is-open");
+        });
+
+      });
+    </script>
   </body>
 </html>
