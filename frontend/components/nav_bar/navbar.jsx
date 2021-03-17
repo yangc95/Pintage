@@ -14,7 +14,7 @@ const Navbar = ({ currentUser, logout }) => {
     if (currentUser) {
         navRight = 
             <span className="nav-right">
-                <button className="header-button">Add Toggle Here</button>
+                <button className="header-button">&or;</button>
                 <div className="header-button-container">
                     <button onClick={logout}>Log Out</button> 
                 </div>
