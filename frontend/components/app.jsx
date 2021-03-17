@@ -17,7 +17,6 @@ const App = () => (
   <div>
     <NavbarContainer />
     <Landing />
-
     <Switch>
       <AuthRoute path="/login" component={LogInFormContainer} />
       <AuthRoute path="/signup" component={SignUpFormContainer} />

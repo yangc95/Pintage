@@ -1,8 +1,9 @@
 @import "variables";
 // LANDING PAGE NOT LOGGED IN
 .landing-header{
-    display: flex;
+    display: grid;
     justify-content: center;
+    width: auto;
 
     .landing-title {
         padding: 20px;
@@ -12,6 +13,7 @@
             font-size: 60px;
             font-weight: 500;
             color: $black;
+            text-align: center;
         }
 
         ul {
@@ -23,4 +25,20 @@
             // }
         }
     }
+}
+
+.landing-imgs {
+    grid-template-columns: repeat(7, 1fr);
+    // grid-template-rows: minmax(20vh, auto);
+    display: grid;
+    margin: 0 auto;
+}
+
+.landing-imgs div{
+    background: black;
+    border: 1px solid white;
+    color: white;
+    height: 45vh;
+    width: 35vh;
+    // padding: 17vh;
 }
