@@ -31,7 +31,7 @@ class SessionForm extends React.Component {
 	// }
 
 	render() {
-		const { formType } = this.props; 
+		const { formType, navLink } = this.props; 
 		const { username, email, password } = this.state;
 
 		return (
@@ -49,16 +49,18 @@ class SessionForm extends React.Component {
 					<div className="input">
 						<label>
 							<input 
-								type="text"
-								value={username}
-								onChange={this.update('username')}
+								type="email"
+								value={email}
+								onChange={this.update('email')}
+								placeholder="Email"
 							/>
 						</label>
 						<label>
 							<input 
-								type="email"
-								value={email}
-								onChange={this.update('email')}
+								type="text"
+								value={username}
+								onChange={this.update('username')}
+								placeholder="Username"
 							/>
 						</label>
 						<label>
@@ -66,9 +68,12 @@ class SessionForm extends React.Component {
 								type="password"
 								value={password}
 								onChange={this.update('password')}
+								placeholder="Password"
 							/>
 						</label>
-						<button className="submit">{formType}</button>
+						<button className="submit">Continue</button>
+						<p>OR</p>
+						{navLink}
 					</div>
 				</form>
 				<div className="signin-modal-screen js-modal-close"></div>

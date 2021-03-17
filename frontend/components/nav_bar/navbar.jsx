@@ -14,10 +14,14 @@ const Navbar = ({ currentUser, logout }) => {
     if (currentUser) {
         navRight = 
             <span className="nav-right">
-                <button className="header-button">&or;</button>
-                <div className="header-button-container">
-                    <button onClick={logout}>Log Out</button> 
-                </div>
+                <ul className="angle-drop-down">
+                    <button className="angle-button">
+                        <i class="fas fa-angle-down"/>
+                    </button>
+                    <li onClick={logout}>
+                        Log Out
+                    </li>
+                </ul>
             </span>
     } else {
         navRight = 

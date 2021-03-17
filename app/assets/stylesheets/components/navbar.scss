@@ -60,6 +60,34 @@
         background-color: $grey-hover;
     }
 
-    // LOGGED IN
+    // RIGHT DOWN CARET NAVBAR
+    .nav-right {
+        .angle-button {
+            top: 10px;
+            right: 20px;
+            height: 35px;
+            width: 35px;
+            text-decoration: none;
+            border: none;
+            outline: 0; 
+            background-color: white;
+            cursor: pointer;
+        }
+
+        ul button:hover,
+        ul button:active {
+            background: $grey-hover;
+            border-radius: 50%;
+        }
+
+        // .angle-drop-down {
+        //     display: hidden;
+        // }
+
+    }
+
+
+
+    
     
 }
