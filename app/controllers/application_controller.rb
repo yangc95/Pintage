@@ -9,16 +9,19 @@ class ApplicationController < ActionController::Base
     end
 
     def login!(user)
+        user.reset_session_token!
         session[:session_token] = user.session_token
+        @current_user = user
     end
 
     def logout!
         current_user.reset_session_token!
         session[:session_token] = nil
+        @current_user = nil
     end
 
     def logged_in?
-        !current_user.nil?
+        !!current_user
     end
   
     def require_logged_out
@@ -26,6 +29,8 @@ class ApplicationController < ActionController::Base
     end
 
     def require_logged_in
-        redirect_to new_session_url unless logged_in?
+        unless current_user
+            render json: { base: ['invalid credentials'] }, status: 401
+        end
     end
 end
