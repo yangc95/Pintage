@@ -16,7 +16,7 @@ const Navbar = ({ currentUser, logout }) => {
             <span className="nav-right">
                 <ul className="angle-drop-down">
                     <button className="angle-button">
-                        <i class="fas fa-angle-down"/>
+                        <i className="fas fa-angle-down"/>
                     </button>
                     <li onClick={logout}>
                         Log Out
