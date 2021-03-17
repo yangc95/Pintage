@@ -3,7 +3,7 @@ import {
   Route,
   Switch,
   Link
-} from 'react-router-dom'
+} from 'react-router-dom';
 
 // import NavbarContainer from './nav_bar/navbar_container';
 import NavbarContainer from './nav_bar/navbar_container';
@@ -16,13 +16,13 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => (
   <div>
     <NavbarContainer />
-    <Landing />
+    {/* <Landing /> */}
     <Switch>
       <AuthRoute path="/login" component={LogInFormContainer} />
       <AuthRoute path="/signup" component={SignUpFormContainer} />
-      {/* <ProtectedRoute exact path="/home" component={Container} /> */}
+      {/* <ProtectedRoute exact path="/home" component={HomePageContainer} /> */}
       {/* <ProtectedRoute exact path="" component={Container} /> */}
-      {/* <Route exact path="/" component={Home} /> */}
+      <Route exact path="/" component={Landing} />
     </Switch>
   </div>
 );
