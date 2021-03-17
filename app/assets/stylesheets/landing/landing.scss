@@ -1,0 +1,26 @@
+@import "variables";
+// LANDING PAGE NOT LOGGED IN
+.landing-header{
+    display: flex;
+    justify-content: center;
+
+    .landing-title {
+        padding: 20px;
+        font-size: 60px;
+
+        h1 {
+            font-size: 60px;
+            font-weight: 500;
+            color: $black;
+        }
+
+        ul {
+            display: none;
+
+            li {
+
+
+            }
+        }
+    }
+}

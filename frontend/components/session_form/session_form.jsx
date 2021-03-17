@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
 	constructor(props) {
@@ -36,8 +37,9 @@ class SessionForm extends React.Component {
 		return (
 			<div className="signin-modal is-open">
 				<form className="signin-modal-form" onSubmit={this.handleSubmit}>
-					
-					<span className="signin-modal-close js-modal-close">&times;</span>
+					<Link className="signin-modal-close js-modal-close" to="/">
+						&times;
+					</Link>
 
 					<img src={window.logoURL}/>
 					<p>{formType} below</p>

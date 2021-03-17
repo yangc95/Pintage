@@ -7,6 +7,7 @@ import {
 
 // import NavbarContainer from './nav_bar/navbar_container';
 import NavbarContainer from './nav_bar/navbar_container';
+import Landing from './landing/landing';
 // import HomePage from 
 import LogInFormContainer from './session_form/login_form_container';
 import SignUpFormContainer from './session_form/signup_form_container';
@@ -15,10 +16,11 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => (
   <div>
     <NavbarContainer />
+    <Landing />
 
     <Switch>
-      <AuthRoute exact path="/login" component={LogInFormContainer} />
-      <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+      <AuthRoute path="/login" component={LogInFormContainer} />
+      <AuthRoute path="/signup" component={SignUpFormContainer} />
       {/* <ProtectedRoute exact path="" component={Container} /> */}
       {/* <ProtectedRoute exact path="" component={Container} /> */}
       {/* <Route exact path="/" component={Home} /> */}
