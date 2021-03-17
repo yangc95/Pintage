@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import createStore from './store/store';
 import Root from './components/root';
+// import { logout } from './util/session_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
-  let store = createStore();
+  let store;
   if (window.currentUser) {
     const preloadedState = {
       entities: {
@@ -21,8 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // TEST START
-  // window.dispatch = store.dispatch;
-  // window.getState = store.getState;
+  window.dispatch = store.dispatch;
+  window.getState = store.getState;
+  // window.logout = logout;
   // ReactDOM.render(<h1>Hi</h1>, root);
   // TEST END
   

@@ -15,7 +15,6 @@ const Navbar = ({ currentUser, logout }) => {
         </nav>
     );
     
-
     const navBarUser = () => (
         <nav className="nav-bar">
             <Link to="/" >
