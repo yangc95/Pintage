@@ -3,7 +3,8 @@
 .landing-header{
     display: grid;
     justify-content: center;
-    width: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
 
     .landing-title {
         padding: 20px;
@@ -19,10 +20,6 @@
         ul {
             display: none;
 
-            // li {
-
-
-            // }
         }
     }
 }
@@ -32,6 +29,14 @@
     // grid-template-rows: minmax(20vh, auto);
     display: grid;
     margin: 0 auto;
+
+    // .overflow {
+    //     position: absolute;
+    //     left: 100%;
+    //     width: 50px;
+    //     height: 50px;
+    //     opacity: 0;
+    // }
 }
 
 .landing-imgs div{

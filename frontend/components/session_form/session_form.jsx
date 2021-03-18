@@ -35,6 +35,7 @@ class SessionForm extends React.Component {
 		const { formType, navLink } = this.props; 
 		const { username, email, password } = this.state;
 
+
 		return (
 			<div className="signin-modal is-open">
 				<form className="signin-modal-form" onSubmit={this.handleSubmit}>
