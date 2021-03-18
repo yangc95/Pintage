@@ -14,7 +14,6 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {
-  debugger;
   return (
     <div>
       {/* <header>
@@ -24,7 +23,7 @@ const App = () => {
         <GreetingContainer />
       </header> */}
       <NavbarContainer />
-      <Landing /> :
+      <Landing />
       <Switch>
         <AuthRoute path="/login" component={LogInFormContainer} />
         <AuthRoute path="/signup" component={SignUpFormContainer} />
