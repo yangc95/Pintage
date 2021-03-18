@@ -13,13 +13,18 @@ const mSTP = ({ errors }) => {
 	return {
 		errors: errors.session,
 		formType: 'signup',
-		navLink: <Link to="/login">Already a member? Log in</Link>
 	};
 };
 
 const mDTP = dispatch => {
 	return {
 		action: (user) => dispatch(signup(user)),
+		otherForm: (
+			<button onClick={() => dispatch(openModal('Login'))}>
+				Already a member? Log in
+			</button>
+			),
+    	closeModal: () => dispatch(closeModal())
 	};
 };
 

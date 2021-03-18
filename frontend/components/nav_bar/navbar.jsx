@@ -7,7 +7,7 @@ import {
 
 import DropDown from './drop_down';
 
-const Navbar = ({ currentUser, logout }) => {
+const Navbar = ({ currentUser, logout, openModal }) => {
     let path;
     if (currentUser) {
         path = "/home";
@@ -37,8 +37,9 @@ const Navbar = ({ currentUser, logout }) => {
     } else {
         navRight = 
             <span className="nav-right">
-                <Link className="nav-login" to="/login">Log In</Link>
-                <Link className="nav-signup" to="/signup">Sign Up</Link>
+                <button className="nav-login" onClick={() => openModal('login')}>Login</button>
+                &nbsp;or&nbsp;
+                <button className="nav-signup" onClick={() => openModal('signup')}>Signup</button>
             </span>
     }
 
