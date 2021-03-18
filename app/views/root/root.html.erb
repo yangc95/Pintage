@@ -1,3 +1,19 @@
+<script>
+  $(function(){
+
+    $("body").on("click", ".js-modal-open", function(event){
+      event.preventDefault();
+      $(".signin-modal").addClass("is-open");
+    });
+
+    $("body").on("click", ".js-modal-close", function(event){
+      event.preventDefault();
+      $(".signin-modal").removeClass("is-open");
+    });
+
+  });
+</script>
+
 <% if logged_in? %>
   <script id="bootstrap-current-user" type="text/javascript">
   	window.currentUser = <%= render("api/users/user.json.jbuilder",
