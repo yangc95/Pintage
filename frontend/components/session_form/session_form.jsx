@@ -21,6 +21,7 @@ class SessionForm extends React.Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		const user = Object.assign({}, this.state);
+		// this.props.history.replaceState('/')
 		this.props.action(user);
 		this.props.history.push('/home');
 	}
@@ -73,7 +74,7 @@ class SessionForm extends React.Component {
 								placeholder="Password"
 							/>
 						</label>
-						<button className="submit">Continue</button>
+							<button className="submit">Continue</button>
 						<p>OR</p>
 						{navLink}
 					</div>
