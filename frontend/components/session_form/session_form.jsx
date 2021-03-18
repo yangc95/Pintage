@@ -27,9 +27,10 @@ class SessionForm extends React.Component {
 	}
 
   renderErrors() {
+		const { errors } = this.props;
     return(
       <ul>
-        {this.props.errors.map((error, i) => (
+        {errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
           </li>
@@ -39,19 +40,18 @@ class SessionForm extends React.Component {
   }
 
 	render() {
-		const { formType, navLink } = this.props; 
+		const { formType, otherForm, closeModal } = this.props; 
 		const { username, email, password } = this.state;
 
 
 		return (
-			<div className="signin-modal is-open">
+			<div className="signin-modal">
 				<form className="signin-modal-form" onSubmit={this.handleSubmit}>
-					<Link className="signin-modal-close js-modal-close" to="/">
+					<div className="signin-modal-close" onClick={closeModal}>
 						&times;
-					</Link>
+					</div>
 
 					<img src={window.logoURL}/>
-					<p>{formType} below</p>
 					<h1>Welcome to Pintage</h1>
 					<p>Find new ideas to try</p>
 					<span>{this.renderErrors()}</span>
@@ -83,10 +83,10 @@ class SessionForm extends React.Component {
 						</label>
 							<button className="submit">Continue</button>
 						<p>OR</p>
-						{navLink}
+						<p>{ otherForm }</p>
 					</div>
 				</form>
-				<div className="signin-modal-screen js-modal-close">
+				<div className="signin-modal-screen">
 				</div>
 			</div>
 		);

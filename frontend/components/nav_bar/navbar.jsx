@@ -38,7 +38,6 @@ const Navbar = ({ currentUser, logout, openModal }) => {
         navRight = 
             <span className="nav-right">
                 <button className="nav-login" onClick={() => openModal('login')}>Login</button>
-                &nbsp;or&nbsp;
                 <button className="nav-signup" onClick={() => openModal('signup')}>Signup</button>
             </span>
     }

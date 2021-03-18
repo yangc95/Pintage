@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 
 import { signup } from '../../actions/session_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 import SessionForm from './session_form';
 
 const mSTP = ({ errors }) => {
@@ -20,7 +21,7 @@ const mDTP = dispatch => {
 	return {
 		action: (user) => dispatch(signup(user)),
 		otherForm: (
-			<button onClick={() => dispatch(openModal('Login'))}>
+			<button onClick={() => dispatch(openModal('login'))}>
 				Already a member? Log in
 			</button>
 			),

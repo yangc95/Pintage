@@ -11,7 +11,7 @@ ul.nav-right-dropdown {
     // visibility: hidden;
     position: absolute;
     // display: inline-block;
-    transform: translate(0px, 550px);
+    transform: translate(-210px, 220px);
     // transform: translate(2, 1);
     // float: right;
     border: 1px solid grey;
@@ -26,5 +26,6 @@ ul.nav-right-dropdown {
 .angle-drop-down.selected {
     .nav-right-dropdown {
         visibility: unset;
+        text-align: start;
     }
 }
