@@ -6,7 +6,6 @@ class Home extends React.Component {
     }
 
     render() {
-        debugger;
         return (
             <div>This is where all the posts should show...
             </div>

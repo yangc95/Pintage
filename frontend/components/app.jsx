@@ -22,7 +22,7 @@ const App = () => {
         {/* <Link to="/" className="header-link"> */}
         <NavbarContainer />
         {/* </Link> */}
-        <Landing />
+        {/* <Landing /> */}
       </header>
       
       
@@ -31,7 +31,7 @@ const App = () => {
         {/* <AuthRoute path="/signup" component={SignUpFormContainer} /> */}
         <ProtectedRoute exact path="/home" component={HomePageContainer} />
         {/* <ProtectedRoute exact path="" component={Container} /> */}
-        {/* <Route path="/" component={Landing} /> */}
+        <Route path="/" component={Landing} />
       </Switch>
     </div>
   )
