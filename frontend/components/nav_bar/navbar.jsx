@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import DropDown from './drop_down';
 
-
 const Navbar = ({ currentUser, logout }) => {
     let path;
     if (currentUser) {

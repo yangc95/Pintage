@@ -26,11 +26,17 @@ class SessionForm extends React.Component {
 		this.props.history.push('/home');
 	}
 
-	// renderErrors() {
-	// 	return (
-	// 		<ul></ul>
-	// 	);
-	// }
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
 	render() {
 		const { formType, navLink } = this.props; 
@@ -48,6 +54,7 @@ class SessionForm extends React.Component {
 					<p>{formType} below</p>
 					<h1>Welcome to Pintage</h1>
 					<p>Find new ideas to try</p>
+					<span>{this.renderErrors()}</span>
 
 					<div className="input">
 						<label>
