@@ -86,7 +86,8 @@ class SessionForm extends React.Component {
 						{navLink}
 					</div>
 				</form>
-				<div className="signin-modal-screen js-modal-close"></div>
+				<div className="signin-modal-screen js-modal-close">
+				</div>
 			</div>
 		);
 	}
