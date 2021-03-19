@@ -12,8 +12,6 @@ class SessionForm extends React.Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	
-
 	update(field) {
 		return e => this.setState({
 			[field]: e.currentTarget.value
@@ -46,6 +44,18 @@ class SessionForm extends React.Component {
 		const { formType, otherForm, closeModal } = this.props; 
 		const { username, email, password } = this.state;
 
+		let emailLabel = "";
+		if (formType === 'signup') {
+			emailLabel = <label>
+							<input 
+								type="email"
+								value={email}
+								onChange={this.update('email')}
+								placeholder="Email"
+							/>
+						</label>
+		}
+
 		return (
 			<div className="signin-modal">
 				<form className="signin-modal-form" onSubmit={this.handleSubmit}>
@@ -59,14 +69,7 @@ class SessionForm extends React.Component {
 					<span>{this.renderErrors()}</span>
 
 					<div className="input">
-						<label>
-							<input 
-								type="email"
-								value={email}
-								onChange={this.update('email')}
-								placeholder="Email"
-							/>
-						</label>
+						{emailLabel}
 
 						<label>
 							<input 
