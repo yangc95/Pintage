@@ -12,6 +12,8 @@ class SessionForm extends React.Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
+	
+
 	update(field) {
 		return e => this.setState({
 			[field]: e.currentTarget.value
@@ -20,10 +22,10 @@ class SessionForm extends React.Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
-		console.log(e)
+		// console.log(e)
 		const user = Object.assign({}, this.state);
 		// this.props.history.replaceState('/')
-		this.props.action(user);
+		this.props.action(user).then(this.props.closeModal);
 		// this.props.history.push('/home');
 	}
 
@@ -92,7 +94,6 @@ class SessionForm extends React.Component {
 						<p>{ otherForm }</p>
 					</span>
 				</form>
-				<div className="signin-modal-screen"></div>
 			</div>
 		);
 	}
