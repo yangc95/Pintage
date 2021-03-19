@@ -20,6 +20,7 @@ class SessionForm extends React.Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
+		console.log(e)
 		const user = Object.assign({}, this.state);
 		// this.props.history.replaceState('/')
 		this.props.action(user);
@@ -43,7 +44,6 @@ class SessionForm extends React.Component {
 		const { formType, otherForm, closeModal } = this.props; 
 		const { username, email, password } = this.state;
 
-
 		return (
 			<div className="signin-modal">
 				<form className="signin-modal-form" onSubmit={this.handleSubmit}>
@@ -65,6 +65,7 @@ class SessionForm extends React.Component {
 								placeholder="Email"
 							/>
 						</label>
+
 						<label>
 							<input 
 								type="text"
@@ -73,6 +74,7 @@ class SessionForm extends React.Component {
 								placeholder="Username"
 							/>
 						</label>
+
 						<label>
 							<input 
 								type="password"
@@ -81,13 +83,16 @@ class SessionForm extends React.Component {
 								placeholder="Password"
 							/>
 						</label>
-							<button className="submit">Continue</button>
-						<p>OR</p>
-						<p>{ otherForm }</p>
 					</div>
+
+					<button className="submit" type="submit">Continue</button>
+
+					<p>OR</p>
+					<span>
+						<p>{ otherForm }</p>
+					</span>
 				</form>
-				<div className="signin-modal-screen">
-				</div>
+				<div className="signin-modal-screen"></div>
 			</div>
 		);
 	}
