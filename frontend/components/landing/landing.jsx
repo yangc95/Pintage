@@ -13,7 +13,7 @@ const Landing = () => {
                     </ul>
                 </div>
                 <div className="landing-imgs">
-                    <div className="one"></div>
+                    <div className="one">1</div>
                     <div className="two"></div>
                     <div className="three"></div>
                     <div className="four"></div>
