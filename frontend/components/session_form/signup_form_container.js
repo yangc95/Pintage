@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import {
   Route,
   Switch,
-  Link
+  Link,
+  withRouter
 } from 'react-router-dom';
 
 import { signup } from '../../actions/session_actions';
@@ -29,4 +30,4 @@ const mDTP = dispatch => {
 	};
 };
 
-export default connect(mSTP, mDTP)(SessionForm);
+export default withRouter(connect(mSTP, mDTP)(SessionForm));

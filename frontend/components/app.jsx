@@ -25,13 +25,12 @@ const App = () => {
         {/* <Landing /> */}
       </header>
       
-      
       <Switch>
-        <Route path="/" component={Landing} />
+        <ProtectedRoute exact path="/home" component={HomePageContainer} />
         {/* <AuthRoute path="/" component={LogInFormContainer} /> */}
         {/* <AuthRoute path="/" component={SignUpFormContainer} /> */}
-        <ProtectedRoute exact path="/home" component={HomePageContainer} />
         {/* <ProtectedRoute exact path="" component={Container} /> */}
+        <AuthRoute exact path="/" component={Landing} />
       </Switch>
     </div>
   )

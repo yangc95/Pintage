@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  Route,
-  Switch
-} from 'react-router-dom';
 
 import DropDown from './drop_down';
 
-const Navbar = ({ currentUser, logout, openModal }) => {
+class Navbar extends React.Component {
+    render () {
+    const { currentUser, logout, openModal } = this.props;
+
     let path;
     if (currentUser) {
         path = "/home";
@@ -47,7 +46,7 @@ const Navbar = ({ currentUser, logout, openModal }) => {
             {navLeft}
             {navRight}
         </nav>
-    );
+    );}
 }
 
 export default Navbar;

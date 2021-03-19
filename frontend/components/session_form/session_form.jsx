@@ -24,6 +24,7 @@ class SessionForm extends React.Component {
 		// this.props.history.replaceState('/')
 		this.props.action(user)
 			.then(this.props.closeModal)
+			// .then(this.props.history.push('/home'))
 	}
 
   renderErrors() {
