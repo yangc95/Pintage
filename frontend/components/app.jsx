@@ -17,7 +17,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => {
   return (
     <div>
-      <Modal />
+      <Modal/>
       <header>
         {/* <Link to="/" className="header-link"> */}
         <NavbarContainer />
