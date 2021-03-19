@@ -1,4 +1,4 @@
-class PinsController < ApplicationController
+class Api::PinsController < ApplicationController
     def index
         @pins = Pin.all
         render :index

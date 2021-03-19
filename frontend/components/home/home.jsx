@@ -6,8 +6,13 @@ class Home extends React.Component {
     }
 
     render() {
+        const { pins } = this.props;
+        // debugger;
         return (
-            <div>This is where all the posts should show...
+            <div>
+                {
+                    
+                }
             </div>
         )
     }

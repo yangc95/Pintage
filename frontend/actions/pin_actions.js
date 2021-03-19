@@ -10,5 +10,5 @@ export const receivePins = pins => ({
 export const fetchPins = () => dispatch => (
     APIUtil.fetchPins().then(pins => (
         dispatch(receivePins(pins))
-    ), err => (null))
+    ), response => {debugger})
 );
