@@ -20,7 +20,6 @@ class SessionForm extends React.Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
-		// console.log(e)
 		const user = Object.assign({}, this.state);
 		// this.props.history.replaceState('/')
 		this.props.action(user)
