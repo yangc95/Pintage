@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 
 class SessionForm extends React.Component {
 	constructor(props) {
@@ -23,8 +23,8 @@ class SessionForm extends React.Component {
 		// console.log(e)
 		const user = Object.assign({}, this.state);
 		// this.props.history.replaceState('/')
-		this.props.action(user).then(this.props.closeModal);
-		// this.props.history.push('/home');
+		this.props.action(user)
+			.then(this.props.closeModal)
 	}
 
   renderErrors() {
