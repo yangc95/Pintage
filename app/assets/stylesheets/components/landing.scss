@@ -15,8 +15,8 @@
 
     .fade {
         position: absolute;
-        transform: translate(0px, 50vh);
-        height: 50vh;
+        transform: translate(0px, 35em);
+        height: 20em;
         width: 100%;
         background: linear-gradient(rgba(255, 255, 255, 0), white);
         opacity: 0.5;
@@ -70,8 +70,8 @@
         border: 1px solid white;
         border-radius: 10px;
         color: white;
-        height: 60vh;
-        width: 35vh;
+        height: 40em;
+        width: 20em;
         background-size: auto;
         background-repeat: no-repeat;
         // padding: 17vh;
@@ -83,27 +83,27 @@
 
     .two {
         background-image: image-url('travel1.jpg');
-        margin-top: 15vh;
+        margin-top: 8em;
     }
 
     .three {
         background-image: image-url('travel2.jpg');
-        margin-top: 30vh;
+        margin-top: 16em;
     }
 
     .four {
         background-image: image-url('travel3.jpg');
-        margin-top: 45vh;
+        margin-top: 24em;
     }
 
     .five {
         background-image: image-url('travel4.jpg');
-        margin-top: 30vh;
+        margin-top: 16em;
     }
 
     .six {
         background-image: image-url('travel5.jpg');
-        margin-top: 15vh;
+        margin-top: 8em;
     }
 
     .seven {
@@ -112,14 +112,14 @@
 
     .eight {
         background-image: image-url('travel7.jpg');
-        position: relative;
-        top: -45vh;
+        position: static;
+        // top: -43em;
     }
 
     .nine {
         background-image: image-url('travel8.jpg');
-        position: relative;
-        top: -45vh;
-        right: -185vh;
+        position: static;
+        // top: -43em;
+        // right: -185vh;
     }
 }
