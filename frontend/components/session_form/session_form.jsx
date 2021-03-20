@@ -66,7 +66,7 @@ class SessionForm extends React.Component {
 					<img src={window.logoURL}/>
 					<h1>Welcome to Pintage</h1>
 					<p className="sign-in-sub-header">Find new ideas to try</p>
-					<span>{this.renderErrors()}</span>
+					<span className="errors">{this.renderErrors()}</span>
 
 					<div className="input">
 						{emailLabel}
@@ -77,7 +77,7 @@ class SessionForm extends React.Component {
 								value={username}
 								onChange={this.update('username')}
 								placeholder="Username"
-							/>
+								/>
 						</label>
 
 						<label>
@@ -86,7 +86,7 @@ class SessionForm extends React.Component {
 								value={password}
 								onChange={this.update('password')}
 								placeholder="Password"
-							/>
+								/>
 						</label>
 					</div>
 
