@@ -18,8 +18,8 @@ users = User.create([
 ])
 
 pins = Pin.create([
-    {title: "Japanese Night Walk", about: "Nice night", user_id: 1},
-    {title: "Japan Sights", about: "Red Alter", user_id: 1},
-    {title: "Japanese Day Walk", about: "Beautiful day streets", user_id: 1}
+    {title: "Japanese Night Walk", about: "Nice night", user_id: 1, },
+    {title: "Japan Sights", about: "Red Alter", user_id: 1, },
+    {title: "Japanese Day Walk", about: "Beautiful day streets", user_id: 1, }
 ])
 

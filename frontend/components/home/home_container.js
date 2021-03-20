@@ -5,7 +5,7 @@ import Home from './home';
 const mSTP = ({ session, entities: { users, pins } }) => {
   return {
     currentUser: users[session.currentUser],
-    pins
+    pins: Object.values(pins)
   };
 };
 
