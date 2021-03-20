@@ -1,22 +1,20 @@
 import React from 'react';
 
 export default ({ pins }) => {
-    // debugger;
-    // console.log(pins)
     return (
-        <ul>NO PINS WHY
+        <div className="home-div-container">
             {
             pins.map(pin => {
                 return (
-                <li key={pin.id}>
-                        <h2>{pin.title}</h2>
-                        <p>{pin.about}</p>
-                        <img src={pin.photoUrl}/>
-                    </li>
+                <div className="pin-index-div" key={pin.id}>
+                    <img className="pin-index-photo pin_medium" src={pin.photoUrl}/>
+                    <h2 className="pin-index-title">{pin.title}</h2>
+                    <p className="pin-index-about">{pin.about}</p>
+                </div>
                 )
             })
             }
-        </ul>
+        </div>
     )
 }
 

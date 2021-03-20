@@ -5,48 +5,52 @@ import DropDown from './drop_down';
 
 class Navbar extends React.Component {
     render () {
-    const { currentUser, logout, openModal } = this.props;
+        const { currentUser, logout, openModal } = this.props;
 
-    let path;
-    if (currentUser) {
-        path = "/home";
-    } else {
-        path = "/"
+        let path;
+        let pintage;
+        if (currentUser) {
+            path = "/home";
+            pintage = <h1 className="nav-home-button">Home</h1>
+        } else {
+            path = "/"
+            pintage = <h1 className="nav-logo">Pintage</h1>
+        }
+
+        const navLeft = 
+        <span className="nav-left">
+                <Link to={path} >
+                    <img src={window.logoURL}/>
+                    {pintage}
+                </Link>
+            </span>;
+            
+        let navRight;
+        if (currentUser) {
+            navRight = 
+                <span className="nav-right">
+                    <ul className="angle-drop-down">
+                        <DropDown logout={logout}/>
+                        <button className="angle-button">
+                            <i className="fas fa-angle-down"/>
+                        </button>
+                    </ul>
+                </span>
+        } else {
+            navRight = 
+                <span className="nav-right">
+                    <button className="nav-login" onClick={() => openModal('login')}>Login</button>
+                    <button className="nav-signup" onClick={() => openModal('signup')}>Signup</button>
+                </span>
+        }
+
+        return (
+            <nav className="nav-bar">
+                {navLeft}
+                {navRight}
+            </nav>
+        );
     }
-
-    const navLeft = 
-    <span className="nav-left">
-            <Link to={path} >
-                <img src={window.logoURL}/>
-                <h1 className="nav-logo">Pintage</h1>
-            </Link>
-        </span>;
-        
-    let navRight;
-    if (currentUser) {
-        navRight = 
-            <span className="nav-right">
-                <ul className="angle-drop-down">
-                    <DropDown logout={logout}/>
-                    <button className="angle-button">
-                        <i className="fas fa-angle-down"/>
-                    </button>
-                </ul>
-            </span>
-    } else {
-        navRight = 
-            <span className="nav-right">
-                <button className="nav-login" onClick={() => openModal('login')}>Login</button>
-                <button className="nav-signup" onClick={() => openModal('signup')}>Signup</button>
-            </span>
-    }
-
-    return (
-        <nav className="nav-bar">
-            {navLeft}
-            {navRight}
-        </nav>
-    );}
 }
 
 export default Navbar;

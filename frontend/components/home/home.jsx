@@ -11,10 +11,6 @@ class Home extends React.Component {
 
     componentDidMount () {
         this.props.fetchPins()
-        // this.setState({ pins })
-            // .then(pins => {
-            //     this.setState({ pins });
-            // });
     };
 
     render() {
@@ -22,13 +18,11 @@ class Home extends React.Component {
         if (this.props.pins) {
             pinIndex = <PinsIndex pins ={this.props.pins}/>
         }
-        // console.log(this.props.pins)
-        // const pins = this.props.fetchPins()
-        // debugger;
+
         return (
-            <div>WHY IS NOTHING SHOWING UP
-                {pinIndex}
-            </div>
+            <>
+            {pinIndex}
+            </>
         )
     }
 }
