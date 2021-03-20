@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default ({ pins }) => {
-    debugger;
+    // debugger;
     // console.log(pins)
     return (
         <ul>NO PINS WHY
