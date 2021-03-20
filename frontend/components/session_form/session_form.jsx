@@ -58,14 +58,14 @@ class SessionForm extends React.Component {
 
 		return (
 			<div className="signin-modal">
-				<form className="signin-modal-form" onSubmit={this.handleSubmit}>
-					<div className="signin-modal-close" onClick={closeModal}>
+				<form className="signin-form" onSubmit={this.handleSubmit}>
+					<div className="signin-close" onClick={closeModal}>
 						&times;
 					</div>
 
 					<img src={window.logoURL}/>
 					<h1>Welcome to Pintage</h1>
-					<p>Find new ideas to try</p>
+					<p className="sign-in-sub-header">Find new ideas to try</p>
 					<span>{this.renderErrors()}</span>
 
 					<div className="input">
@@ -92,10 +92,10 @@ class SessionForm extends React.Component {
 
 					<button className="submit" type="submit">Continue</button>
 
-					<p>OR</p>
-					<span>
+					<div className="or-other-form">
+						<p>OR</p>
 						<p>{ otherForm }</p>
-					</span>
+					</div>
 				</form>
 			</div>
 		);
