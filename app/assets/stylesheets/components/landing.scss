@@ -9,6 +9,7 @@
     overflow-x: hidden;
     overflow-y: hidden;
     height: 88vh;
+    // height: 100%;
     width: 100%;
     // width: 100em;
     // width: 100vh;
@@ -70,7 +71,7 @@
         border: 1px solid white;
         border-radius: 10px;
         color: white;
-        height: 40em;
+        height: 35em;
         width: 20em;
         background-size: auto;
         background-repeat: no-repeat;
@@ -112,14 +113,15 @@
 
     .eight {
         background-image: image-url('travel7.jpg');
-        position: static;
-        // top: -43em;
+        // position: fixed;
+        transform: translate(0, -24em);
     }
 
     .nine {
         background-image: image-url('travel8.jpg');
-        position: static;
+        transform: translate(106em, -24em);
+        // position: fixed;
         // top: -43em;
-        // right: -185vh;
+        // right: -185em;
     }
 }
