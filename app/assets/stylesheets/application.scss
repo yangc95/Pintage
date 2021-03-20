@@ -97,10 +97,10 @@ button {
   
   .signin-close {
     text-decoration: none;
-    position: absolute;
+    position: fixed;
     font-size: 40px;
     color: $light-black;
-    transform: translate(27vh, -5vh);
+    transform: translate(5em, -1em);
     cursor: pointer;
   }
 

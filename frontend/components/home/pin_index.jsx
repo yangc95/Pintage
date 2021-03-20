@@ -8,7 +8,7 @@ export default ({ pins }) => {
             {
             pins.map(pin => {
                 return (
-                    <li key={pin.id}>
+                <li key={pin.id}>
                         <h2>{pin.title}</h2>
                         <p>{pin.about}</p>
                         <img src={pin.photoUrl}/>

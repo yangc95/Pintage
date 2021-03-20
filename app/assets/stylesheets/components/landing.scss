@@ -17,9 +17,9 @@
     .fade {
         position: absolute;
         transform: translate(0px, 35em);
-        height: 20em;
+        height: 30em;
         width: 100%;
-        background: linear-gradient(rgba(255, 255, 255, 0), white);
+        background: linear-gradient(180deg,rgba(255, 255, 255, 0), white);
         opacity: 0.5;
     }
 }
