@@ -4,6 +4,16 @@ import { Link } from 'react-router-dom';
 import DropDown from './drop_down';
 
 class Navbar extends React.Component {
+    constructor (props) {
+        super(props);
+        this.userProfile = this.userProfile.bind(this);
+    }
+
+    userProfile() {
+        // debugger; ${this.props.currentUser.username}
+        this.props.history.push(`/_saved`)
+    }
+
     render () {
         const { currentUser, logout, openModal } = this.props;
 
@@ -30,7 +40,7 @@ class Navbar extends React.Component {
             navRight = 
                 <span className="nav-right">
                     <ul className="angle-drop-down">
-                        <button></button>
+                        <button onClick={this.userProfile} >Profile</button>
                         <DropDown logout={logout}/>
                         <button className="angle-button">
                             <i className="fas fa-angle-down"/>

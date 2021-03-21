@@ -5,6 +5,12 @@ export const fetchPins = () => (
     })
 );
 
+// export const fetchUserPins = userId => (
+//     $.ajax({
+//         method: 'GET',
+//         url:'/api/pins'
+//     })
+// );
 //  .then(pins => {
 //         this.setState({pins})
 //     });

@@ -9,12 +9,15 @@ import {
 import NavbarContainer from './nav_bar/navbar_container';
 import Landing from './landing/landing';
 import HomePageContainer from './home/home_container';
+import ProfileContainer from './profile/profile_container'
 import Modal from './session_form/modal'
 // import LogInFormContainer from './session_form/login_form_container';
 // import SignUpFormContainer from './session_form/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { logoutCurrentUser } from '../actions/session_actions';
 
 const App = () => {
+  // debugger;
   return (
     <div>
       <Modal/>
@@ -29,7 +32,7 @@ const App = () => {
         <ProtectedRoute exact path="/home" component={HomePageContainer} />
         {/* <AuthRoute path="/" component={LogInFormContainer} /> */}
         {/* <AuthRoute path="/" component={SignUpFormContainer} /> */}
-        {/* <ProtectedRoute exact path="/" component={ProfileContainer} /> */}
+        <ProtectedRoute path={`/_saved`} component={ProfileContainer} />
         <AuthRoute exact path="/" component={Landing} />
       </Switch>
     </div>

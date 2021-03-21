@@ -12,3 +12,9 @@ export const fetchPins = () => dispatch => (
         dispatch(receivePins(pins))
     ), err => (null))
 );
+
+// export const fetchUserPins = (userId) => dispatch => (
+//     APIUtil.fetchUserPins(userId).then(pins => (
+//         dispatch(receivePins(pins))
+//     ), err => (null))
+// );
