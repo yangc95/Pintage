@@ -30,6 +30,7 @@ class Navbar extends React.Component {
             navRight = 
                 <span className="nav-right">
                     <ul className="angle-drop-down">
+                        <button></button>
                         <DropDown logout={logout}/>
                         <button className="angle-button">
                             <i className="fas fa-angle-down"/>
