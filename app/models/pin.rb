@@ -14,6 +14,6 @@ class Pin < ApplicationRecord
     validates :title, :about, :user_id, presence: true
 
     belongs_to :user
-    # belongs_to :boards
+    belongs_to :board
     has_one_attached :photo
 end
