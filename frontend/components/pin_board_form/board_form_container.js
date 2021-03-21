@@ -1,20 +1,20 @@
 import { connect } from 'react-redux';
-import PinBoardForm from './pin_board_form';
+import { withRouter } from 'react-router-dom';
 import { openModal, closeModal } from '../../actions/modal_actions';
+import PinBoardForm from './pin_board_form';
 
 const mSTP = ({ session, entities: { users, boards } }) => {
-    // debugger;
   return {
-    currentUser: users[session.currentUser],
+    // currentUser: users[session.currentUser],
     boards
   };
 };
 
 const mDTP = dispatch => {
 	return {
-    // fetchPins: () => dispatch(fetchPins())
+    openModal: modal => dispatch(openModal(modal)),
     closeModal: () => dispatch(closeModal())
 	};
 };
 
-export default connect(mSTP, mDTP)(PinBoardForm);
+export default withRouter(connect(mSTP, mDTP)(PinBoardForm));

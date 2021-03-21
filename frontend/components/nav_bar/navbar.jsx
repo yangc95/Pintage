@@ -42,7 +42,7 @@ class Navbar extends React.Component {
                     <ul className="angle-drop-down">
                         <button onClick={this.userProfile} >Profile</button>
                         <DropDown logout={logout}/>
-                        <button className="angle-button">
+                        <button className="angle-button" >
                             <i className="fas fa-angle-down"/>
                         </button>
                     </ul>

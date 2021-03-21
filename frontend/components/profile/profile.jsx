@@ -21,7 +21,7 @@ class Profile extends React.Component {
                 <div>
                     {boardIndex}
                 </div>
-                <button className="profile-add" onClick={() => openModal('addPinBoard')}>&#43;</button>
+                <button className="profile-add" onClick={() => openModal('pbDropdown')}>&#43;</button>
             </div>
         )
     }
