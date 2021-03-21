@@ -1,14 +1,14 @@
 class Api::BoardsController < ApplicationController
 
     def index
-        @board = Board.find_by(user_id: params[:user_id])
+        @board = Board.where(user_id: params[:user_id])
         render :index
     end
 
-    # def show
-    #     @board = Board.find(params[:id])
-    #     render :show
-    # end
+    def show
+        @board = Board.find(params[:id])
+        render :show
+    end
 
     def create
         @board = Board.new(board_params)
@@ -22,8 +22,8 @@ class Api::BoardsController < ApplicationController
     def edit
         @board = Board.find_by(id: params[:id])
 
-        if @board
-            render :edit
+        if @board.update
+            render "api/boards/show"
         else
             render json: ["Board not found"], status 404
         end
