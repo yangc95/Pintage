@@ -29,10 +29,10 @@ const App = () => {
       </header>
       
       <Switch>
-        <ProtectedRoute exact path="/home" component={HomePageContainer} />
         {/* <AuthRoute path="/" component={LogInFormContainer} /> */}
         {/* <AuthRoute path="/" component={SignUpFormContainer} /> */}
         <ProtectedRoute path={`/_saved`} component={ProfileContainer} />
+        <ProtectedRoute exact path="/home" component={HomePageContainer} />
         <AuthRoute exact path="/" component={Landing} />
       </Switch>
     </div>
