@@ -24,7 +24,7 @@ users = User.create([
 # ])
 
 p = Pin.create(title: "Sunflower", about: "Testing", user_id: 1)
-p.photo.attach(io: File.open("/Users/christineyang/Desktop/sunflower.png"), filename: "sunflower.png")
+# p.photo.attach(io: File.open("/Users/christineyang/Desktop/sunflower.png"), filename: "sunflower.png")
 
 
 
