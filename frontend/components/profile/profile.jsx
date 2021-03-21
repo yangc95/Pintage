@@ -1,24 +1,27 @@
-import React from 'react'
+import React from 'react';
+import BoardIndex from './board_index';
 
 class Profile extends React.Component {
-    // componentDidMount () {
-    //     this.props.fetchBoards()
-    // };
+    componentDidMount () {
+        this.props.fetchBoards()
+    };
 
     render() {
-        // let boardIndex = "";
-        // if (this.props.boards) {
-        //     boardIndex = <BoardIndex boards ={this.props.boards}/>
-        // }
-
+        const { openModal } = this.props;
+        // debugger;
+        let boardIndex = "";
+        if (this.props.boards) {
+            boardIndex = <BoardIndex boards ={this.props.boards}/>
+        }
         return (
             <div>
-                <div className="profile-photo"></div>
-                <div className="profile-name"></div>
-                <div className="profile-followers"></div>
+                <div className="profile-photo">PHOTO</div>
+                <div className="profile-name">NAME</div>
+                <div className="profile-followers">FOLLOWERS</div>
                 <div>
-                    {/* {boardIndex} */}
+                    {boardIndex}
                 </div>
+                <button className="profile-add" onClick={() => openModal('addPinBoard')}>&#43;</button>
             </div>
         )
     }

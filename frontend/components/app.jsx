@@ -10,7 +10,8 @@ import NavbarContainer from './nav_bar/navbar_container';
 import Landing from './landing/landing';
 import HomePageContainer from './home/home_container';
 import ProfileContainer from './profile/profile_container'
-import Modal from './session_form/modal'
+import BoardFormContainer from './pin_board_form/board_form_container';
+import Modal from './modal'
 // import LogInFormContainer from './session_form/login_form_container';
 // import SignUpFormContainer from './session_form/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
@@ -31,9 +32,9 @@ const App = () => {
       <Switch>
         {/* <AuthRoute path="/" component={LogInFormContainer} /> */}
         {/* <AuthRoute path="/" component={SignUpFormContainer} /> */}
+        <AuthRoute exact path="/" component={Landing} />
         <ProtectedRoute path={`/_saved`} component={ProfileContainer} />
         <ProtectedRoute exact path="/home" component={HomePageContainer} />
-        <AuthRoute exact path="/" component={Landing} />
       </Switch>
     </div>
   )

@@ -1,13 +1,27 @@
 class Api::PinsController < ApplicationController
+    helper_method :current_user
+
     def index
         @pins = Pin.all
         render :index
     end
 
-    # def show
-    #     @pin = Pin.find(params[:id])
-    #     render :show
-    # end
+    def new
+        @pin = Pin.new
+    end
+
+    def create
+        @pin = Pin.new(pin_params)
+
+        if @pin.save
+            render "api/pin/show"
+        else
+            render json: ["Pin error"]
+        end
+    end
+
+    def show
+    end
 
     private
 

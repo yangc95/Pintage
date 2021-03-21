@@ -1,7 +1,7 @@
 class Api::BoardsController < ApplicationController
 
     def index
-        @board = Board.where(user_id: params[:user_id])
+        @board = Board.all
         render :index
     end
 
@@ -15,7 +15,7 @@ class Api::BoardsController < ApplicationController
         if @board.save
             render :index
         else
-            render json: ["Enter a name!"], status 401
+            render json: ["Enter a name!"], status: 401
         end
     end
 
@@ -25,7 +25,7 @@ class Api::BoardsController < ApplicationController
         if @board.update
             render "api/boards/show"
         else
-            render json: ["Board not found"], status 404
+            render json: ["Board not found"], status: 404
         end
     end
 

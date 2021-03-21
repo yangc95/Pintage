@@ -1,8 +1,9 @@
 import React from 'react';
-import { closeModal } from '../../actions/modal_actions';
+import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
-import LoginFormContainer from '../session_form/login_form_container';
-import SignupFormContainer from '../session_form/signup_form_container';
+import LoginFormContainer from './session_form/login_form_container';
+import SignupFormContainer from './session_form/signup_form_container';
+import BoardFormContainer from './pin_board_form/board_form_container';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -16,16 +17,27 @@ function Modal({ modal, closeModal }) {
     case 'signup':
       component = <SignupFormContainer />;
       break;
+    case 'addBoard':
+      component = <BoardFormContainer />;
+      break;
     default:
       return null;
   }
-  return (
+
+
+  return (modal === 'login' || modal === 'signup') ? (
     <div className="modal-background" onClick={closeModal}>
       <div className="modal-child" onClick={e => e.stopPropagation()}>
         { component }
       </div>
     </div>
-  );
+  ):(
+    <div className="" onClick={closeModal}>
+      <div className="modal-child" onClick={e => e.stopPropagation()}>
+        { component }
+      </div>
+    </div>
+  )
 }
 
 const mSTP = state => {
