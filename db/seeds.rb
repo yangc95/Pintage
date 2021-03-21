@@ -6,22 +6,27 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# User.destroy_all
-# Pin.destroy_all 
-# ApplicationRecord.connection.reset_pk_sequence!('users')
-# ApplicationRecord.connection.reset_pk_sequence!('pins')
+User.destroy_all
+Pin.destroy_all 
+ApplicationRecord.connection.reset_pk_sequence!('users')
+ApplicationRecord.connection.reset_pk_sequence!('pins')
 
-# users = User.create([
-#     {username: "test",  password: "hunter10", email: "test@gmail.com"},
-#     {username: "test1", password: "hunter11", email: "test1@gmail.com"},
-#     {username: "test2", password: "hunter12", email: "test2@gmail.com"}
-# ])
+users = User.create([
+    {username: "test",  password: "hunter10", email: "test@gmail.com"},
+    {username: "test1", password: "hunter11", email: "test1@gmail.com"},
+    {username: "test2", password: "hunter12", email: "test2@gmail.com"}
+])
 
 # pins = Pin.create([
-# 1    {title: "Japanese Night Walk", about: "Nice night", user_id: 1, },
-# 2    {title: "Japan Sights", about: "Red Alter", user_id: 1, },
-# 3    {title: "Japanese Day Walk", about: "Beautiful day streets", user_id: 1, }
+#     {title: "Japanese Night Walk", about: "Nice night", user_id: 1}
+# # 2    {title: "Japan Sights", about: "Red Alter", user_id: 1, },
+# # 3    {title: "Japanese Day Walk", about: "Beautiful day streets", user_id: 1, }
 # ])
+
+p = Pin.create(title: "Sunflower", about: "Testing", user_id: 1)
+p.photo.attach(io: File.open("/Users/christineyang/Desktop/sunflower.png"), filename: "sunflower.png")
+
+
 
 
 # pins = Pin.create([
