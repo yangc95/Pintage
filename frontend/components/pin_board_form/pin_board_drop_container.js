@@ -17,8 +17,12 @@ class PinBoardDrop extends React.Component {
 
         return (
             <div className="pin-board-modal">
-                <button onClick={closeModal}><Link to={'/pin'} >New Pin</Link></button>
-                <button onClick={closeModal}><Link to={'/board'} >New Board</Link></button>
+                <button className="button" onClick={closeModal}>
+                  <Link to={'/pin'} >New Pin</Link>
+                </button>
+                <button className="button" onClick={closeModal}>
+                  <Link to={'/board'} >New Board</Link>
+                </button>
 
                 <button className="pin-board-close" onClick={closeModal}>
                     &times;

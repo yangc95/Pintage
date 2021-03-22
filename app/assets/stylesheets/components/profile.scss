@@ -1,0 +1,47 @@
+.profile-div {
+    // font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 10em;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    display: grid;
+    justify-content: center;
+
+    .profile-name {
+        grid-column: 3 / span 2;
+        justify-self: center;
+        font-size: 18px;
+    }
+
+    .profile-add {
+        grid-column: 6/7;
+        grid-row: 10/11;
+        justify-self: center;
+        top: 10px;
+        right: 20px;
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        margin-right: 10px;
+        font-size: 20px;
+    }
+}
+
+.pin-board-modal {
+    // background-color: white;
+    width: 15em;
+    height: 10em;
+    display: flex;
+    flex-direction: column;
+    // align-items:;
+    // transform: translateX(150%);
+    border-radius: 8px;
+    border: 2px solid black;
+    text-decoration: none;
+
+    .button,
+    Link {
+        background-color: white;
+        text-decoration: none;
+        font-size: 20px;
+    }
+}

@@ -14,10 +14,10 @@ class Profile extends React.Component {
             boardIndex = <BoardIndex boards ={this.props.boards}/>
         }
         return (
-            <div>
-                <div className="profile-photo">PHOTO</div>
+            <div className="profile-div">
+                {/* <div className="profile-photo">PHOTO</div> */}
                 <div className="profile-name">NAME</div>
-                <div className="profile-followers">FOLLOWERS</div>
+                {/* <div className="profile-followers">FOLLOWERS</div> */}
                 <div>
                     {boardIndex}
                 </div>

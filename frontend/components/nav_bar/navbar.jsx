@@ -40,11 +40,11 @@ class Navbar extends React.Component {
             navRight = 
                 <span className="nav-right">
                     <ul className="angle-drop-down">
-                        <button onClick={this.userProfile} >Profile</button>
+                        <button className="profile-button" onClick={this.userProfile}></button>
                         <DropDown logout={logout}/>
-                        <button className="angle-button" >
+                        {/* <button className="angle-button" >
                             <i className="fas fa-angle-down"/>
-                        </button>
+                        </button> */}
                     </ul>
                 </span>
         } else {
