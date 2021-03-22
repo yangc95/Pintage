@@ -34,39 +34,43 @@ class PinForm extends React.Component {
     handleSubmit() {
         e.preventDefault();
         const pin = Object.assign({}, this.state);
-        // this.props.fetchPin(pin)
+        this.props.fetchPin(pin)
+        
     }
 
     render() {
         const { title, about, photoUrl } = this.state;
 
         return (
-            <div>
+            <div className="pin-form-div">
                 <form className="pin-form" onSubmit={this.handleSubmit}>
-                    <label>
+                    <label className="pin-photo-label">
                         {photoUrl ?
-                        <img src={photoUrl} alt="Image Preview"/> :
+                        <img className="pin-img" src={photoUrl} alt="Image Preview"/> :
                         <input 
+                            className= "pin-input-photo"
                             type="file"
                             onChange={this.previewFile}
                         />}
                     </label>
-                    <label>
-                        <input 
+                    <label >
+                        <input
+                            className="pin-input-title" 
                             type="text" 
                             value={title}
                             onChange={this.update('title')}
-                            placeholder="Title"
+                            placeholder="Add your title"
                         />
                     </label>
                     <label>
                         <textarea
+                            className="pin-input-about"
                             value={about}
                             onChange={this.update('about')}
                             placeholder="About"
                         />
                     </label>
-                    <button>Continue</button>
+                    <button className="pin-input-button">Continue</button>
                 </form>
             </div>
         )

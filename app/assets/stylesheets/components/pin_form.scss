@@ -1,0 +1,51 @@
+// Place all the styles related to the Pins controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+
+.pin-form-div {
+    background-color: rgb(235, 232, 232);
+    display: grid;
+    grid-template-columns: repeat(15 ,50px);
+    grid-template-rows: repeat(14, 50px);
+    justify-content: center;
+}
+
+.pin-form {
+    background-color: white;
+    border-radius: 15px;
+    grid-column: 1 / span 14;
+    grid-row: 2/ span 12;
+    padding: 5em;
+    // flex-direction: column;
+}
+
+.pin-photo-label {
+    justify-items: center;
+    align-items: center;
+}
+
+.pin-img {
+    width: var(--pin_width);
+    height: var(--pin_large);
+    border-radius: var(--pin_border_radius);
+}
+
+.pin-input-photo {
+    height: 400px;
+    width: 250px;
+    float: left;
+    background-color: rgb(235, 232, 232);
+    border: 2px dashed rgb(204, 203, 203);
+    box-shadow: 0 0 0 10px rgb(235, 232, 232);
+    border-radius: 2px;
+    justify-items: center;
+}
+
+// .pin-input-title,
+// .pin-input-about,
+// .pin-input-button {
+//     position: relative;
+//     top: 30px;
+//     right: -65px;
+// }
