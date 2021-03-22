@@ -27,17 +27,15 @@ b = Board.create(name: "Travel", user_id: 1)
 
 p = Pin.create(title: "Sunflower", about: "Testing", user_id: 1, board_id: 1)
 # p.photo.attach(io: File.open("/Users/christineyang/Desktop/sunflower.png"), filename: "sunflower.png")
-
-
-
+# p.photo.attach(io: File.open("/Users/christineyang/Desktop/$intagePics/food14.jpg"), filename: "food14.jpg")
 
 # pins = Pin.create([
-# 4    {title: "Korean Corndogs", about: "Nicely battered crispy crunch", user_id: 1, },
-# 5    {title: "Spring Cupcakes", about: "So light, fluffy, and creamy frosting", user_id: 1, },
-# 6    {title: "More Spring Cupcakes", about: "But from a different angle, haha", user_id: 1, },
-# 7    {title: "French Toast", about: "Boozy Sunday Brunch with polaroid", user_id: 1, },
-# 8    {title: "Soup Dumplings", about: "Chewy dumpling skin and hot delicious soup inside", user_id: 1, },
-# 9    {title: "Gluten-free Waffles", about: "Yummy cinnamon butter crispy waffle with fruit", user_id: 1, },
+#     {id: 2, title: "Korean Corndogs", about: "Nicely battered crispy crunch", user_id: 1, board_id: 1},
+#     {id: 3, title: "Spring Cupcakes", about: "So light, fluffy, and creamy frosting", user_id: 1, board_id: 1},
+#     {id: 4, title: "More Spring Cupcakes", about: "But from a different angle, haha", user_id: 1, board_id: 1},
+#     {id: 5, title: "French Toast", about: "Boozy Sunday Brunch with polaroid", user_id: 1, board_id: 1},
+#     {id: 6, title: "Soup Dumplings", about: "Chewy dumpling skin and hot delicious soup inside", user_id: 1, board_id: 1},
+#     {id: 7, title: "Gluten-free Waffles", about: "Yummy cinnamon butter crispy waffle with fruit", user_id: 1, board_id: 1},
 # ])
 
 
