@@ -1,7 +1,12 @@
 class Api::BoardsController < ApplicationController
-    def show
-        @board = Board.find(params[:id])
+    def index
+        @board = Board.find_by(user_id: params[:user_id])
+        @user = @board.user_id
         render "api/users/show"
+    end
+
+    def show
+        
     end
     
     def create
@@ -17,7 +22,7 @@ class Api::BoardsController < ApplicationController
         @board = Board.find(params[:id])
         
         if @board.destroy
-            render "api/boards/show"
+            render json: ["Error"]
         end
     end
     

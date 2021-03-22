@@ -4,20 +4,17 @@ import { fetchBoards } from '../../actions/board_actions';
 import { openModal } from '../../actions/modal_actions';
 import Profile from './profile';
 
-const mSTP = ({ session, entities: { users, boards } }) => {
-// debugger
+const mSTP = ({ session, entities: { users }}) => {
+  // debugger;
   return {
-    currentUser: users[session.currentUser],
-    // users: Object.values(pins),
-    boards: Object.values(boards)
-    // users[session.id].pins
-
+    session: session.id,
+    boards: Object.values(users[session.id].boards)
   };
 };
 
 const mDTP = dispatch => {
 	return {
-    fetchBoards: () => dispatch(fetchBoards()),
+    fetchBoards: userId => dispatch(fetchBoards(userId)),
     openModal: modal => dispatch(openModal(modal))
     
     

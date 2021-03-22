@@ -3,14 +3,14 @@ class Api::PinsController < ApplicationController
 
     def index
         @pins = Pin.all
-        render :index
+        render "api/pins/index"
     end
 
     def create
         @pin = Pin.new(pin_params)
 
         if @pin.save
-            render "api/pin/show"
+            render "api/pins/show"
         else
             render json: ["Pin error"]
         end

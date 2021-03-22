@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
     resources :pins, only: [:index, :create, :show, :update, :destroy]
-    resources :boards, only: [:show, :create, :destroy]
+    resources :boards, only: [:index, :show, :create, :destroy]
     # resources :follows, only: [:create, :destroy]
   end
 

@@ -1,9 +1,10 @@
 class Board < ApplicationRecord
-    validates :name, :user_id, presence: true, uniqueness: { scope: :user_id,
+    validates :name, presence: true, uniqueness: { scope: :user_id,
     message: "You already have a board with that name" }
+    validates :user_id, presence: true
 
-    belongs_to :user
-    has_many :pins,
-        foreign_key: :board_id,
-        class_name: :Pin
+    belongs_to :user,
+        foreign_key: :user_id,
+        class_name: :User
+    has_many :pins
 end

@@ -27,18 +27,18 @@ class SessionForm extends React.Component {
 			// .then(this.props.history.push('/home'))
 	}
 
-  renderErrors() {
-	const { errors } = this.props;
-    return(
-      <ul>
-        {errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+	renderErrors() {
+		const { errors } = this.props;
+		return(
+		<ul>
+			{errors.map((error, i) => (
+			<li key={`error-${i}`}>
+				{error}
+			</li>
+			))}
+		</ul>
+		);
+	}
 
 	render() {
 		const { formType, otherForm, closeModal } = this.props; 
@@ -77,7 +77,7 @@ class SessionForm extends React.Component {
 								value={username}
 								onChange={this.update('username')}
 								placeholder="Username"
-								/>
+							/>
 						</label>
 
 						<label>
@@ -86,7 +86,7 @@ class SessionForm extends React.Component {
 								value={password}
 								onChange={this.update('password')}
 								placeholder="Password"
-								/>
+							/>
 						</label>
 					</div>
 

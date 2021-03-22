@@ -19,13 +19,17 @@ users = User.create([
 ])
 
 b = Board.create(name: "Travel", user_id: 1)
+
+p = Pin.create(title: "Sunflower", about: "Testing", user_id: 1, board_id: 1)
+file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/sunflower.png")
+p.photo.attach(io: file, filename: "sunflower.png")
+
 # pins = Pin.create([
 #     {title: "Japanese Night Walk", about: "Nice night", user_id: 1}
 # # 2    {title: "Japan Sights", about: "Red Alter", user_id: 1, },
 # # 3    {title: "Japanese Day Walk", about: "Beautiful day streets", user_id: 1, }
 # ])
 
-p = Pin.create(title: "Sunflower", about: "Testing", user_id: 1, board_id: 1)
 # p.photo.attach(io: File.open("/Users/christineyang/Desktop/sunflower.png"), filename: "sunflower.png")
 # p.photo.attach(io: File.open("/Users/christineyang/Desktop/$intagePics/food14.jpg"), filename: "food14.jpg")
 

@@ -7,8 +7,8 @@ export const receiveBoards = boards => ({
   boards
 });
 
-export const fetchBoards = () => dispatch => (
-    APIUtil.fetchBoards().then(boards => (
+export const fetchBoards = userId => dispatch => (
+    APIUtil.fetchBoards(userId).then(boards => (
         dispatch(receiveBoards(boards))
     ), err => (null))
 );
