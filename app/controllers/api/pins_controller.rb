@@ -6,10 +6,6 @@ class Api::PinsController < ApplicationController
         render :index
     end
 
-    def new
-        @pin = Pin.new
-    end
-
     def create
         @pin = Pin.new(pin_params)
 
@@ -21,6 +17,25 @@ class Api::PinsController < ApplicationController
     end
 
     def show
+        @pin = Pin.find(params[:id])
+        render "api/users/show"
+    end
+    
+    def update
+        @pin = Pin.find(params[:id])
+        if @pin && @pin.update(pin_params)
+            render :show
+        else
+            render json: ["Pin not found"]
+        end
+    end
+
+    def destroy
+        @pin = Pin.find(params[:id])
+        
+        if @pin.destroy
+            render "api/pins/show"
+        end
     end
 
     private
@@ -28,4 +43,6 @@ class Api::PinsController < ApplicationController
     def pin_params
         params.require(:pin).permit(:title, :about, :user_id, :board_id);
     end
+
+
 end

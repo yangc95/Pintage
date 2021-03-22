@@ -1,6 +1,6 @@
-export const fetchBoards = () => (
+export const fetchBoards = boardId => (
     $.ajax({
         method: 'GET',
-        url:'/api/boards'
+        url:`/api/boards/${boardId}`
     })
 );
