@@ -15,7 +15,7 @@ class Profile extends React.Component {
         const { openModal } = this.props;
         let boardIndex = "";
         if (this.props.boards) {
-            boardIndex = <BoardIndex boards ={this.props.boards}/>
+            boardIndex = <BoardIndex boards={this.props.boards}/>
         }
 
         // debugger;
@@ -27,7 +27,8 @@ class Profile extends React.Component {
                 <span className="profile-board-index">
                     {boardIndex}
                 </span>
-                <button className="profile-add" onClick={() => openModal('pbDropdown')}>&#43;</button>
+                <button className="profile-add-board" onClick={() => openModal('addBoard')}>&#43;</button>
+                <button className="profile-add-pin" onClick={() => openModal('addPin')}></button>
             </div>
         )
     }

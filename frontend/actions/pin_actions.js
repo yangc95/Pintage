@@ -7,10 +7,22 @@ export const receivePins = pins => ({
   pins
 });
 
+export const receivePin = pin => ({
+  type: RECEIVE_PIN,
+  pin
+});
+
+
 export const fetchPins = () => dispatch => (
-    APIUtil.fetchPins().then(pins => (
-        dispatch(receivePins(pins))
-    ), err => (null))
+  APIUtil.fetchPins().then(pins => (
+      dispatch(receivePins(pins))
+  ), err => (null))
+);
+
+export const createPin = pin => dispatch => (
+  APIUtil.createPin(pin).then(pin => (
+    dispatch(receivePin(pin))
+  ), err => (null))
 );
 
 // export const fetchUserPins = (userId) => dispatch => (

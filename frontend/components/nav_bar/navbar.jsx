@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import DropDown from './drop_down';
-
 class Navbar extends React.Component {
     constructor (props) {
         super(props);
@@ -41,7 +39,7 @@ class Navbar extends React.Component {
                 <span className="nav-right">
                     <ul className="angle-drop-down">
                         <button className="profile-button" onClick={this.userProfile}></button>
-                        <DropDown logout={logout}/>
+                        <Link onClick={logout} to="/">Log Out</Link>
                         {/* <button className="angle-button" >
                             <i className="fas fa-angle-down"/>
                         </button> */}

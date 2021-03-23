@@ -3,8 +3,7 @@ import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
-import PinBoardDropContainer from './pin_board_form/pin_board_drop_container';
-// import BoardFormContainer from './pin_board_form/board_form_container';
+import BoardFormContainer from './pin_board_form/board_form_container';
 import PinFormContainer from './pin_board_form/pin_form_container';
 
 
@@ -20,12 +19,9 @@ function Modal({ modal, closeModal }) {
     case 'signup':
       component = <SignupFormContainer />;
       break;
-    case 'pbDropdown':
-      component = <PinBoardDropContainer />;
+    case 'addBoard':
+      component = <BoardFormContainer />;
       break;
-    // case 'addBoard':
-    //   component = <BoardFormContainer />;
-    //   break;
     case 'addPin':
       component = <PinFormContainer />;
       break;
@@ -42,7 +38,7 @@ function Modal({ modal, closeModal }) {
     </div>
   ):(
     <div className="" onClick={closeModal}>
-      <div className="modal-child" onClick={e => e.stopPropagation()}>
+      <div className="" onClick={e => e.stopPropagation()}>
         { component }
       </div>
     </div>

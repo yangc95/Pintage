@@ -1,5 +1,4 @@
 import React from 'react';
-// import { closeModal } from '../../actions/modal_actions';
 
 class PinForm extends React.Component {
     constructor(props) {
@@ -8,7 +7,8 @@ class PinForm extends React.Component {
             title: "",
             about: "",
             photoUrl: null,
-            photoFile: null
+            photoFile: null,
+            user_id: this.props.session
         };
         this.previewFile = this.previewFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -31,11 +31,19 @@ class PinForm extends React.Component {
 		});
 	}
 
-    handleSubmit() {
+    handleSubmit(e) {
         e.preventDefault();
-        const pin = Object.assign({}, this.state);
-        this.props.fetchPin(pin)
+        const formData = new FormData();
+
+        if (this.state.photoFile) {
+            formData.append('pin[photo]', this.state.photoFile);
+        }
         
+        formData.append('pin[user_id]', this.state.user_id);
+        formData.append('pin[title]', this.state.title);
+        formData.append('pin[about]', this.state.about);
+        debugger;
+        this.props.createPin(formData).then(this.props.closeModal());
     }
 
     render() {

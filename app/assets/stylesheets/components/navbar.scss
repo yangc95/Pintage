@@ -24,7 +24,8 @@
         font-size: 16px;
     }
 
-    .nav-home-button:hover {
+    .nav-home-button:hover,
+    .nav-home-button:visited {
         background-color: black;
         color: white;
     }

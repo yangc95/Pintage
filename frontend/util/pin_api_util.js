@@ -5,6 +5,15 @@ export const fetchPins = () => (
     })
 );
 
+export const createPin = (pin) => (
+    $.ajax({
+        method: 'POST',
+        url:'/api/pins',
+        data: { pin },
+        contentType: false,
+        processData: false
+    })
+);
 // export const fetchUserPins = userId => (
 //     $.ajax({
 //         method: 'GET',
