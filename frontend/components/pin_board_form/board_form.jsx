@@ -19,10 +19,15 @@ class BoardForm extends React.Component {
         return (
             <div>
                 <form className="board-form" onSubmit={this.handleSubmit}>
-                    <label>Name
-                        <input type="text"/>
+                    <h1 className="board-form-h1">Create board</h1>
+                    <label className="board-form-label">Name
+                        <input 
+                            className="board-form-input"
+                            type="text"
+                            placeholder='Like "Places to Go" or "Recipes to Make"'
+                        />
                     </label>
-                    <button>Add Board</button>
+                    <button className="board-form-button">Create</button>
                 </form>
             </div>
         )

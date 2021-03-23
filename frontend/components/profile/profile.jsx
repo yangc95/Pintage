@@ -27,8 +27,11 @@ class Profile extends React.Component {
                 <span className="profile-board-index">
                     {boardIndex}
                 </span>
-                <button className="profile-add-board" onClick={() => openModal('addBoard')}>&#43;</button>
-                <button className="profile-add-pin" onClick={() => openModal('addPin')}></button>
+                {/* <button className="profile-add-button" onClick={}>
+                    &#43;
+                </button> */}
+                <button className="profile-add-pin" onClick={() => openModal('addPin')}>P</button>
+                <button className="profile-add-board" onClick={() => openModal('addBoard')}>B</button>
             </div>
         )
     }

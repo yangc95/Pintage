@@ -30,19 +30,28 @@ function Modal({ modal, closeModal }) {
   }
 
 
-  return (modal === 'login' || modal === 'signup') ? (
+  if (modal === 'login' || modal === 'signup') {
+    return (
     <div className="modal-background" onClick={closeModal}>
       <div className="modal-child" onClick={e => e.stopPropagation()}>
         { component }
       </div>
     </div>
-  ):(
-    <div className="" onClick={closeModal}>
-      <div className="" onClick={e => e.stopPropagation()}>
-        { component }
-      </div>
+  )} else if (modal === 'addBoard') {
+    return (
+    <div className="modal-background" onClick={closeModal}>
+        <span className="modal-child" onClick={e => e.stopPropagation()}>
+          { component }
+        </span>
     </div>
-  )
+  )} else {
+    return (
+    <div className="" onClick={closeModal}>
+        <span className="modal-child" onClick={e => e.stopPropagation()}>
+          { component }
+        </span>
+    </div>
+  )}
 }
 
 const mSTP = state => {
