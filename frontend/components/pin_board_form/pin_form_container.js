@@ -5,7 +5,7 @@ import { createPin } from '../../actions/pin_actions'
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mSTP = ({ session, entities: {users, pins} }) => {
-  debugger;
+  // debugger;
   return {
     // currentUser: users[session.currentUser],
     session: session.id, 

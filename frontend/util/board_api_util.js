@@ -1,6 +1,22 @@
 export const fetchBoards = userId => (
     $.ajax({
         method: 'GET',
-        url:`/api/boards/${userId}`
+        url:`/api/boards`,
+        data: { user_id: userId }
     })
 );
+
+export const createBoard = board => (
+    $.ajax({
+        method: 'POST',
+        url:`/api/boards`,
+        data: board
+    })
+);
+
+export const destroyBoard = board => (
+    $.ajax({
+        method: 'DELETE',
+        url:`/api/boards/${board.id}`
+    })
+)

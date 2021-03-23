@@ -8,7 +8,9 @@ class Profile extends React.Component {
 
     componentDidMount() {
         // debugger;
-        this.props.fetchBoards(this.props.session)
+        this.props.fetchBoards(this.props.session).then((res) => {
+            // debugger
+        })
     };
 
     render() {

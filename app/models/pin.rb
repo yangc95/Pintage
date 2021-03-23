@@ -14,6 +14,9 @@ class Pin < ApplicationRecord
     validates :user_id, presence: true
 
     belongs_to :user
-    belongs_to :board
+    belongs_to :board,
+        foreign_key: :board_id,
+        class_name: :Board,
+        optional: true
     has_one_attached :photo
 end

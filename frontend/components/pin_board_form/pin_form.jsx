@@ -8,15 +8,16 @@ class PinForm extends React.Component {
             about: "",
             photoUrl: null,
             photoFile: null,
-            user_id: this.props.session
+            user_id: this.props.session,
+            board_id: 1
         };
-        this.previewFile = this.previewFile.bind(this);
+        this.handleFile = this.handleFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    previewFile(e) {
-        const reader = new FileReader();
+    handleFile(e) {
         const file = e.currentTarget.files[0];
+        const reader = new FileReader();
         reader.onloadend = () => {
             this.setState({ photoUrl: reader.result, photoFile: file });
         }
@@ -42,7 +43,7 @@ class PinForm extends React.Component {
         formData.append('pin[user_id]', this.state.user_id);
         formData.append('pin[title]', this.state.title);
         formData.append('pin[about]', this.state.about);
-        debugger;
+        // debugger;
         this.props.createPin(formData).then(this.props.closeModal());
     }
 
@@ -54,11 +55,11 @@ class PinForm extends React.Component {
                 <form className="pin-form" onSubmit={this.handleSubmit}>
                     <label className="pin-photo-label">
                         {photoUrl ?
-                        <img className="pin-img" src={photoUrl} alt="Image Preview"/> :
+                        <img className="pin-img" src={photoUrl} alt="Image handle"/> :
                         <input 
                             className= "pin-input-photo"
                             type="file"
-                            onChange={this.previewFile}
+                            onChange={this.handleFile}
                         />}
                     </label>
                     <label >

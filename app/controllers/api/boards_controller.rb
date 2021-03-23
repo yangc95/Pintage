@@ -1,18 +1,18 @@
 class Api::BoardsController < ApplicationController
     def index
         @board = Board.find_by(user_id: params[:user_id])
-        @user = @board.user_id
+        @user = User.find(@board.user_id)
         render "api/users/show"
     end
 
     def show
-        
+
     end
     
     def create
         @board = Board.new(board_params)
         if @board.save
-            render :show
+            render "api/users/show"
         else
             render json: ["Enter a name!"], status: 401
         end

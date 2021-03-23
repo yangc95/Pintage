@@ -1,6 +1,7 @@
-import * as APIUtil from '../util/pin_api_util';
+import * as PinAPIUtil from '../util/pin_api_util';
 
-export const RECEIVE_PINS = 'RECEIVE_PINS'
+export const RECEIVE_PINS = 'RECEIVE_PINS';
+export const RECEIVE_PIN = 'RECEIVE_PIN';
 
 export const receivePins = pins => ({
   type: RECEIVE_PINS,
@@ -12,16 +13,15 @@ export const receivePin = pin => ({
   pin
 });
 
-
 export const fetchPins = () => dispatch => (
-  APIUtil.fetchPins().then(pins => (
+  PinAPIUtil.fetchPins().then(pins => (
       dispatch(receivePins(pins))
   ), err => (null))
 );
 
 export const createPin = pin => dispatch => (
-  APIUtil.createPin(pin).then(pin => (
-    dispatch(receivePin(pin))
+  PinAPIUtil.createPin(pin).then(pin => (
+    dispatch(receivePins(pin))
   ), err => (null))
 );
 

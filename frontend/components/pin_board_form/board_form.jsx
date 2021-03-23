@@ -1,21 +1,35 @@
 import React from 'react';
-// import { closeModal } from '../../actions/modal_actions';
 
 class BoardForm extends React.Component {
     constructor(props) {
 		super(props);
         this.state = {
             name: "",
+            user_id: this.props.session
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit() {
+    handleSubmit(e) {
         e.preventDefault();
+        const board = Object.assign({}, this.state);
+        this.props.createBoard({ board }).then(() =>
+            this.props.closeModal()
+        )
+        this.setState({
+            name: "",
+            user_id: this.props.session
+        })
     }
 
+    update(field) {
+		return e => this.setState({
+			[field]: e.currentTarget.value
+		});
+	}
+
     render () {
-        // const { closeModal } = this.props;
+        const { name } = this.state;
         return (
             <div>
                 <form className="board-form" onSubmit={this.handleSubmit}>
@@ -24,6 +38,8 @@ class BoardForm extends React.Component {
                         <input 
                             className="board-form-input"
                             type="text"
+                            value={name}
+                            onChange={this.update('name')}
                             placeholder='Like "Places to Go" or "Recipes to Make"'
                         />
                     </label>
