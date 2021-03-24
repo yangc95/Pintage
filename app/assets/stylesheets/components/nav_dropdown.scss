@@ -1,18 +1,23 @@
-// .angle-drop-down {
-//     position: relative;
-//     // display: inline-block;
-//     // position: absolute;
-//     // display: flex;
-//     // float: left;
-//     // flex-direction: column-reverse;
-// }
+.angle-drop-down {
+    position: relative;
+    display: inline-block;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#dropdown {
+    
+        // display: inline-block;
+        // transform: translate(-210px, 45px);
+        // transform: translate(2, 1);
+
+}
+
 
 // ul.nav-right-dropdown {
 //     // visibility: hidden;
 //     position: absolute;
-//     // display: inline-block;
-//     transform: translate(-210px, 45px);
-//     // transform: translate(2, 1);
 //     // float: right;
 //     border: 1px solid grey;
 //     border-radius: 10px;

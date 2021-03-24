@@ -13,13 +13,15 @@ class BoardForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const board = Object.assign({}, this.state);
-        this.props.createBoard({ board }).then(() =>
-            this.props.closeModal()
-        )
+        this.props.createBoard({ board }).then(this.props.closeModal())
         this.setState({
             name: "",
             user_id: this.props.session
         })
+    }
+
+    componentWillUnmount() {
+        
     }
 
     update(field) {
@@ -30,6 +32,8 @@ class BoardForm extends React.Component {
 
     render () {
         const { name } = this.state;
+        // const { closeModal } = this.props;
+
         return (
             <div>
                 <form className="board-form" onSubmit={this.handleSubmit}>
@@ -43,7 +47,7 @@ class BoardForm extends React.Component {
                             placeholder='Like "Places to Go" or "Recipes to Make"'
                         />
                     </label>
-                    <button className="board-form-button">Create</button>
+                    <button className="board-form-button" >Create</button>
                 </form>
             </div>
         )

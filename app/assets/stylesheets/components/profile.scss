@@ -70,11 +70,23 @@
 }
 
 span.profile-board-index {
-    grid-column: 2/6;
-    grid-row: 4/12;
-    display: flex;
+    grid-column: 1/6;
+    grid-row: 5/12;
+    // display: flex;
 }
 
+
+
 .profile-div-container {
-    
+
+    // display: grid;
+    // grid-template-columns: repeat(auto-fill, 500px);
+    // grid-auto-rows: 250px;
+
+
+    .board-index-img {
+        width: 240px;
+        height: 155px;
+    }
 }
+

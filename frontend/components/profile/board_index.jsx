@@ -6,11 +6,11 @@ export default ({ boards }) => {
             {
                 boards.map(board => {
                     return (
-                        <li className="board-index-li" key={board.id}>
-                            <img/>
-                            <h2 className="board-index-title">{board.name}</h2>
-                            <div className="board-img"></div>
-                        </li>
+                            <li className="board-index-li" key={board.id}>
+                                <img className="board-index-img" src={window.boardURL}/>
+                                <h2 className="board-index-title">{board.name}</h2>
+                                {/* <div className="board-img"></div> */}
+                            </li>
                     )
                 })
             } 

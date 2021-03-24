@@ -45,13 +45,12 @@ class Navbar extends React.Component {
             navRight = 
                 <span className="nav-right">
                     <ul className="angle-drop-down">
+                        <button>
+                            <Link id="dropdown" className={`signout-button ${dropdownButton}`} onClick={logout} to="/">Log Out</Link>
+                        </button>
                         <button className="profile-button" onClick={this.userProfile}></button>
                         <button className="angle-button" onClick={() => this.setState({dropdown: !this.state.dropdown})}>
                             <i className="fas fa-angle-down"/>
-                        </button>
-                        
-                        <button>
-                            <Link className={`signout-button ${dropdownButton}`} onClick={logout} to="/">Log Out</Link>
                         </button>
                     </ul>
                 </span>
