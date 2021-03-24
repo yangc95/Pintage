@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 class Navbar extends React.Component {
     constructor (props) {
         super(props);
+        this.state = {
+            dropdown: false
+        }
         this.userProfile = this.userProfile.bind(this);
     }
 
@@ -14,6 +17,9 @@ class Navbar extends React.Component {
 
     render () {
         const { currentUser, logout, openModal } = this.props;
+        
+        let dropdownButton;
+        (this.state.dropdown) ? dropdownButton = 'dropdownActive' : dropdownButton = '' ;
 
         let path;
         let pintage;
@@ -24,6 +30,7 @@ class Navbar extends React.Component {
             path = "/"
             pintage = <h1 className="nav-logo">Pintage</h1>
         }
+
 
         const navLeft = 
         <span className="nav-left">
@@ -39,10 +46,13 @@ class Navbar extends React.Component {
                 <span className="nav-right">
                     <ul className="angle-drop-down">
                         <button className="profile-button" onClick={this.userProfile}></button>
-                        <Link onClick={logout} to="/">Log Out</Link>
-                        {/* <button className="angle-button" >
+                        <button className="angle-button" onClick={() => this.setState({dropdown: !this.state.dropdown})}>
                             <i className="fas fa-angle-down"/>
-                        </button> */}
+                        </button>
+                        
+                        <button>
+                            <Link className={`signout-button ${dropdownButton}`} onClick={logout} to="/">Log Out</Link>
+                        </button>
                     </ul>
                 </span>
         } else {

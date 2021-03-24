@@ -14,15 +14,21 @@
     justify-content: center;
     grid-gap: 1em;
     
-    // .pin-index-title {
-        
-    // }
+    .pin-index-title {
+        margin-top: 5px;
+        margin-left: 10px;
+        font-size: 14px;
+        font-weight: 600;
+    }
     
-    // .pin-index-about {
-        
-    // }
+    .pin-index-about {
+        margin-top: 3px;
+        font-size: 11px;
+        margin-left: 10px;
+    }
     
     .pin-index-div {
+        align-items: center;
         // background-color: black;
         
     }

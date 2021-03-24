@@ -2,11 +2,19 @@
 // NAV BAR STYLINGS
 // NOT LOGGED IN
 .nav-bar {
-    position: sticky;
-    padding: 25px;
+    position: fixed;
+    margin-left: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     display: flex;
     justify-content: space-between;
     font-size: 16px;
+    background-color: white;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 93%;
 
     .nav-left {
         display: flex;
@@ -14,20 +22,14 @@
 
     .nav-home-button {
         margin-left: 1em;  
-        background-color: white;
-        color: black;
+        background-color: black;
+        color: white;
         display: flex;
         justify-content: center;
         padding: 15px;
         border-radius: 25px;
         font-weight: 600;
         font-size: 16px;
-    }
-
-    .nav-home-button:hover,
-    .nav-home-button:visited {
-        background-color: black;
-        color: white;
     }
 
     // .nav-home-button:active {
@@ -38,7 +40,7 @@
     
     .nav-right {
         display: flex;
-        gap: 1em;
+        // gap: 1em;
     }
 
     :first-of-type {
@@ -99,24 +101,33 @@
             border-radius: 50%;
             margin-right: 10px;
         }
-        // .angle-button {
-        //     top: 10px;
-        //     right: 20px;
-        //     height: 35px;
-        //     width: 35px;
-        //     text-decoration: none;
-        //     justify-content: center;
-        //     border: none;
-        //     outline: 0; 
-        //     background-color: white;
-        //     cursor: pointer;
-        // }
+        .angle-button {
+            top: 10px;
+            right: 20px;
+            height: 35px;
+            width: 35px;
+            text-decoration: none;
+            justify-content: center;
+            border: none;
+            outline: 0; 
+            background-color: white;
+            cursor: pointer;
+        }
 
-        // ul button:hover,
-        // ul button:active {
-        //     background: $grey-hover;
-        //     border-radius: 50%;
-        // }
+        ul button:hover {
+            background: $grey-hover;
+            border-radius: 50%;
+        }
+
+        .signout-button {
+            visibility: hidden;
+        }
+
+        .signout-button.dropdownActive {
+            visibility: unset;
+        }
+
+
 
         // .angle-drop-down {
         //     display: hidden;
