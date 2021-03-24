@@ -1,5 +1,8 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import {
+	Link, 
+	Route,
+	Redirect} from 'react-router-dom';
 
 class SessionForm extends React.Component {
 	constructor(props) {
@@ -66,9 +69,10 @@ class SessionForm extends React.Component {
 		}
 
 
-
+		
 		return (
 			<div className="signin-modal">
+				{/* { (formType === 'login' && currentUser) ? <Redirect path='/'></Redirect> : <Redirect path='/home'></Redirect> } */}
 				<form className="signin-form" onSubmit={this.handleSubmit}>
 					<div className="signin-close" onClick={closeModal}>
 						&times;
@@ -78,6 +82,7 @@ class SessionForm extends React.Component {
 					<h1>Welcome to Pintage</h1>
 					<p className="sign-in-sub-header">Find new ideas to try</p>
 					<span className="errors">{this.renderErrors()}</span>
+
 
 					<div className="input">
 						{emailLabel}

@@ -30,12 +30,8 @@ const App = () => {
       </header>
       
       <Switch>
-        {/* <AuthRoute path="/" component={LogInFormContainer} /> */}
-        {/* <AuthRoute path="/" component={SignUpFormContainer} /> */}
         <AuthRoute exact path="/" component={Landing} />
         <ProtectedRoute path={"/pin"} component={PinFormContainer} />
-        {/* <ProtectedRoute path={"/board"} com
-        ponent={BoardFormContainer} /> */}
         <ProtectedRoute path={`/_saved`} component={ProfileContainer} />
         <ProtectedRoute exact path="/home" component={HomePageContainer} />
       </Switch>

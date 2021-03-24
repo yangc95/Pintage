@@ -11,8 +11,9 @@ import { signup } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import SessionForm from './session_form';
 
-const mSTP = ({ errors }) => {
+const mSTP = ({entities, errors, session}) => {
 	return {
+		currentUser: entities.users[session.id],
 		errors: errors.session,
 		formType: 'signup',
 	};
