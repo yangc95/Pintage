@@ -72,7 +72,7 @@ class SessionForm extends React.Component {
 		
 		return (
 			<div className="signin-modal">
-				{/* { (formType === 'login' && currentUser) ? <Redirect path='/'></Redirect> : <Redirect path='/home'></Redirect> } */}
+				{/* { (formType === 'login' || formType === 'signup' && !currentUser) ? <Redirect path='/' /> : "" } */}
 				<form className="signin-form" onSubmit={this.handleSubmit}>
 					<div className="signin-close" onClick={closeModal}>
 						&times;
