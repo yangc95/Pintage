@@ -6,13 +6,13 @@ import {
 
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
-  // debugger;
+  // ;
   let newState = Object.assign({}, state)
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
       return Object.assign({}, newState, { [action.currentUser.id]: action.currentUser }); 
     // case RECEIVE_PINS:
-    //   // debugger;
+    //   // ;
     //   return Object.assign({}, newState, { [action.user_id]: action.pins}); 
     // case RECEIVE_BOARDS:
     //   return Object.assign({}, newState, { [action.user_id]: action.boards })

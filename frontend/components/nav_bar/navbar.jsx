@@ -11,7 +11,7 @@ class Navbar extends React.Component {
     }
 
     userProfile() {
-        // debugger; ${this.props.currentUser.username}
+        // ; ${this.props.currentUser.username}
         this.props.history.push(`/_saved`)
     }
 

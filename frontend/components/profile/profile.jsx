@@ -10,7 +10,7 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-        // debugger;
+        // ;
         this.props.fetchBoards(this.props.session)
     };
 
@@ -24,7 +24,7 @@ class Profile extends React.Component {
         let dropdownButton;
         (this.state.dropdown) ? dropdownButton = 'isActive' : dropdownButton = '' ;
 
-        // debugger;
+        // ;
         return (
             <div className="profile-div">
                 {/* <div className="profile-photo">PHOTO</div> */}

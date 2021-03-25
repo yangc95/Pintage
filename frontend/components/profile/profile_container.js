@@ -5,7 +5,7 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 import Profile from './profile';
 
 const mSTP = ({ session, entities: { users }}) => {
-  // debugger;
+  // ;
   return {
     session: session.id,
     currentUser: users[session.id],

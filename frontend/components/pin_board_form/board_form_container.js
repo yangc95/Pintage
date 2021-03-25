@@ -6,7 +6,7 @@ import { fetchBoards, createBoard } from '../../actions/board_actions';
 import BoardForm from './board_form';
 
 const mSTP = ({ session }) => {
-  // debugger;
+  // ;
   return {
     session: session.id,
   };

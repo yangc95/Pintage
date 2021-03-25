@@ -19,7 +19,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { logoutCurrentUser } from '../actions/session_actions';
 
 const App = () => {
-  // debugger;
+  // ;
   return (
     <div>
       <Modal/>

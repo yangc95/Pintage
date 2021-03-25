@@ -21,7 +21,6 @@ export const removeBoard = board => ({
 
 export const fetchBoards = userId => dispatch => (
     BoardAPIUtil.fetchBoards(userId).then(boards => {
-      // debugger;
       return(
         dispatch(receiveBoards(boards))
     )}, err => (null))

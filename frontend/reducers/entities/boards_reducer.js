@@ -4,7 +4,7 @@ import {
 
 const boardsReducer = (state = {}, action) => {
   Object.freeze(state);
-  // debugger;
+  // ;
   let newState = Object.assign({}, state)
   switch(action.type) {
     case RECEIVE_BOARDS:

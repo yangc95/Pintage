@@ -43,7 +43,7 @@ class PinForm extends React.Component {
         formData.append('pin[user_id]', this.state.user_id);
         formData.append('pin[title]', this.state.title);
         formData.append('pin[about]', this.state.about);
-        // debugger;
+        // ;
         this.props.createPin(formData).then(this.props.closeModal());
     }
 
