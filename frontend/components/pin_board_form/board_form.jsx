@@ -20,10 +20,6 @@ class BoardForm extends React.Component {
         })
     }
 
-    componentWillUnmount() {
-        
-    }
-
     update(field) {
 		return e => this.setState({
 			[field]: e.currentTarget.value

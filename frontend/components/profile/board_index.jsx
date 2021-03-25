@@ -9,6 +9,7 @@ export default ({ boards }) => {
                             <li className="board-index-li" key={board.id}>
                                 <img className="board-index-img" src={window.boardURL}/>
                                 <h2 className="board-index-title">{board.name}</h2>
+                                <p>{}pins {}w</p>
                                 {/* <div className="board-img"></div> */}
                             </li>
                     )

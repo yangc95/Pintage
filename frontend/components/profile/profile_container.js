@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { fetchBoards } from '../../actions/board_actions';
-import { openModal } from '../../actions/modal_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 import Profile from './profile';
 
 const mSTP = ({ session, entities: { users }}) => {
   // debugger;
   return {
     session: session.id,
+    currentUser: users[session.id],
     boards: Object.values(users[session.id].boards)
   };
 };
@@ -15,7 +16,8 @@ const mSTP = ({ session, entities: { users }}) => {
 const mDTP = dispatch => {
 	return {
     fetchBoards: userId => dispatch(fetchBoards(userId)),
-    openModal: modal => dispatch(openModal(modal))
+    openModal: modal => dispatch(openModal(modal)),
+    closeModal: () => dispatch(closeModal())
     
     
     // fetchUserPins: (userId) => dispatch(fetchUserPins(userId))

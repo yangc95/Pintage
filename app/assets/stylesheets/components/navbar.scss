@@ -3,10 +3,7 @@
 // NOT LOGGED IN
 .nav-bar {
     position: fixed;
-    margin-left: 20px;
-    padding-left: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     font-size: 16px;
@@ -14,7 +11,7 @@
     z-index: 10;
     left: 0;
     top: 0;
-    width: 93%;
+    width: 97%;
 
     .nav-left {
         display: flex;
@@ -70,6 +67,7 @@
         font-weight: 600;
         background-color: $red;
         border-radius: 25px;
+        margin-right: 1em;
     }
 
     .nav-login:hover {
@@ -93,6 +91,7 @@
 
     // RIGHT DOWN CARET NAVBAR
     .nav-right {
+
         .profile-button {
             top: 10px;
             right: 20px;
@@ -100,37 +99,44 @@
             width: 35px;
             border-radius: 50%;
             margin-right: 10px;
+            color: grey;
         }
-        .angle-button {
+        
+        .fas.fa-user-alt {
+            text-align: center;
+            line-height: 35px;
+            font-size: 22px;
+        }
+
+        .fas.fa-user-alt:hover {
+            height: 35px;
+            width: 35px;
+        }
+
+        button.angle-button {
             top: 10px;
             right: 20px;
             height: 35px;
             width: 35px;
             text-decoration: none;
-            justify-content: center;
             border: none;
             outline: 0; 
+            text-align: center;
             background-color: white;
             cursor: pointer;
         }
+        
+        .fas.fa-angle-down {
+            text-align: center;
+            line-height: 35px;
+            font-size: 20px;
+            padding-left: 5px;
+            color: grey;
+        }
 
-        ul button:hover {
-            background: $grey-hover;
+        .angle-button:hover {
+            background: $grey;
             border-radius: 50%;
         }
-
-        .signout-button {
-            visibility: hidden;
-        }
-
-        .signout-button.dropdownActive {
-            visibility: unset;
-        }
-
-
-
-        // .angle-drop-down {
-        //     display: hidden;
-        // }
     }
 }

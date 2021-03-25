@@ -17,7 +17,7 @@
     .fade {
         position: absolute;
         transform: translate(0px, 35em);
-        height: 30em;
+        height: 40em;
         width: 100%;
         background: linear-gradient(180deg,rgba(255, 255, 255, 0), white);
         opacity: 0.5;
@@ -121,8 +121,8 @@
     }
 
     .nine {
-        background-image: image-url('./images/travel8.jpg');
-        transform: translate(106em, -24em);
+        background-image: image-url('travel8.jpg');
+        transform: translate(0, -16em);
         // position: fixed;
         // top: -43em;
         // right: -185em;

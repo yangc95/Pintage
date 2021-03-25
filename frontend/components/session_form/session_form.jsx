@@ -33,7 +33,7 @@ class SessionForm extends React.Component {
 
 	handleDemoSubmit(e) {
 		e.preventDefault();
-		const user = Object.assign({}, {username: "test", email: "test@gmail.com", password: "hunter10"});
+		const user = Object.assign({}, {username: "DemoUser", email: "test@gmail.com", password: "hunter10"});
 		this.props.action(user)
 			.then(this.props.closeModal)
 			// .then(this.props.history.push('/home'))

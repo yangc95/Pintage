@@ -13,7 +13,7 @@ ApplicationRecord.connection.reset_pk_sequence!('users')
 ApplicationRecord.connection.reset_pk_sequence!('pins')
 
 users = User.create([
-    {username: "test",  password: "hunter10", email: "test@gmail.com"},
+    {username: "DemoUser",  password: "hunter10", email: "test@gmail.com"},
     {username: "test1", password: "hunter11", email: "test1@gmail.com"},
     {username: "test2", password: "hunter12", email: "test2@gmail.com"}
 ])

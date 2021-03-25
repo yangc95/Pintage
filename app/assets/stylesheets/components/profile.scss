@@ -1,50 +1,16 @@
 .profile-div {
     // font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin-top: 10em;
+    // margin-top: 10em;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(12, 1fr);
+    grid-template-rows: repeat(7, 1fr);
     display: grid;
     justify-content: center;
 
     .profile-name {
         grid-column: 3 / span 2;
+        grid-row: 2;
         justify-self: center;
         font-size: 18px;
-    }
-
-    .profile-add-board {
-        grid-column: 6/7;
-        grid-row: 4/5;
-        justify-self: start;
-        right: 20px;
-        height: 35px;
-        width: 35px;
-        border-radius: 50%;
-        margin-right: 10px;
-        font-size: 35px;
-        text-align: center;
-        line-height: 22px;
-        background-color: white;
-    }
-
-    .profile-add-pin {
-        grid-column: 5/6;
-        grid-row: 4/5;
-        justify-self: end;
-        right: 20px;
-        height: 35px;
-        width: 35px;
-        border-radius: 50%;
-        margin-right: 10px;
-        font-size: 35px;
-        text-align: center;
-        line-height: 22px;
-        background-color: white;
-    }
-
-    .profile-add-board:hover,
-    .profile-add-pin:hover {
-        background-color: #d0d0d0;
     }
 }
 
@@ -60,7 +26,7 @@
     border-radius: 8px;
     border: 2px solid black;
     text-decoration: none;
-
+    
     .button,
     Link {
         background-color: white;
@@ -70,23 +36,107 @@
 }
 
 span.profile-board-index {
-    grid-column: 1/6;
-    grid-row: 5/12;
+    grid-column: 1/7;
+    grid-row: 3/7;
+    justify-self: center;
     // display: flex;
+    margin-top: 40px;
 }
 
-
-
 .profile-div-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    margin-top: 40px;
+    margin-left: 80px;
+    justify-self: center;
+    
+    .board-index-li {
+        list-style-type: none;
+    }
+    
+    .board-index-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-top: 5px;
+        margin-left: 25px;
+    }
 
-    // display: grid;
-    // grid-template-columns: repeat(auto-fill, 500px);
-    // grid-auto-rows: 250px;
-
+    .board-index-li p {
+        margin-top: 5px;
+        margin-left: 25px;
+    }
 
     .board-index-img {
         width: 240px;
         height: 155px;
+        border-radius: 20px;
     }
 }
 
+.profile-add-button {
+    grid-column: 6/7;
+    grid-row: 3/4;
+    right: 20px;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 35px;
+    text-align: center;
+    line-height: 22px;
+    background-color: white;
+    justify-self: end;
+    margin-top: 35px;
+}
+
+.profile-add-button:hover {
+    background-color: #d0d0d0;
+}
+
+.profile-add-buttons {
+    margin-top: 80px;
+    visibility: hidden;
+    grid-column: 6/7;
+    grid-row: 3/4;
+    height: 80px;
+    width: 135px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.342);
+    justify-self: end;
+    margin-right: 10px;
+    justify-items: start;
+    
+    display: grid;
+
+    button {
+        margin-left: -10px;
+        padding: 10px;
+        background-color: white;
+        font-size: 16px;
+        font-weight: 600;
+        width: 150px;
+        height: 35px;
+        border-radius: 10px;
+        text-align: left;
+    }
+    
+    .profile-add-pin {
+        margin-top: 5px;
+    }
+
+    button:hover {
+        background-color:#dfdfdf;
+    }
+}
+
+.profile-add-button.isActive {
+    background-color: black;
+    color: white;
+}
+
+.profile-add-buttons.isActive {
+    visibility: unset;
+}

@@ -20,9 +20,9 @@ class Home extends React.Component {
         }
 
         return (
-            <>
-            {pinIndex}
-            </>
+            <div className="home-div">
+                {pinIndex}
+            </div>
         )
     }
 }

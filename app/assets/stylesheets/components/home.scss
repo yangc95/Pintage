@@ -1,18 +1,25 @@
 @import "variables";
 
-.home-div-container {
+.home-div {
     margin-top: 10em;
-    padding: 0;
-    width: 100%;
-    position: absolute;
-    // left: 50%;
-    // transform: translateX(-50%);
-    grid-template-columns: repeat(auto-fill, var(--pin_width));
-    display: grid;
+}
 
-    grid-auto-rows: var(--row_increment);
+.home-div-container {
+    // margin-top: 30em;
+    // padding: 0;
+    // width: 100%;
+    // position: absolute;
+    // left: 50%;
+    // transform: translateX(-50%);)
+    grid-template-columns: repeat(auto-fill, 250px);
+    display: grid;
     justify-content: center;
-    grid-gap: 1em;
+    // grid-gap: 1em;
+
+    width: 100%;
+    margin: 20px auto;
+    // columns: 5;
+    column-gap: 0.5em;
     
     .pin-index-title {
         margin-top: 5px;
@@ -22,25 +29,29 @@
     }
     
     .pin-index-about {
-        margin-top: 3px;
+        // margin-top: 3px;
         font-size: 11px;
         margin-left: 10px;
     }
     
     .pin-index-div {
-        align-items: center;
+        // align-items: center;
         // background-color: black;
+        width: 100%;
+        // margin: 0 0 0;
+        // padding: 10px;
+        overflow: hidden;
         
     }
     
-    .pin_medium {
+    .pin-index-photo {
         // width: 10em;
         // height: 10em;
         // padding: 0px;
-        // margin: 15px 10px;
+        margin: 15px 10px;
         grid-row-end: span var(--pin_medium);
         width: var(--pin_width);
-        height: var(--pin_large);
+        height: var(--pin_medium);
         border-radius: var(--pin_border_radius);
     }
 
