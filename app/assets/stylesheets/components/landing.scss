@@ -130,23 +130,28 @@
     }
 
     .ten {
-        background-image: image-url('./images/travel9.jpg');
+        background-image: image-url('travel9.jpg');
         margin-top: -40%;
     }
 
     .eleven {
-        background-image: image-url('./images/travel10.jpg');
+        background-image: image-url('travel10.jpg');
         // margin-top: 0;
         // z-index: 100000;
     }
 
     .twelve {
-        background-image: image-url('./images/travel11.jpg');
+        background-image: image-url('travel11.jpg');
         margin-top: -40%;
     }
 
     .thirteen {
-        background-image: image-url('./images/travel12.jpg');
+        background-image: image-url('travel12.jpg');
+        margin-top: -40%;
+    }
+
+    .fourteen {
+        background-image: image-url('travel13.jpg');
         margin-top: -40%;
     }
 }
