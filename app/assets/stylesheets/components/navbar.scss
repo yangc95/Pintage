@@ -98,7 +98,17 @@
             width: 35px;
             border-radius: 50%;
             margin-right: 10px;
-            color: grey;
+        }
+
+        .profile-button:hover {
+            background-color: $grey-hover;
+        }
+
+        button.profile-button:active {
+            // border:black;
+            // outline-color: blue;
+
+            box-shadow: 0 0 0 5px rgba(0, 132, 255, 0.514);
         }
         
         .fas.fa-user-alt {
@@ -111,6 +121,10 @@
             height: 35px;
             width: 35px;
         }
+
+        // .fas.fa-user-alt:active {
+        //     // outline: blue;
+        // }
 
         button.angle-button {
             top: 10px;
