@@ -15,6 +15,9 @@ class Profile extends React.Component {
 
     render() {
         const { openModal, closeModal, currentUser } = this.props;
+        
+        const userEmail = currentUser.email.split("@")[0].split(".").join(""); 
+
         let boardIndex = "";
         if (this.props.boards) {
             boardIndex = <BoardIndex boards={this.props.boards}/>
@@ -28,6 +31,7 @@ class Profile extends React.Component {
                 <div className="profile-name">
                     <img src={window.profileURL}/>
                     {currentUser.username}
+                    <span className="profile-user-name">@{userEmail}</span>
                 </div>
                 <span className="profile-board-index">
                     {boardIndex}
