@@ -7,7 +7,7 @@
     // justify-items: center;
     position: relative;
     overflow-x: hidden;
-    // overflow-y: hidden;
+    overflow-y: hidden;
     height: 100vh;
     // height: 100%;
     width: 100%;
@@ -17,7 +17,7 @@
     .fade {
         position: absolute;
         transform: translate(0px, 35em);
-        height: 40em;
+        height: 100%;
         width: 100%;
         background: linear-gradient(180deg,rgba(255, 255, 255, 0), white);
         opacity: 0.5;
@@ -116,17 +116,12 @@
 
     .eight {
         background-image: image-url('travel7.jpg');
-        // position: fixed;
-        margin-top: -40%;
+        margin-top: -120%;
     }
 
     .nine {
         background-image: image-url('travel8.jpg');
-        // transform: translate(0, -16%);
-        margin-top: -40%;
-        // position: fixed;
-        // top: -43em;
-        // right: -185em;
+        margin-top: -80%;
     }
 
     .ten {
@@ -147,12 +142,12 @@
 
     .thirteen {
         background-image: image-url('travel12.jpg');
-        margin-top: -40%;
+        margin-top: -80%;
     }
 
     .fourteen {
         background-image: image-url('travel13.jpg');
-        margin-top: -40%;
+        margin-top: -120%;
     }
 }
 

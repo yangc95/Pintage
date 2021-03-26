@@ -26,6 +26,7 @@ const Landing = () => {
                     <div className="eleven"></div>
                     <div className="twelve"></div>
                     <div className="thirteen"></div>
+                    <div className="fourteen"></div>
                 </div>
             </div>
             <div className="fade"></div>
