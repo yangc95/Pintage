@@ -7,7 +7,7 @@
     // justify-items: center;
     position: relative;
     overflow-x: hidden;
-    overflow-y: hidden;
+    // overflow-y: hidden;
     height: 100vh;
     // height: 100%;
     width: 100%;
@@ -36,7 +36,7 @@
         // position: relative;
 
         h1 {
-            padding-top: 95px;
+            padding-top: 5%;
             font-size: 60px;
             color: $black;
             font-weight: 450;
@@ -59,7 +59,7 @@
     // margin: 0 auto;
     gap: 1em;
     position: relative;
-    top: 2em;
+    // top: 2em;
     
 
     // .overflow {
@@ -87,27 +87,27 @@
 
     .two {
         background-image: image-url('travel1.jpg');
-        margin-top: 8em;
+        margin-top: 40%;
     }
 
     .three {
         background-image: image-url('travel2.jpg');
-        margin-top: 16em;
+        margin-top: 80%;
     }
 
     .four {
         background-image: image-url('travel3.jpg');
-        margin-top: 24em;
+        margin-top: 120%;
     }
 
     .five {
         background-image: image-url('travel4.jpg');
-        margin-top: 16em;
+        margin-top: 80%;
     }
 
     .six {
         background-image: image-url('travel5.jpg');
-        margin-top: 8em;
+        margin-top: 40%;
     }
 
     .seven {
@@ -117,14 +117,38 @@
     .eight {
         background-image: image-url('travel7.jpg');
         // position: fixed;
-        transform: translate(0, -24em);
+        margin-top: -40%;
     }
 
     .nine {
         background-image: image-url('travel8.jpg');
-        transform: translate(0, -16em);
+        // transform: translate(0, -16%);
+        margin-top: -40%;
         // position: fixed;
         // top: -43em;
         // right: -185em;
     }
+
+    .ten {
+        background-image: image-url('./images/travel9.jpg');
+        margin-top: -40%;
+    }
+
+    .eleven {
+        background-image: image-url('./images/travel10.jpg');
+        // margin-top: 0;
+        // z-index: 100000;
+    }
+
+    .twelve {
+        background-image: image-url('./images/travel11.jpg');
+        margin-top: -40%;
+    }
+
+    .thirteen {
+        background-image: image-url('./images/travel12.jpg');
+        margin-top: -40%;
+    }
 }
+
+

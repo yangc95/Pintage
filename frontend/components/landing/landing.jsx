@@ -22,6 +22,10 @@ const Landing = () => {
                     <div className="seven"></div>
                     <div className="eight"></div>
                     <div className="nine"></div>
+                    <div className="ten"></div>
+                    <div className="eleven"></div>
+                    <div className="twelve"></div>
+                    <div className="thirteen"></div>
                 </div>
             </div>
             <div className="fade"></div>
