@@ -61,8 +61,8 @@ class Navbar extends React.Component {
         } else {
             navRight = 
                 <span className="nav-right">
-                    <button className="nav-login" onClick={() => openModal('login')}>Login</button>
-                    <button className="nav-signup" onClick={() => openModal('signup')}>Signup</button>
+                    <button className="nav-login" onClick={() => openModal('login')}>Log in</button>
+                    <button className="nav-signup" onClick={() => openModal('signup')}>Sign up</button>
                 </span>
         }
 
