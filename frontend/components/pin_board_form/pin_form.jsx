@@ -76,10 +76,10 @@ class PinForm extends React.Component {
                             className="pin-input-about"
                             value={about}
                             onChange={this.update('about')}
-                            placeholder="About"
+                            placeholder="Tell everyone what your pin is about"
                         />
                     </label>
-                    <button className="pin-input-button">Continue</button>
+                    <button className="pin-input-button">Save</button>
                 </form>
             </div>
         )

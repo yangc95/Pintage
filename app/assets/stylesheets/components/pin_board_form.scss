@@ -18,25 +18,31 @@
 }
 
 .pin-form {
-    // background-color: white;
-    // border-radius: 15px;
-    // grid-column: 2 / span 13;
-    // grid-row: 2/ span 12;
-    display: grid;
-    grid-column: 2;
-    grid-row: 2;
-    // flex-direction: column;
+    // // background-color: white;
+    // // border-radius: 15px;
+    // // grid-column: 2 / span 13;
+    // // grid-row: 2/ span 12;
+    // display: grid;
+    // grid-column: 2;
+    // grid-row: 2;
+    // // flex-direction: column;
      
-    // padding: 5em;
-    // flex-direction: column;
+    // // padding: 5em;
+    // // flex-direction: column;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 2rem 4rem -2rem;
+    min-width: min-content;
+
     .pin-photo-label {
         justify-items: center;
         align-items: center;
     }
     
     input.pin-input-title {
-        position: fixed;
-        transform: translate(110%, -750%);
+        // position: fixed;
+        // transform: translate(110%, -750%);
+        display: block;
         border: none;
         background: transparent;
         border-bottom: 1px solid grey;
@@ -44,9 +50,19 @@
         font-size: 25px;
         font-weight: bold;
         width: fit-content;
+        outline: none;
     }
 }
 
+.pin-input-button {
+    // position: fixed;
+    // transform: translate(507%, 500%);
+    background-color: $red;
+    padding: 15px;
+    border-radius: 15px;
+    color: white;
+    // transform: translate(990%, 500%);
+}
 
 .pin-img {
     width: var(--pin_width);
@@ -55,7 +71,7 @@
 }
 
 .pin-input-photo {
-    height: 400px;
+    height: 360px;
     width: 300px;
     // float: left;
     background-color: rgb(235, 232, 232);
@@ -67,13 +83,21 @@
 
 .pin-input-about {
     position: fixed;
-    transform: translate(111%, -750%);
     border: none;
     margin: 0px;
     resize: none;
-    width: 41%;
-    height: 40px;
+    width: 37%;
+    height: 30px;
+    outline: none;
+    margin-top: 3.5%;
+    margin-left: 5%;
+    font-size: 17px;
+    font-family: inherit;
+    border-bottom: 1px solid grey;
+    background-color: transparent;
+    color: rgb(172, 172, 172);
 }
+
 
 
 .board-form {
