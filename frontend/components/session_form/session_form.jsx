@@ -81,7 +81,6 @@ class SessionForm extends React.Component {
 					<img src={window.logoURL}/>
 					<h1>Welcome to Pintage</h1>
 					<p className="sign-in-sub-header">Find new ideas to try</p>
-					<span className="errors">{this.renderErrors()}</span>
 
 
 					<div className="input">
@@ -95,6 +94,7 @@ class SessionForm extends React.Component {
 								placeholder="Username"
 							/>
 						</label>
+						<div className="errors">{this.renderErrors()}</div>
 
 						<label>
 							<input 

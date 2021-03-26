@@ -5,7 +5,8 @@ class Navbar extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            dropdown: false
+            dropdown: false,
+            home: false
         }
         this.userProfile = this.userProfile.bind(this);
     }
@@ -21,11 +22,14 @@ class Navbar extends React.Component {
         let dropdownButton;
         (this.state.dropdown) ? dropdownButton = 'dropdownActive' : dropdownButton = '' ;
 
+        let homeButton;
+        (this.state.home) ? homeButton = 'homeActive' : homeButton = '' ;
+
         let path;
         let pintage;
         if (currentUser) {
             path = "/home";
-            pintage = <h1 className="nav-home-button">Home</h1>
+            pintage = <button onClick={() => this.setState({home: !this.state.home})} className={`nav-home-button ${homeButton}`}>Home</button>
         } else {
             path = "/"
             pintage = <h1 className="nav-logo">Pintage</h1>
@@ -34,7 +38,7 @@ class Navbar extends React.Component {
 
         const navLeft = 
         <span className="nav-left">
-                <Link to={path} >
+                <Link className={`nav-home-buttons ${homeButton}`} onClick={() => this.setState({home: !this.state.home})} to={path} >
                     <img src={window.logoURL}/>
                     {pintage}
                 </Link>

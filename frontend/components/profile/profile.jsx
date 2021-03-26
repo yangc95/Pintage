@@ -10,7 +10,6 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-        // ;
         this.props.fetchBoards(this.props.session)
     };
 
@@ -24,18 +23,15 @@ class Profile extends React.Component {
         let dropdownButton;
         (this.state.dropdown) ? dropdownButton = 'isActive' : dropdownButton = '' ;
 
-        // ;
         return (
             <div className="profile-div">
-                {/* <div className="profile-photo">PHOTO</div> */}
-                <div className="profile-name">{currentUser.username}</div>
-                {/* <div className="profile-followers">FOLLOWERS</div> */}
+                <div className="profile-name">
+                    <img src={window.profileURL}/>
+                    {currentUser.username}
+                </div>
                 <span className="profile-board-index">
                     {boardIndex}
                 </span>
-                {/* <button className="profile-add-button" onClick={}>
-                    &#43;
-                </button> */}
 
                 <div className={`profile-add-buttons ${dropdownButton}`} onClick={() => this.setState({dropdown: !this.state.dropdown})}>
                     <p>Create</p>

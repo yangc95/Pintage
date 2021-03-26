@@ -5,7 +5,7 @@ class Api::UsersController < ApplicationController
 			login(@user)
 			render "api/users/show"
 		else
-			render json: ["You didn't enter anything silly!"], status: 401
+			render json: ["You forgot something silly!"], status: 401
 		end
 	end
 	
