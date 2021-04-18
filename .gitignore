@@ -26,3 +26,4 @@ bundle.js
 config/master.key
 
 .DS_Store
+Gemfile.lock
