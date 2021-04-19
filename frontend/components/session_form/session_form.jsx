@@ -68,8 +68,6 @@ class SessionForm extends React.Component {
 						</label>
 		}
 
-
-		
 		return (
 			<div className="signin-modal">
 				{/* { (formType === 'login' || formType === 'signup' && !currentUser) ? <Redirect path='/' /> : "" } */}

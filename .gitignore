@@ -23,8 +23,10 @@ bundle.js
 .byebug_history
 
 .ruby-version
-config/master.key
 
 .DS_Store
 Gemfile.lock
 package-lock.json
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
