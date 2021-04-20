@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetchBoards } from '../../actions/board_actions'
+import { fetchBoards } from '../../actions/board_actions';
 
 class BoardForm extends React.Component {
     constructor(props) {
