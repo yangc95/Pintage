@@ -4,12 +4,12 @@ import { fetchBoards } from '../../actions/board_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import Profile from './profile';
 
-const mSTP = ({ session, entities: { users }}) => {
-  // ;
+const mSTP = ({ session, entities: { users, boards }}) => {
+  // debugger;
   return {
     session: session.id,
     currentUser: users[session.id],
-    boards: Object.values(users[session.id].boards)
+    boards: Object.values(boards)
   };
 };
 

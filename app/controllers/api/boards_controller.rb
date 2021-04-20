@@ -11,7 +11,10 @@ class Api::BoardsController < ApplicationController
     
     def create
         @board = Board.new(board_params)
+        # debugger;
         if @board.save
+            # debugger;
+            @user = User.find(@board.user_id)
             render "api/users/show"
         else
             render json: ["Enter a name!"], status: 401

@@ -1,6 +1,7 @@
 import React from 'react';
 
 export default ({ boards }) => {
+    // debugger;
     return (
         <div className="profile-div-container">
             {

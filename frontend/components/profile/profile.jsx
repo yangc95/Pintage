@@ -5,26 +5,35 @@ class Profile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            dropdown: false
+            dropdown: false,
+            boards: null
         }
     }
 
     componentDidMount() {
-        this.props.fetchBoards(this.props.session)
+        this.props.fetchBoards(this.props.session).then(
+            () => this.setState({boards: this.props.boards})
+        )
     };
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.boards.length !== this.props.boards.length) {
+            () => this.setState({boards: this.props.boards})
+        }
+    }
 
     render() {
         const { openModal, closeModal, currentUser } = this.props;
-        
+        const { boards, dropdown } = this.state;
         const userEmail = currentUser.email.split("@")[0].split(".").join(""); 
 
         let boardIndex = "";
-        if (this.props.boards) {
-            boardIndex = <BoardIndex boards={this.props.boards}/>
+        if (boards) {
+            boardIndex = <BoardIndex boards={boards}/>
         }
 
         let dropdownButton;
-        (this.state.dropdown) ? dropdownButton = 'isActive' : dropdownButton = '' ;
+        (dropdown) ? dropdownButton = 'isActive' : dropdownButton = '' ;
 
         return (
             <div className="profile-div">
@@ -37,12 +46,12 @@ class Profile extends React.Component {
                     {boardIndex}
                 </span>
 
-                <div className={`profile-add-buttons ${dropdownButton}`} onClick={() => this.setState({dropdown: !this.state.dropdown})}>
+                <div className={`profile-add-buttons ${dropdownButton}`} onClick={() => this.setState({dropdown: !dropdown})}>
                     <p>Create</p>
                     <button className="profile-add-pin" onClick={() => openModal('addPin')}>Pin</button>
                     <button className="profile-add-board" onClick={() => openModal('addBoard')}>Board</button>
                 </div>
-                <button className={`profile-add-button ${dropdownButton}`} onClick={() => this.setState({dropdown: !this.state.dropdown})}>
+                <button className={`profile-add-button ${dropdownButton}`} onClick={() => this.setState({dropdown: !dropdown})}>
                     &#43;
                 </button>
             </div>

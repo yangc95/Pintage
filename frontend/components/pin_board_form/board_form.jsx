@@ -1,4 +1,5 @@
 import React from 'react';
+import { fetchBoards } from '../../actions/board_actions'
 
 class BoardForm extends React.Component {
     constructor(props) {
@@ -13,7 +14,9 @@ class BoardForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const board = Object.assign({}, this.state);
-        this.props.createBoard({ board }).then(this.props.closeModal())
+        this.props.createBoard({ board })
+            .then(this.props.closeModal())
+            .then(() => dispatch(fetchBoards(this.state.user_id)))
         this.setState({
             name: "",
             user_id: this.props.session
