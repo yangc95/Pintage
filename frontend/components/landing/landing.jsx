@@ -24,8 +24,8 @@ const Landing = () => {
                 <div className="landing-title">
                     <h1>Get your next</h1>
                     <ul className="idea-module">
-                        <li>food idea</li>
-                        <li>home idea</li>
+                        {/* <li>food idea</li>
+                        <li>home idea</li> */}
                         <li>travel idea</li>
                     </ul>
                 </div>
