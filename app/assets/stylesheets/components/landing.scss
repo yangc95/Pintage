@@ -79,7 +79,7 @@
         border: 1px solid white;
         border-radius: 15px;
         color: white;
-        height: 30em;
+        height: 29em;
         width: 20em;
         background-size: auto;
         background-repeat: no-repeat;
@@ -93,31 +93,31 @@
 
     .two {
         background-image: image-url('travel1.jpg');
-        margin-top: 40%;
+        margin-top: 55%;
         animation: slide-up-fade-in ease 0.75s;
     }
 
     .three {
         background-image: image-url('travel2.jpg');
-        margin-top: 80%;
+        margin-top: 90%;
         animation: slide-up-fade-in ease 1.25s;
     }
 
     .four {
         background-image: image-url('travel3.jpg');
-        margin-top: 120%;
+        margin-top: 150%;
         animation: slide-up-fade-in ease 1.75s;
     }
 
     .five {
         background-image: image-url('travel4.jpg');
-        margin-top: 80%;
+        margin-top: 90%;
         animation: slide-up-fade-in ease 2.25s;
     }
 
     .six {
         background-image: image-url('travel5.jpg');
-        margin-top: 40%;
+        margin-top: 55%;
         animation: slide-up-fade-in ease 2.75s;
     }
 
@@ -128,42 +128,43 @@
 
     .eight {
         background-image: image-url('travel7.jpg');
-        margin-top: -120%;
+        margin-top: -150%;
         animation: slide-up-fade-in ease 0.5s;
     }
 
     .nine {
         background-image: image-url('travel8.png');
-        margin-top: -80%;
+        margin-top: -95%;
         animation: slide-up-fade-in ease 1s;
     }
 
     .ten {
         background-image: image-url('travel9.jpg');
-        margin-top: -40%;
+        margin-top: -60%;
         animation: slide-up-fade-in ease 1.5s;
     }
 
     .eleven {
         background-image: image-url('travel10.jpg');
         animation: slide-up-fade-in ease 2s;
+        // margin-top: -30%;
     }
 
     .twelve {
         background-image: image-url('travel11.jpg');
-        margin-top: -40%;
+        margin-top: -60%;
         animation: slide-up-fade-in ease 2.5s;
     }
 
     .thirteen {
         background-image: image-url('travel12.jpg');
-        margin-top: -80%;
+        margin-top: -95%;
         animation: slide-up-fade-in ease 3s;
     }
 
     .fourteen {
         background-image: image-url('travel13.jpg');
-        margin-top: -120%;
+        margin-top: -150%;
         animation: slide-up-fade-in ease 3.5s;
     }
 }
