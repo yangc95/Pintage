@@ -14,8 +14,8 @@ class Api::BoardsController < ApplicationController
         # debugger;
         if @board.save
             # debugger;
-            @user = User.find(@board.user_id)
-            render "api/users/show"
+            # @user = User.find(@board.user_id)
+            render "api/boards/show"
         else
             render json: ["Enter a name!"], status: 401
         end

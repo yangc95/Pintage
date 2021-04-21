@@ -1,7 +1,18 @@
 import React from 'react';
 
+// class BoardIndex extends React.Component {
+//     constructor(props) {
+//         super(props)
+//     }
 export default ({ boards }) => {
-    // debugger;
+//     // debugger;
+//     componentDidUpdate() {
+//         console.log("hi")
+//     }
+
+
+//     render() {
+//         const {boards} = this.props;
     return (
         <div className="profile-div-container">
             {
@@ -18,5 +29,7 @@ export default ({ boards }) => {
             } 
         </div>
     )
+    // }
 }
 
+// export default BoardIndex;

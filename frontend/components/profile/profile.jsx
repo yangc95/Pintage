@@ -6,30 +6,33 @@ class Profile extends React.Component {
         super(props);
         this.state = {
             dropdown: false,
-            boards: null
+            boards: {}
         }
     }
 
     componentDidMount() {
-        this.props.fetchBoards(this.props.session).then(
-            () => this.setState({boards: this.props.boards})
-        )
+        this.props.fetchBoards(this.props.session)
+        .then(() => this.setState({boards: this.props.boards, prevBoards: this.props.prevBoards}))
     };
-
-    componentDidUpdate(prevProps) {
-        if (prevProps.boards.length !== this.props.boards.length) {
-            () => this.setState({boards: this.props.boards})
-        }
-    }
-
+    
+    // componentDidUpdate(prevProps) {
+    //         debugger;
+    //     if (prevProps.boards !== this.props.boards) {
+    //         this.setState({boards: this.props.boards})
+    //         // console.log("hi")
+    //     }
+    // }
+            
+            
     render() {
-        const { openModal, closeModal, currentUser } = this.props;
+        const { openModal, closeModal, currentUser} = this.props;
         const { boards, dropdown } = this.state;
         const userEmail = currentUser.email.split("@")[0].split(".").join(""); 
-
+            
         let boardIndex = "";
         if (boards) {
-            boardIndex = <BoardIndex boards={boards}/>
+            // console.log(this.state)
+            boardIndex = <BoardIndex boards={this.props.boards}/>
         }
 
         let dropdownButton;
