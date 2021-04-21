@@ -13,16 +13,7 @@ class Profile extends React.Component {
     componentDidMount() {
         this.props.fetchBoards(this.props.session)
         .then(() => this.setState({boards: this.props.boards, prevBoards: this.props.prevBoards}))
-    };
-    
-    // componentDidUpdate(prevProps) {
-    //         debugger;
-    //     if (prevProps.boards !== this.props.boards) {
-    //         this.setState({boards: this.props.boards})
-    //         // console.log("hi")
-    //     }
-    // }
-            
+    }; 
             
     render() {
         const { openModal, closeModal, currentUser} = this.props;
@@ -45,18 +36,18 @@ class Profile extends React.Component {
                     {currentUser.username}
                     <span className="profile-user-name">@{userEmail}</span>
                 </div>
-                <span className="profile-board-index">
-                    {boardIndex}
-                </span>
-
+                <button className={`profile-add-button ${dropdownButton}`} onClick={() => this.setState({dropdown: !dropdown})}>
+                    &#43;
+                </button>
                 <div className={`profile-add-buttons ${dropdownButton}`} onClick={() => this.setState({dropdown: !dropdown})}>
                     <p>Create</p>
                     <button className="profile-add-pin" onClick={() => openModal('addPin')}>Pin</button>
                     <button className="profile-add-board" onClick={() => openModal('addBoard')}>Board</button>
                 </div>
-                <button className={`profile-add-button ${dropdownButton}`} onClick={() => this.setState({dropdown: !dropdown})}>
-                    &#43;
-                </button>
+                <span className="profile-board-index">
+                    {boardIndex}
+                </span>
+
             </div>
         )
     }
