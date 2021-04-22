@@ -17,8 +17,6 @@ const mDTP = dispatch => {
     fetchBoards: userId => dispatch(fetchBoards(userId)),
     openModal: modal => dispatch(openModal(modal)),
     closeModal: () => dispatch(closeModal())
-    
-    
     // fetchUserPins: (userId) => dispatch(fetchUserPins(userId))
 	};
 };

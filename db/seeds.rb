@@ -35,17 +35,17 @@ p = Pin.create(title: "Japan Day Walk", about: "Sights", user_id: 1, board_id: 1
 file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel2.jpg")
 p.photo.attach(io: file, filename: "travel2.jpg")
 
-p = Pin.create(title: "Japanese Calligraphy", about: "Writing", user_id: 1, board_id: 1)
-file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel3.jpg")
-p.photo.attach(io: file, filename: "travel3.jpg")
+# p = Pin.create(title: "Japanese Calligraphy", about: "Writing", user_id: 1, board_id: 1)
+# file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel3.jpg")
+# p.photo.attach(io: file, filename: "travel3.jpg")
 
-p = Pin.create(title: "Hills", about: "Over the mountain and through the woods", user_id: 1, board_id: 1)
-file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel12.jpg")
-p.photo.attach(io: file, filename: "travel12.jpg")
+# p = Pin.create(title: "Hills", about: "Over the mountain and through the woods", user_id: 1, board_id: 1)
+# file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel12.jpg")
+# p.photo.attach(io: file, filename: "travel12.jpg")
 
-p = Pin.create(title: "Concert", about: "Lights galore", user_id: 1, board_id: 1)
-file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel10.jpg")
-p.photo.attach(io: file, filename: "travel10.jpg")
+# p = Pin.create(title: "Concert", about: "Lights galore", user_id: 1, board_id: 1)
+# file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel10.jpg")
+# p.photo.attach(io: file, filename: "travel10.jpg")
 
 # # 3    {title: "Japanese Day Walk", about: "Beautiful day streets", user_id: 1, }
 # ])

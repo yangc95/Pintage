@@ -1,57 +1,56 @@
 @import "variables";
 
 .home-div {
-    margin-top: 10em;
+    padding: 0 30px 0 30px;
+    margin-top: 5em;
 }
 
-.home-div-container {
-    // margin-top: 30em;
-    // padding: 0;
+.my-masonry-grid {
+    // grid-template-columns: repeat(auto-fill, 250px);
+    // display: grid;
+    // justify-content: center;
     // width: 100%;
-    // position: absolute;
-    // left: 50%;
-    // transform: translateX(-50%);)
-    grid-template-columns: repeat(auto-fill, 250px);
-    display: grid;
-    justify-content: center;
-    // grid-gap: 1em;
+    // column-gap: 0.5em;
+    display: flex;
+    width: auto;
+}
 
+.my-masonry-grid_column {
+    background-clip: padding-box;
+}
+
+.my-masonary-grid_column > div {
+    margin-bottom: 30px;
+}
+
+.pin-index-title {
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pin-index-about {
+    // margin-top: 3px;
+    font-size: 11px;
+    margin-left: 10px;
+}
+
+.pin-index-div {
+    // align-items: center;
+    // background-color: black;
     width: 100%;
-    margin: 20px auto;
-    // columns: 5;
-    column-gap: 0.5em;
-    
-    .pin-index-title {
-        margin-left: 10px;
-        font-size: 14px;
-        font-weight: 600;
-    }
-    
-    .pin-index-about {
-        // margin-top: 3px;
-        font-size: 11px;
-        margin-left: 10px;
-    }
-    
-    .pin-index-div {
-        // align-items: center;
-        // background-color: black;
-        width: 100%;
-        // margin: 0 0 0;
-        // padding: 10px;
-        overflow: hidden;
-        
-    }
-    
-    .pin-index-photo {
-        // width: 10em;
-        // height: 10em;
-        // padding: 0px;
-        margin: 15px 10px;
-        grid-row-end: span var(--pin_medium);
-        width: var(--pin_width);
-        height: var(--pin_medium);
-        border-radius: var(--pin_border_radius);
-    }
+    // margin: 0 0 0;
+    // padding: 10px;
+    // overflow: hidden;
+}
 
+.pin-index-photo {
+    // width: 10em;
+    // height: 10em;
+    // padding: 0px;
+    margin: 15px 10px;
+    // grid-row-end: span var(--pin_medium);
+    width: var(--pin_width);
+    height: var(--pin_medium);
+    border-radius: var(--pin_border_radius);
 }

@@ -8,7 +8,7 @@ class Api::SessionsController < ApplicationController
 			login(@user)
 			render 'api/users/show'
 		else
-			render json: ['Wrong credentials'], status: 401
+			render json: ['You missed a spot! Don\'t forget to add your username.'], status: 401
 		end
 	end
 
