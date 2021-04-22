@@ -5,9 +5,7 @@ import React from 'react';
 //         super(props)
 //     }
 export default ({ boards }) => {
-//     // debugger;
 //     componentDidUpdate() {
-//         console.log("hi")
 //     }
 
 

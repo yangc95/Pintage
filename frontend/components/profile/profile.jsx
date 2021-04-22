@@ -22,7 +22,6 @@ class Profile extends React.Component {
             
         let boardIndex = "";
         if (boards) {
-            // console.log(this.state)
             boardIndex = <BoardIndex boards={this.props.boards}/>
         }
 

@@ -4,7 +4,6 @@ import {
 } from '../../actions/board_actions';
 
 const boardsReducer = (state = {}, action) => {
-  // debugger;
   Object.freeze(state);
   // ;
   let newState = Object.assign({}, state)
