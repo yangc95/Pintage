@@ -36,13 +36,15 @@ class Profile extends React.Component {
                     {currentUser.username}
                     <span className="profile-user-name">@{userEmail}</span>
                 </div>
-                <button className={`profile-add-button ${dropdownButton}`} onClick={() => this.setState({dropdown: !dropdown})}>
-                    &#43;
-                </button>
-                <div className={`profile-add-buttons ${dropdownButton}`} onClick={() => this.setState({dropdown: !dropdown})}>
-                    <p>Create</p>
-                    <button className="profile-add-pin" onClick={() => openModal('addPin')}>Pin</button>
-                    <button className="profile-add-board" onClick={() => openModal('addBoard')}>Board</button>
+                <div className="profile-add-button-wrapper">
+                    <button className={`profile-add-button ${dropdownButton}`} onClick={() => this.setState({dropdown: !dropdown})}>
+                        &#43;
+                    </button>
+                    <div className={`profile-add-buttons ${dropdownButton}`} onClick={() => this.setState({dropdown: !dropdown})}>
+                        <p>Create</p>
+                        <button className="profile-add-pin" onClick={() => openModal('addPin')}>Pin</button>
+                        <button className="profile-add-board" onClick={() => openModal('addBoard')}>Board</button>
+                    </div>
                 </div>
                 <span className="profile-board-index">
                     {boardIndex}
