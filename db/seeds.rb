@@ -8,9 +8,11 @@
 require 'open-uri'
 
 User.destroy_all
-Pin.destroy_all 
+Pin.destroy_all
+Board.destroy_all
 ApplicationRecord.connection.reset_pk_sequence!('users')
 ApplicationRecord.connection.reset_pk_sequence!('pins')
+ApplicationRecord.connection.reset_pk_sequence!('boards')
 
 users = User.create([
     {username: "DemoUser",  password: "hunter10", email: "test@gmail.com"},
