@@ -28,14 +28,14 @@ const App = () => {
         <NavbarContainer />
         {/* </Link> */}
       </header>
-      <body>
+      {/* <body> */}
         <Switch>
           <AuthRoute exact path="/" component={Landing} />
           <ProtectedRoute path={"/pin"} component={PinFormContainer} />
           <ProtectedRoute path={`/_saved`} component={ProfileContainer} />
           <ProtectedRoute exact path="/home" component={HomePageContainer} />
         </Switch>
-      </body>
+      {/* </body> */}
     </div>
   )
 };
