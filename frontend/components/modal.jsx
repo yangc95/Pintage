@@ -46,7 +46,7 @@ function Modal({ modal, closeModal }) {
     </div>
   )} else {
     return (
-    <div className="" onClick={closeModal}>
+    <div className={`modal-background ${modal}`} onClick={closeModal}>
         <span className="modal-child" onClick={e => e.stopPropagation()}>
           { component }
         </span>

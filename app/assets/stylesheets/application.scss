@@ -135,6 +135,10 @@ button {
   z-index: 20;
 }
 
+.modal-background.addPin {
+  background: rgba(255, 255, 255, 0)
+}
+
 .modal-child {
   position: absolute;
   top: 50%;

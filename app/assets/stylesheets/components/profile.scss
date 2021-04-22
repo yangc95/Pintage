@@ -46,8 +46,9 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1.5em;
-    margin-top: 10em;
     margin-left: 5em;
+    margin-top: -9em;
+
     
     .board-index-li {
         list-style-type: none;
@@ -73,8 +74,16 @@
     }
 }
 
+.profile-add-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 1em;
+    // justify-content: flex-start;
+}
+
 .profile-add-button {
-    position: fixed;
+    // position: fixed;
     // transform: translate(95vw, 7vh);
     right: 20px;
     height: 35px;
@@ -95,7 +104,7 @@
 }
 
 .profile-add-buttons {
-    margin-top: 80px;
+    // transform: translate(63vw, 110px);
     visibility: hidden;
     height: 80px;
     width: 135px;
@@ -103,8 +112,9 @@
     border-radius: 20px;
     background-color: white;
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.219);
-    margin-right: 10px;
-    position: fixed;
+    // position: static;
+    transform: translateY(10px);
+
 
     button {
         margin-left: -10px;
