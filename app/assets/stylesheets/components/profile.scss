@@ -72,6 +72,12 @@
         border-radius: 20px;
         background-color: #f0ececf1;
     }
+
+    .board-index-img:hover {
+        background-color: #0000009f;
+        transition-delay: 0.1s;
+        transition-property: background-color;
+    }
 }
 
 .profile-add-button-wrapper {
