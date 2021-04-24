@@ -31,7 +31,7 @@ class Profile extends React.Component {
         (dropdown) ? dropdownButton = 'isActive' : dropdownButton = '' ;
 
         return (
-            <div className="profile-div">
+            <div className="profile-div" onClick={() => dropdown === true ? this.setState({dropdown: !dropdown}) : null}>
                 <div className="profile-name">
                     <img src={window.profileURL}/>
                     {currentUser.username}
