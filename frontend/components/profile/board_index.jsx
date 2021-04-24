@@ -27,7 +27,7 @@ export default ({ boards }) => {
                                 </div>
 
                                 <h2 className="board-index-title">{board.name}</h2>
-                                <p>{}pins {}w</p>
+                                <p>{0} pins {1} w</p>
                             </li>
                     );
                 })

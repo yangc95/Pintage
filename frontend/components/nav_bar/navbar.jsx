@@ -71,7 +71,7 @@ class Navbar extends React.Component {
         }
 
         return (
-            <nav className="nav-bar">
+            <nav className="nav-bar" >
                 {navLeft}
                 {navRight}
             </nav>
