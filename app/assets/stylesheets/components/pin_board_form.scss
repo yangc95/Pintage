@@ -18,17 +18,6 @@
 }
 
 .pin-form {
-    // // background-color: white;
-    // // border-radius: 15px;
-    // // grid-column: 2 / span 13;
-    // // grid-row: 2/ span 12;
-    // display: grid;
-    // grid-column: 2;
-    // grid-row: 2;
-    // // flex-direction: column;
-     
-    // // padding: 5em;
-    // // flex-direction: column;
     display: flex;
     flex-flow: row wrap;
     margin: 2rem 4rem -2rem;
@@ -40,8 +29,6 @@
     }
     
     input.pin-input-title {
-        // position: fixed;
-        // transform: translate(110%, -750%);
         display: block;
         border: none;
         background: transparent;
@@ -55,13 +42,10 @@
 }
 
 .pin-input-button {
-    // position: fixed;
-    // transform: translate(507%, 500%);
     background-color: $red;
     padding: 15px;
     border-radius: 15px;
     color: white;
-    // transform: translate(990%, 500%);
 }
 
 .pin-img {
@@ -73,7 +57,6 @@
 .pin-input-photo {
     height: 360px;
     width: 300px;
-    // float: left;
     background-color: rgb(235, 232, 232);
     border: 2px dashed rgb(204, 203, 203);
     box-shadow: 0 0 0 10px rgb(255, 255, 255);
@@ -97,8 +80,6 @@
     background-color: transparent;
     color: rgb(172, 172, 172);
 }
-
-
 
 .board-form {
     display: grid;
@@ -131,8 +112,6 @@
     .board-form-input {
         width: 450px;
         outline: 0;
-
-        // justify-self: stretch;
     }
 
     .board-form-input:focus {
@@ -156,5 +135,4 @@
         width: 95px;
         height: 40px;
     }
-
 }

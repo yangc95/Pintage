@@ -1,4 +1,6 @@
 import React from 'react';
+import { HiPlus } from 'react-icons/hi';
+
 import BoardIndex from './board_index';
 
 class Profile extends React.Component {
@@ -37,7 +39,7 @@ class Profile extends React.Component {
                 </div>
                 <div className="profile-add-button-wrapper">
                     <button className={`profile-add-button ${dropdownButton}`} onClick={() => this.setState({dropdown: !dropdown})}>
-                        &#43;
+                        <HiPlus />
                     </button>
                     <div className={`profile-add-buttons ${dropdownButton}`} onClick={() => this.setState({dropdown: !dropdown})}>
                         <p>Create</p>
