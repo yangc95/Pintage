@@ -5,10 +5,9 @@ import { HiPencil } from 'react-icons/hi';
 //     constructor(props) {
 //         super(props)
 //     }
-export default ({ boards }) => {
+export default ({ boards }, openModal) => {
 //     componentDidUpdate() {
 //     }
-
 //     render() {
 //         const {boards} = this.props;
     return (
@@ -18,6 +17,7 @@ export default ({ boards }) => {
                     let editButton = "";
                     if (board.name !== "Saved") {
                         editButton = <button className="board-index-edit"><HiPencil/></button>;
+                        // editButton = <button className="board-index-edit" onClick={() => openModal('editBoard')}><HiPencil/></button>;
                     };
 
                     return (
