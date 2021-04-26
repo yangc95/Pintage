@@ -1,34 +1,34 @@
-import { openModal, closeModal } from '../../actions/modal_actions';
-import {  } from '../../actions/board_actions';
+// import { openModal, closeModal } from '../../actions/modal_actions';
+// import {  } from '../../actions/board_actions';
 
-class BoardEdit extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            
-        };
-    }
+// class BoardEdit extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
 
-    render() {
-        return (
-            <div>
+//         };
+//     }
 
-            </div>
-        )
-    }
-}
+//     render() {
+//         return (
+//             <div>
 
-const mSTP = ({ session }) => {
-  return {
-    session: session.id,
-  };
-};
+//             </div>
+//         )
+//     }
+// }
 
-const mDTP = dispatch => {
-	return {
-    openModal: modal => dispatch(openModal(modal)),
-    closeModal: () => dispatch(closeModal())
-	};
-};
+// const mSTP = ({ session }) => {
+//   return {
+//     session: session.id,
+//   };
+// };
 
-export default withRouter(connect(mSTP, mDTP)(BoardEdit));
+// const mDTP = dispatch => {
+// 	return {
+//     openModal: modal => dispatch(openModal(modal)),
+//     closeModal: () => dispatch(closeModal())
+// 	};
+// };
+
+// export default withRouter(connect(mSTP, mDTP)(BoardEdit));
