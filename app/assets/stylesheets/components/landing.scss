@@ -143,7 +143,6 @@
     .eleven {
         background-image: image-url('travel10.jpg');
         animation: slide-up-fade-in ease 2s;
-        // margin-top: -30%;
     }
 
     .twelve {
@@ -162,6 +161,18 @@
         background-image: image-url('travel13.jpg');
         margin-top: -150%;
         animation: slide-up-fade-in ease 3.5s;
+    }
+
+    .fifteen {
+        background-image: image-url('travel14.png');
+        margin-top: -150%;
+        animation: slide-up-fade-in ease 0.35s;
+    }
+
+    .sixteen {
+        background-image: image-url('travel15.png');
+        margin-top: -150%;
+        animation: slide-up-fade-in ease 3.7s;
     }
 }
 

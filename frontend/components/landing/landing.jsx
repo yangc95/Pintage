@@ -16,6 +16,13 @@ const Landing = () => {
         <div className="twelve"></div>
         <div className="thirteen"></div>
         <div className="fourteen"></div>
+        <div className="fifteen"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div className="sixteen"></div>
     </div>;
 
     return (
