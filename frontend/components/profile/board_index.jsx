@@ -16,8 +16,8 @@ export default ({ boards }, openModal) => {
                 boards.map(board => {
                     let editButton = "";
                     if (board.name !== "Saved") {
-                        editButton = <button className="board-index-edit"><HiPencil/></button>;
-                        // editButton = <button className="board-index-edit" onClick={() => openModal('editBoard')}><HiPencil/></button>;
+                        // editButton = <button className="board-index-edit"><HiPencil/></button>;
+                        editButton = <button className="board-index-edit" onClick={() => openModal('editBoard')}><HiPencil/></button>;
                     };
 
                     return (

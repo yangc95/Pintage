@@ -18,13 +18,13 @@ class Profile extends React.Component {
     }; 
             
     render() {
-        const { openModal, closeModal, currentUser} = this.props;
+        const { closeModal, currentUser} = this.props;
         const { boards, dropdown } = this.state;
         const userEmail = currentUser.email.split("@")[0].split(".").join(""); 
             
         let boardIndex = "";
         if (boards) {
-            boardIndex = <BoardIndex boards={this.props.boards} openModal={openModal}/>
+            boardIndex = <BoardIndex boards={this.props.boards} openModal={this.props.openModal}/>
         }
 
         let dropdownButton;
