@@ -24,7 +24,7 @@ class Profile extends React.Component {
             
         let boardIndex = "";
         if (boards) {
-            boardIndex = <BoardIndex boards={this.props.boards} openModal={this.props.openModal}/>
+            boardIndex = <BoardIndex boards={this.props.boards}/>
         }
 
         let dropdownButton;

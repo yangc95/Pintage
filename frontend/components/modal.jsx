@@ -32,7 +32,6 @@ function Modal({ modal, closeModal }) {
       return null;
   }
 
-
   if (modal === 'login' || modal === 'signup') {
     return (
     <div className="modal-background" onClick={closeModal}>

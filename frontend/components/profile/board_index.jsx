@@ -1,11 +1,12 @@
 import React from 'react';
 import { HiPencil } from 'react-icons/hi';
+import { openModal } from '../../actions/modal_actions';
 
 // class BoardIndex extends React.Component {
 //     constructor(props) {
 //         super(props)
 //     }
-export default ({ boards }, openModal) => {
+export default ({ boards }) => {
 //     componentDidUpdate() {
 //     }
 //     render() {
@@ -17,7 +18,7 @@ export default ({ boards }, openModal) => {
                     let editButton = "";
                     if (board.name !== "Saved") {
                         // editButton = <button className="board-index-edit"><HiPencil/></button>;
-                        editButton = <button className="board-index-edit" onClick={() => openModal('editBoard')}><HiPencil/></button>;
+                        editButton = <button className="board-index-edit" onClick={() => dispatch(openModal('editBoard'))}><HiPencil/></button>;
                     };
 
                     return (
