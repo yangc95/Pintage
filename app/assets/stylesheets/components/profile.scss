@@ -92,8 +92,6 @@
     }
 }
 
-
-
 .profile-add-button-wrapper {
     display: flex;
     flex-direction: column;
@@ -163,4 +161,17 @@
 
 .profile-add-buttons.isActive {
     visibility: unset;
+}
+
+.modal-background.editBoard {
+
+    .modal-child {
+        box-sizing: border-box;
+        background-color: white;
+        width: 50em;
+        height: 60em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
