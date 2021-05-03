@@ -18,12 +18,24 @@ class Api::BoardsController < ApplicationController
             render json: ["Enter a name!"], status: 401
         end
     end
+
+    def edit
+        @board = Board.find_by(id: params[:id])
+        if @board.save
+            render "api/boards/index"
+        else
+            render json: ["Board not found"]
+        end
+    end
     
     def destroy
         @board = Board.find(params[:id])
         
         if @board.destroy
-            render json: ["Error"]
+            render "api/boards/index"
+            # after board is deleted, render users show to display boards
+        else
+            render json: ["Error, board could not be deleted. Please refresh and try again"]
         end
     end
     
