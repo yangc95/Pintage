@@ -1,1 +1,8 @@
-json.partial! "api/boards/board", board: @board
+json.extract! @board, :id, :name, :user_id
+# json.pins do
+#     @board.pins.each do |pin|
+#         json.set! pin.id do 
+#             json.extract! pin :id, :title, :about
+#         end
+#     end
+# end

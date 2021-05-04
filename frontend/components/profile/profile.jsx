@@ -18,7 +18,7 @@ class Profile extends React.Component {
     }; 
             
     render() {
-        const { closeModal, currentUser} = this.props;
+        const { openModal, currentUser} = this.props;
         const { boards, dropdown } = this.state;
         const userEmail = currentUser.email.split("@")[0].split(".").join(""); 
             
