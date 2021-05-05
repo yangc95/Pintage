@@ -26,19 +26,18 @@ class BoardEdit extends React.Component {
         const { destroyBoard } = this.props;
 
         return (
-            <div>
+            <div className="board-edit-div">
                 <h1>Edit your board</h1>
 
-                <form onSubmit={this.handleSubmit}>
-                <label>Name
-                    <input
-                        className="board-edit-name"
-                        type="text"
-                        value={name}
-                        onChange={this.update('name')}
-                        placeholder='Like "Places to Go" or "Recipes to Make"'
-                    />
-                </label>
+                <form className="board-edit-form" onSubmit={this.handleSubmit}>
+                <label>Name</label>
+                <input
+                    className="board-edit-name"
+                    type="text"
+                    value={name}
+                    onChange={this.update('name')}
+                    placeholder='Like "Places to Go" or "Recipes to Make"'
+                />
                 </form>
                 
             </div>
