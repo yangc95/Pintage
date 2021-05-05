@@ -6,7 +6,7 @@ class Api::BoardsController < ApplicationController
     end
 
     def show
-
+        # figure out front end set up first
     end
     
     def create
@@ -22,7 +22,7 @@ class Api::BoardsController < ApplicationController
     def edit
         @board = Board.find_by(id: params[:id])
         if @board.save
-            render "api/boards/index"
+            render "api/users/index"
         else
             render json: ["Board not found"]
         end
@@ -32,7 +32,7 @@ class Api::BoardsController < ApplicationController
         @board = Board.find(params[:id])
         
         if @board.destroy
-            render "api/boards/index"
+            render "api/users/index"
             # after board is deleted, render users show to display boards
         else
             render json: ["Error, board could not be deleted. Please refresh and try again"]
