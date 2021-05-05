@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "variables";
+
 .signin-modal {
     display: block;
 }
@@ -31,7 +33,7 @@
         text-decoration: none;
         position: fixed;
         font-size: 40px;
-        color: $light-black;
+        color: rgb(24, 24, 24);
         transform: translate(490%, -60%);
         cursor: pointer;
         height: 35px;
