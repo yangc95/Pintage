@@ -4,19 +4,43 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 import { destroyBoard } from '../../actions/board_actions';
 
 class BoardEdit extends React.Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: ""
+        };
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
 
-//         };
-//     }
+    update(field) {
+        return e => this.setState({
+            [field]: e.currentTarget.value
+        });
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+    }
 
     render() {
         const { destroyBoard } = this.props;
 
         return (
             <div>
-                hi
+                <h1>Edit your board</h1>
+
+                <form onSubmit={this.handleSubmit}>
+                <label>Name
+                    <input
+                        className="board-edit-name"
+                        type="text"
+                        value={name}
+                        onChange={this.update('name')}
+                        placeholder='Like "Places to Go" or "Recipes to Make"'
+                    />
+                </label>
+                </form>
+                
             </div>
         )
     }
