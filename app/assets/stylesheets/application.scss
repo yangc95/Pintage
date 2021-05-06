@@ -103,25 +103,6 @@ button {
     transform: translate(4%, 4%);
   }
 
-  .signin-close {
-    text-decoration: none;
-    position: fixed;
-    font-size: 40px;
-    color: $light-black;
-    transform: translate(490%, -60%);
-    cursor: pointer;
-    height: 35px;
-    width: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;    
-    border-radius: 50%;
-  }
-
-  .signin-close:hover {
-    background: #d0d0d0;
-  }
-
   h1 {
     font-size: 30px;
     font-weight: 500;
@@ -230,4 +211,30 @@ button {
 
 .errors {
   width: 20em;
+}
+
+.x-close {
+  text-decoration: none;
+  position: fixed;
+  font-size: 40px;
+  color: $light-black;
+  cursor: pointer;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 50%;
+
+  .signin {
+    transform: translate(490%, -60%);
+  }
+
+  .edit {
+    transform: translateX(980%);
+  }
+}
+
+.x-close:hover {
+  background: #d0d0d0;
 }
