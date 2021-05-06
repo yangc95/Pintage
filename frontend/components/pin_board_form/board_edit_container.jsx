@@ -23,7 +23,7 @@ class BoardEdit extends React.Component {
     }
 
     render() {
-        const { destroyBoard } = this.props;
+        const { destroyBoard, closeModal } = this.props;
 
         return (
             <div className="board-edit-div">

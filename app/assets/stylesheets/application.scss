@@ -225,14 +225,14 @@ button {
   justify-content: center;
   align-items: flex-end;
   border-radius: 50%;
+}
 
-  .signin {
-    transform: translate(490%, -60%);
-  }
+.x-close.signin {
+  transform: translate(490%, -60%);
+}
 
-  .edit {
-    transform: translateX(980%);
-  }
+.x-close.edit {
+  transform: translateX(980%);
 }
 
 .x-close:hover {
