@@ -39,6 +39,9 @@ class BoardEdit extends React.Component {
                     placeholder='Like "Places to Go" or "Recipes to Make"'
                 />
                 </form>
+                <button>
+                    Delete this board
+                </button>
                 
             </div>
         )
