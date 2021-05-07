@@ -23,11 +23,14 @@ class BoardEdit extends React.Component {
     }
 
     render() {
-        const { destroyBoard } = this.props;
+        const { destroyBoard, closeModal } = this.props;
 
         return (
             <div className="board-edit-div">
                 <h1>Edit your board</h1>
+                <div className="x-close edit" onClick={closeModal}>
+						&times;
+				</div>
 
                 <form className="board-edit-form" onSubmit={this.handleSubmit}>
                 <label>Name</label>
@@ -39,6 +42,12 @@ class BoardEdit extends React.Component {
                     placeholder='Like "Places to Go" or "Recipes to Make"'
                 />
                 </form>
+                <p>Action</p>
+                <button>
+                    Delete this board
+                </button>
+                <p>Delete this board and all it's Pin forever.</p>
+                <p>You can't undo this!</p>
                 
             </div>
         )
