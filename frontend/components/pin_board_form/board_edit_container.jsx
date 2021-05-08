@@ -7,7 +7,9 @@ class BoardEdit extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: ""
+            id: this.props.id,
+            name: "",
+            user_id: this.props.session
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -43,12 +45,11 @@ class BoardEdit extends React.Component {
                 />
                 </form>
                 <p>Action</p>
-                <button>
+                <button onClick={() => destroyBoard(this.state)}>
                     Delete this board
                 </button>
                 <p>Delete this board and all it's Pin forever.</p>
                 <p>You can't undo this!</p>
-                
             </div>
         )
     }
@@ -62,8 +63,9 @@ const mSTP = ({ session }) => {
 
 const mDTP = dispatch => {
 	return {
-    openModal: modal => dispatch(openModal(modal)),
-    closeModal: () => dispatch(closeModal())
+        destroyBoard: board => dispatch(destroyBoard(board)),    
+        openModal: modal => dispatch(openModal(modal)),
+        closeModal: () => dispatch(closeModal())
 	};
 };
 
