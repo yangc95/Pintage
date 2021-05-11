@@ -6,12 +6,9 @@ import { destroyBoard } from '../../actions/board_actions';
 class BoardEdit extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            id: this.props.id,
-            name: "",
-            user_id: this.props.session
-        };
+        this.state = this.props.board;
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     update(field) {
@@ -24,8 +21,14 @@ class BoardEdit extends React.Component {
         e.preventDefault();
     }
 
-    render() {
+    handleClick() {
         const { destroyBoard, closeModal } = this.props;
+        destroyBoard(this.state)
+            .then(() => closeModal())
+    }
+
+    render() {
+        const {closeModal } = this.props;
 
         return (
             <div className="board-edit-div">
@@ -45,7 +48,7 @@ class BoardEdit extends React.Component {
                 />
                 </form>
                 <p>Action</p>
-                <button onClick={() => destroyBoard(this.state)}>
+                <button onClick={() => this.handleClick()}>
                     Delete this board
                 </button>
                 <p>Delete this board and all it's Pin forever.</p>
@@ -55,9 +58,10 @@ class BoardEdit extends React.Component {
     }
 }
 
-const mSTP = ({ session }) => {
+const mSTP = ({ session, entities: { boards }}) => {
   return {
     session: session.id,
+    board: boards
   };
 };
 

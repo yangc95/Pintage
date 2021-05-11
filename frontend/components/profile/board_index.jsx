@@ -1,20 +1,28 @@
 import React from 'react';
 import { HiPencil } from 'react-icons/hi';
+import { fetchBoard } from '../../actions/board_actions';
 import { openModal } from '../../actions/modal_actions';
 import BoardEditContainer from './board_edit_container'
 
 class BoardIndex extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
+        // this.state = {
             // openEditModal: false,
             // activeItemName: "",
             // activeItemId: null,
-        }
+        // }
+        this.handleClick = this.handleClick.bind(this);
     }
 // export default ({ boards }) => {
     // componentDidUpdate() {
     // }
+
+    handleClick(boardId) {
+        dispatch(fetchBoard(boardId))
+            .then(() => dispatch(openModal('editBoard')))
+    }
+
     render() {
         const {boards} = this.props;
         return (
@@ -24,7 +32,7 @@ class BoardIndex extends React.Component {
                         let editButton = "";
                         if (board.name !== "Saved") {
                             // editButton = <button className="board-index-edit"><HiPencil/></button>;
-                            editButton = <button className="board-index-edit" onClick={() => dispatch(openModal('editBoard'))}><HiPencil/></button>;
+                            editButton = <button className="board-index-edit" onClick={() => this.handleClick(board.id)}><HiPencil/></button>;
                         };
 
                         return (

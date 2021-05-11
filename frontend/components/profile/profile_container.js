@@ -4,7 +4,7 @@ import { fetchBoards } from '../../actions/board_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import Profile from './profile';
 
-const mSTP = ({ session, entities: { users, boards }}) => {
+const mSTP = ({ session, entities: { users }}) => {
   return {
     session: session.id,
     currentUser: users[session.id],
