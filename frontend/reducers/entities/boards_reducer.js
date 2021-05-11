@@ -1,3 +1,4 @@
+import { merge } from 'lodash';
 import { 
   RECEIVE_BOARD,
   RECEIVE_BOARDS
@@ -6,7 +7,7 @@ import {
 const boardsReducer = (state = {}, action) => {
   Object.freeze(state);
   // ;
-  let newState = Object.assign({}, state)
+  let newState = merge({}, state);
   switch(action.type) {
     // case RECEIVE_NEW_BOARD:
     //   return Object.assign({}, newState, Object.values(action.boards.boards));
