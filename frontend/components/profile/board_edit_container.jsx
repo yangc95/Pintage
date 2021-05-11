@@ -31,7 +31,7 @@ class BoardEdit extends React.Component {
             <div className="board-edit-div">
                 <h1>Edit your board</h1>
                 <div className="x-close edit" onClick={closeModal}>
-						&times;
+					&times;
 				</div>
 
                 <form className="board-edit-form" onSubmit={this.handleSubmit}>
