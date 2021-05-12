@@ -21,9 +21,9 @@ const usersReducer = (state = {}, action) => {
       newState[action.board.user_id].boards[length] = action.board;
       return newState;
     case RECEIVE_BOARDS:
-      return Object.assign({}, newState, action.boards);
+      return merge({}, newState, action.boards);
     case REMOVE_BOARD:
-      return Object.assign({}, newState, action.boards);
+      return merge({}, newState, action.boards);
     default: 
       return state;
   }

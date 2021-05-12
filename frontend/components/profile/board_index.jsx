@@ -2,20 +2,17 @@ import React from 'react';
 import { HiPencil } from 'react-icons/hi';
 import { fetchBoard } from '../../actions/board_actions';
 import { openModal } from '../../actions/modal_actions';
-import BoardEditContainer from './board_edit_container'
 
 class BoardIndex extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = {
-            // openEditModal: false,
-            // activeItemName: "",
-            // activeItemId: null,
-        // }
         this.handleClick = this.handleClick.bind(this);
     }
 // export default ({ boards }) => {
-    // componentDidUpdate() {
+    // componentDidUpdate(prevProps) {
+    //     if (prevProps.boards !== this.props.boards) {
+    //         console.log('hi')
+    //     }
     // }
 
     handleClick(boardId) {
