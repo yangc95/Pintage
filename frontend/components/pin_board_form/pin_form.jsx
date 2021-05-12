@@ -9,7 +9,7 @@ class PinForm extends React.Component {
             photoUrl: null,
             photoFile: null,
             user_id: this.props.session,
-            board_id: 1
+            board_id: 1 // this needs to be dynamic later
         };
         this.handleFile = this.handleFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,7 +39,6 @@ class PinForm extends React.Component {
         if (this.state.photoFile) {
             formData.append('pin[photo]', this.state.photoFile);
         }
-        
         formData.append('pin[user_id]', this.state.user_id);
         formData.append('pin[title]', this.state.title);
         formData.append('pin[about]', this.state.about);
@@ -52,6 +51,9 @@ class PinForm extends React.Component {
 
         return (
             <div className="pin-form-div">
+                <div className="x-close pinform" onClick={this.props.closeModal}>
+					&times;
+				</div>
                 <form className="pin-form" onSubmit={this.handleSubmit}>
                     <label className="pin-photo-label">
                         {photoUrl ?
@@ -62,23 +64,25 @@ class PinForm extends React.Component {
                             onChange={this.handleFile}
                         />}
                     </label>
-                    <label >
-                        <input
-                            className="pin-input-title" 
-                            type="text" 
-                            value={title}
-                            onChange={this.update('title')}
-                            placeholder="Add your title"
-                        />
-                    </label>
-                    <label>
-                        <textarea
-                            className="pin-input-about"
-                            value={about}
-                            onChange={this.update('about')}
-                            placeholder="Tell everyone what your pin is about"
-                        />
-                    </label>
+                    <span className="pin-form-info">
+                        <label >
+                            <input
+                                className="pin-input-title" 
+                                type="text" 
+                                value={title}
+                                onChange={this.update('title')}
+                                placeholder="Add your title"
+                            />
+                        </label>
+                        <label>
+                            <textarea
+                                className="pin-input-about"
+                                value={about}
+                                onChange={this.update('about')}
+                                placeholder="Tell everyone what your pin is about"
+                            />
+                        </label>
+                    </span>
                     <button className="pin-input-button">Save</button>
                 </form>
             </div>

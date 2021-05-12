@@ -25,12 +25,9 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: $light-black;
   font-size: 12px;
-  // height: 100vh;
 }
 
-// height: 30%
 h1 {
-  // font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-variant: normal;
@@ -62,10 +59,6 @@ button {
   cursor: pointer;
 }
 
-// ::placeholder {
-//   color: rgba(128, 128, 128, 0.856);
-// }
-
 // input[type=text] {}
 
 // input[type=email] {}
@@ -94,10 +87,6 @@ button {
   flex-direction: column;
   align-items: center;
 
-  // img {
-  //   position: fixed;
-  //   top: 3px;
-  // }
   .errors {
     position: relative;
     transform: translate(4%, 4%);
@@ -112,8 +101,6 @@ button {
   input {
     display: grid;
     outline: 0;
-        // label {
-      // }
   }
 
   input:focus {
@@ -154,7 +141,6 @@ button {
   border-radius: 25px;
   border: none;
   width: 250px;
-// margin-bottom: 40px;
 }
 
 .submit:active {
@@ -169,11 +155,7 @@ button {
 }
 
 .input {
-  // display: grid;
   margin-top: 10%;
-  // position: fixed;
-  // top: 450px;
-  // margin-bottom: 40px;
 
   p {
     justify-content: space-around;
@@ -188,7 +170,6 @@ button {
   align-items: center;
   font-size: 12px;
   font-weight: 600;
-  // background-color: white;
   
   :last-child {
     font-weight: 600;
@@ -211,30 +192,4 @@ button {
 
 .errors {
   width: 20em;
-}
-
-.x-close {
-  text-decoration: none;
-  position: fixed;
-  font-size: 40px;
-  color: $light-black;
-  cursor: pointer;
-  height: 35px;
-  width: 35px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  border-radius: 50%;
-}
-
-.x-close.signin {
-  transform: translate(490%, -60%);
-}
-
-.x-close.edit {
-  transform: translateX(980%);
-}
-
-.x-close:hover {
-  background: #d0d0d0;
 }

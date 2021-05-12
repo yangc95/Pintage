@@ -1,0 +1,83 @@
+@import "variables";
+
+.pin-form-div {
+    // margin-top: 100px;
+    background-color: rgb(235, 232, 232);
+    // display: flex;
+    // flex-direction: column;
+    // width: 150%;
+    height: 50%;
+    // grid-template-columns: repeat(15 ,50px);
+    // grid-template-rows: repeat(14, 40px);
+    justify-content: center;
+    padding: 25px;
+    border-radius: 15px;
+    -moz-box-shadow: 3px 3px 5px #535353;
+    -webkit-box-shadow: 3px 3px 5px #535353;
+    box-shadow: 3px 3px 5px #535353;
+}
+
+.pin-form {
+    display: flex;
+    flex-direction: column;
+    // flex-flow: row wrap;
+    // margin: 2rem 4rem -2rem;
+    // min-width: min-content;
+
+    .pin-photo-label {
+        // justify-items: center;
+        // align-items: center;
+    }
+
+    input.pin-input-title {
+        // display: block;
+        border: none;
+        background: transparent;
+        border-bottom: 1px solid grey;
+        border-radius: unset;
+        font-size: 25px;
+        font-weight: bold;
+        // width: fit-content;
+        outline: none;
+    }
+}
+
+.pin-input-button {
+    background-color: $red;
+    padding: 15px;
+    border-radius: 15px;
+    color: white;
+}
+
+.pin-img {
+    width: var(--pin_width);
+    height: var(--pin_large);
+    border-radius: var(--pin_border_radius);
+}
+
+.pin-input-photo {
+    height: 360px;
+    width: 300px;
+    background-color: rgb(235, 232, 232);
+    border: 2px dashed rgb(204, 203, 203);
+    box-shadow: 0 0 0 10px rgb(255, 255, 255);
+    // border-radius: 2px;
+    // justify-items: center;
+}
+
+.pin-input-about {
+    // position: fixed;
+    border: none;
+    // margin: 0px;
+    resize: none;
+    width: 37%;
+    // height: 30px;
+    outline: none;
+    // margin-top: 3.5%;
+    // margin-left: 5%;
+    font-size: 17px;
+    font-family: inherit;
+    border-bottom: 1px solid grey;
+    background-color: transparent;
+    // color: rgb(172, 172, 172);
+}

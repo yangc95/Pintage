@@ -23,6 +23,7 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_BOARDS:
       return merge({}, newState, action.boards);
     case REMOVE_BOARD:
+      // debugger;
       return merge({}, newState, action.boards);
     default: 
       return state;

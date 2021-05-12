@@ -20,6 +20,10 @@ class BoardIndex extends React.Component {
             .then(() => dispatch(openModal('editBoard')))
     }
 
+    componentDidUpdate() {
+        console.log('boardindex')
+    }
+
     render() {
         const {boards} = this.props;
         return (

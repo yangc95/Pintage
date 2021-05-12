@@ -13,16 +13,22 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-        console.log('profile mounted')
+        // console.log('profile mounted')
         this.props.fetchBoards(this.props.session)
-        .then(() => this.setState({boards: this.props.boards}))
+            .then(() => this.setState({ boards: this.props.boards }))
     }
 
     componentDidUpdate(prevProps) {
-        console.log('profile updated')
-        console.log(prevProps.boards)
-        console.log(this.props.boards)
-        console.log(this.state.boards)
+        if (this.props.boards !== this.state.boards) {
+            this.setState({ boards: this.props.boards })
+        }
+
+        if (prevProps.boards !== this.props.boards) {
+            this.setState({ boards: this.props.boards})
+        }
+        // console.log('profile updated')
+        // console.log(prevProps.boards)
+        // console.log(this.state.boards)
     }
             
     render() {
