@@ -9,9 +9,9 @@ class BoardShow extends React.Component {
         return (
             <div className="board-show">
                 <h1>Board Name</h1>
+                <h2>{0} Pins</h2>
 
-                <p>{0} Pins</p>
-                <div>
+                <div className="board-show-pin-index">
                     Pins
                 </div>
             </div>
