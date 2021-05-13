@@ -42,7 +42,7 @@ class BoardIndex extends React.Component {
                                     <div className="board-index-img" onClick={() => this.props.history.push('/board')}></div>
                                     {editButton}
 
-                                    <h2 class   Name="board-index-title">{board.name}</h2>
+                                    <h2 className="board-index-title">{board.name}</h2>
                                     <p>{0} pins {1} w</p>
                                 </li>
                         );
