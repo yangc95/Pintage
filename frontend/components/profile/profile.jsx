@@ -18,18 +18,18 @@ class Profile extends React.Component {
             .then(() => this.setState({ boards: this.props.boards }))
     }
 
-    componentDidUpdate(prevProps) {
-        if (this.props.boards !== this.state.boards) {
-            this.setState({ boards: this.props.boards })
-        }
+    // componentDidUpdate(prevProps) {
+    //     if (this.props.boards !== this.state.boards) {
+    //         this.setState({ boards: this.props.boards })
+    //     }
 
-        if (prevProps.boards !== this.props.boards) {
-            this.setState({ boards: this.props.boards})
-        }
+    //     if (prevProps.boards !== this.props.boards) {
+    //         this.setState({ boards: this.props.boards})
+    //     }
         // console.log('profile updated')
         // console.log(prevProps.boards)
         // console.log(this.state.boards)
-    }
+    // }
             
     render() {
         const { openModal, currentUser} = this.props;
