@@ -7,7 +7,7 @@ class BoardShow extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="board-show">
                 This is the Board Show
             </div>
         )

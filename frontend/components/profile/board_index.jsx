@@ -39,11 +39,10 @@ class BoardIndex extends React.Component {
 
                         return (
                                 <li className="board-index-li" key={board.id}>
-                                    <div className="board-index-img" onClick={() => this.history.push('/board')}>
-                                        {editButton}
-                                    </div>
+                                    <div className="board-index-img" onClick={() => this.props.history.push('/board')}></div>
+                                    {editButton}
 
-                                    <h2 className="board-index-title">{board.name}</h2>
+                                    <h2 class   Name="board-index-title">{board.name}</h2>
                                     <p>{0} pins {1} w</p>
                                 </li>
                         );
