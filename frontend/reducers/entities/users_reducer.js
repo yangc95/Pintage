@@ -1,9 +1,12 @@
 import { merge } from 'lodash';
+
 import { RECEIVE_PINS } from '../../actions/pin_actions';
-import { RECEIVE_BOARDS, RECEIVE_NEW_BOARD, REMOVE_BOARD } from '../../actions/board_actions';
 import { 
-  RECEIVE_CURRENT_USER
-} from '../../actions/session_actions';
+  RECEIVE_BOARDS, 
+  RECEIVE_NEW_BOARD, 
+  REMOVE_BOARD 
+} from '../../actions/board_actions';
+import { RECEIVE_CURRENT_USER } from '../../actions/session_actions';
 
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);

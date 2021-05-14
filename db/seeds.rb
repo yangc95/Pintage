@@ -23,17 +23,23 @@ users = User.create([
 b = Board.create(name: "Saved", user_id: 1)
 b = Board.create(name: "Travel", user_id: 1)
 
-p = Pin.create(title: "Japanese Night Walk", about: "Nice night", user_id: 1, board_id: 1)
-file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel.jpg")
-p.photo.attach(io: file, filename: "travel.jpg")
+# p = Pin.create(title: "Japanese Night Walk", about: "Nice night", user_id: 1, board_id: 1)
+# file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel.jpg")
+# p.photo.attach(io: file, filename: "travel.jpg")
 
-p = Pin.create(title: "Japan Alter", about: "Sights", user_id: 1, board_id: 1)
-file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel1.jpg")
-p.photo.attach(io: file, filename: "travel1.jpg")
+# p = Pin.create(title: "Japan Alter", about: "Sights", user_id: 1, board_id: 1)
+# file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel1.jpg")
+# p.photo.attach(io: file, filename: "travel1.jpg")
 
-p = Pin.create(title: "Japan Day Walk", about: "Sights", user_id: 1, board_id: 1)
-file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel2.jpg")
-p.photo.attach(io: file, filename: "travel2.jpg")
+# p = Pin.create(title: "Japan Day Walk", about: "Sights", user_id: 1, board_id: 1)
+# file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel2.jpg")
+# p.photo.attach(io: file, filename: "travel2.jpg")
+
+
+
+
+
+
 
 # p = Pin.create(title: "Japanese Calligraphy", about: "Writing", user_id: 1, board_id: 1)
 # file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel3.jpg")

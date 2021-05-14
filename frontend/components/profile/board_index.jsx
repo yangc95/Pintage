@@ -1,7 +1,8 @@
 import React from 'react';
 import { HiPencil } from 'react-icons/hi';
-import { fetchBoard } from '../../actions/board_actions';
+
 import { openModal } from '../../actions/modal_actions';
+import { fetchBoard } from '../../actions/board_actions';
 
 class BoardIndex extends React.Component {
     constructor(props) {
@@ -38,9 +39,8 @@ class BoardIndex extends React.Component {
 
                         return (
                                 <li className="board-index-li" key={board.id}>
-                                    <div className="board-index-img">
-                                        {editButton}
-                                    </div>
+                                    <div className="board-index-img" onClick={() => this.props.history.push('/board')}></div>
+                                    {editButton}
 
                                     <h2 className="board-index-title">{board.name}</h2>
                                     <p>{0} pins {1} w</p>

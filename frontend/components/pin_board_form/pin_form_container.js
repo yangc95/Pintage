@@ -1,8 +1,10 @@
-import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
-import PinForm from './pin_form';
-import { createPin } from '../../actions/pin_actions'
+import { connect } from 'react-redux';
+
 import { openModal, closeModal } from '../../actions/modal_actions';
+import { createPin } from '../../actions/pin_actions'
+
+import PinForm from './pin_form';
 
 const mSTP = ({ session, entities: {users, pins} }) => {
   return {
@@ -12,9 +14,9 @@ const mSTP = ({ session, entities: {users, pins} }) => {
 
 const mDTP = dispatch => {
 	return {
-    createPin: (pin) => dispatch(createPin(pin)),
     openModal: modal => dispatch(openModal(modal)),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    createPin: (pin) => dispatch(createPin(pin)),
 	};
 };
 

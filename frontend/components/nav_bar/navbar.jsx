@@ -8,12 +8,6 @@ class Navbar extends React.Component {
             dropdown: false,
             home: false
         }
-        this.userProfile = this.userProfile.bind(this);
-    }
-
-    userProfile() {
-        // ; ${this.props.currentUser.username}
-        this.props.history.push(`/_saved`)
     }
 
     render () {
@@ -54,7 +48,7 @@ class Navbar extends React.Component {
                                 <Link onClick={logout} to="/">Log out</Link>
                             </button>
                         </span>
-                        <button className="profile-button" onClick={this.userProfile}>
+                        <button className="profile-button" onClick={() => this.props.history.push(`/_saved`)}>
                             <i className="fas fa-user-alt"></i>
                         </button>
                         <button className="angle-button" onClick={() => this.setState({dropdown: !this.state.dropdown})}>
@@ -71,7 +65,7 @@ class Navbar extends React.Component {
         }
 
         return (
-            <nav className="nav-bar" >
+            <nav className="nav-bar">
                 {navLeft}
                 {navRight}
             </nav>
