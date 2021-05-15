@@ -8,6 +8,7 @@ class Profile extends React.Component {
         super(props);
         this.state = {
             dropdown: false,
+            question: false,
             boards: null
         }
     }
@@ -33,7 +34,7 @@ class Profile extends React.Component {
             
     render() {
         const { openModal, currentUser} = this.props;
-        const { boards, dropdown } = this.state;
+        const { boards, dropdown, question } = this.state;
         const userEmail = currentUser.email.split("@")[0].split(".").join(""); 
             
         let boardIndex = "";
@@ -43,6 +44,9 @@ class Profile extends React.Component {
 
         let dropdownButton;
         (dropdown) ? dropdownButton = 'isActive' : dropdownButton = '' ;
+
+        let questionButton;
+        (question) ? questionButton = 'isActive' : questionButton = '' ;
 
         return (
             <div className="profile-div" onClick={() => dropdown === true ? this.setState({dropdown: !dropdown}) : null}>
@@ -64,7 +68,9 @@ class Profile extends React.Component {
                 <span className="profile-board-index">
                     {boardIndex}
                 </span>
-
+                <button className={`profile-question-button ${questionButton}`} onClick={() => this.setState({question: !question})}>
+                        ?
+                </button>
             </div>
         )
     }
