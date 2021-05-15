@@ -57,7 +57,8 @@
     margin-right: 2em;
 }
 
-.profile-add-button {
+.profile-add-button,
+.profile-question-button {
     right: 20px;
     height: 50px;
     width: 50px;
@@ -76,9 +77,18 @@
     }
 }
 
-.profile-add-button:hover {
-    background-color:#f0ececf1 ;
+.profile-add-button:hover,
+.profile-question-button:hover {
+    background-color:#f0ececf1;
 }
+
+// .profile-add-button:active {
+//     border: 2px solid white;
+// }
+
+// .profile-question-button:active {
+
+// }
 
 .profile-add-buttons {
     visibility: hidden;
@@ -112,7 +122,8 @@
     }
 }
 
-.profile-add-button.isActive {
+.profile-add-button.isActive,
+.profile-question-button.isActive {
     background-color: black;
     color: white;
 }
@@ -121,4 +132,16 @@
     visibility: unset;
 }
 
+// .profile-question-button {
+//     padding: 20px;
+//     border-radius: 50%;
+//     width: 40px;
+//     height: 40px;
+//     line-height: 0;
+//     transform: translate(-2%, 10%);
+// }
 
+// .profile-question-button.isActive {
+//     background-color: black;
+//     color: white;
+// }
