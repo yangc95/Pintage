@@ -1,3 +1,5 @@
+@import "variables";
+
 .profile-div {
     margin-top: 8em;
     // padding-top: 15em;
@@ -57,7 +59,15 @@
     margin-right: 2em;
 }
 
-.profile-add-button {
+.profile-question-button {
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.219);
+    position: fixed;
+    bottom: 20px;
+    animation: slide-up-down 0.5s;
+}
+
+.profile-add-button,
+.profile-question-button {
     right: 20px;
     height: 50px;
     width: 50px;
@@ -76,8 +86,25 @@
     }
 }
 
-.profile-add-button:hover {
-    background-color:#f0ececf1 ;
+.profile-add-button:hover,
+.profile-question-button:hover {
+    background-color:#f0ececf1;
+}
+
+.profile-add-button:active {
+    border: 2px solid white;
+    
+    svg {
+        transform: translate(-3px, 2px);
+    }
+}
+
+.profile-question-button:active {
+    border: 2px solid white;
+
+    svg {
+        transform: translate(-3px, 2.5px);
+    }
 }
 
 .profile-add-buttons {
@@ -89,7 +116,6 @@
     background-color: white;
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.219);
     transform: translateY(10px);
-
 
     button {
         margin-left: -10px;
@@ -112,7 +138,8 @@
     }
 }
 
-.profile-add-button.isActive {
+.profile-add-button.isActive,
+.profile-question-button.isActive {
     background-color: black;
     color: white;
 }
@@ -120,5 +147,3 @@
 .profile-add-buttons.isActive {
     visibility: unset;
 }
-
-

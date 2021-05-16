@@ -1,5 +1,7 @@
 import React from 'react';
 import { HiPlus } from 'react-icons/hi';
+import { BsQuestion } from 'react-icons/bs';
+
 
 import BoardIndex from './board_index';
 
@@ -69,7 +71,7 @@ class Profile extends React.Component {
                     {boardIndex}
                 </span>
                 <button className={`profile-question-button ${questionButton}`} onClick={() => this.setState({question: !question})}>
-                        ?
+                        <BsQuestion />
                 </button>
             </div>
         )

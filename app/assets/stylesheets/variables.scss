@@ -17,3 +17,32 @@ $faded-green:#618C7B;
     --pin_medium: 33;
     --pin_large: 45;
 }
+
+@keyframes slide-up-fade-in {
+    0% {
+        opacity: 0;
+        transform: translate(0px, 100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes slide-up-down {
+    0% {
+        opacity: 0;
+        transform: translate(0px, 100px);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: translate(0px, -10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
