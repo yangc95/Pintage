@@ -15,7 +15,6 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-        // console.log('profile mounted')
         this.props.fetchBoards(this.props.session)
             .then(() => this.setState({ boards: this.props.boards }))
     }

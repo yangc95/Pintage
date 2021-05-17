@@ -6,17 +6,18 @@ class Navbar extends React.Component {
         super(props);
         this.state = {
             dropdown: false,
-            home: false
+            home: false,
         }
         this.handleProfile = this.handleProfile.bind(this);
     }
 
     handleProfile() {
-        this.props.history.push(`/_saved`)
+        this.setState({ home: this.props.navbar });
+        this.props.history.push(`/_saved`);
     }
 
     render () {
-        const { currentUser, logout, openModal } = this.props;
+        const { currentUser, logout, openModal, navbar, activeNavbar, inactiveNavbar } = this.props;
         
         let dropdownButton;
         (this.state.dropdown) ? dropdownButton = 'dropdownActive' : dropdownButton = '' ;
@@ -37,11 +38,11 @@ class Navbar extends React.Component {
 
         const navLeft = 
         <span className="nav-left">
-                <Link className={`nav-home-buttons ${homeButton}`} onClick={() => this.setState({home: !this.state.home})} to={path} >
-                    <img src={window.logoURL}/>
-                    {pintage}
-                </Link>
-            </span>;
+            <Link className={`nav-home-buttons ${homeButton}`} onClick={() => this.setState({home: true})} to={path} >
+                <img src={window.logoURL}/>
+                {pintage}
+            </Link>
+        </span>;
             
         let navRight;
         if (currentUser) {

@@ -10,7 +10,8 @@ import Landing from './landing/landing';
 import HomePageContainer from './home/home_container';
 import ProfileContainer from './profile/profile_container';
 import BoardShowContainer from './board/board_show_container';
-import Modal from './modal'
+import Modal from './ui/modal';
+// import Navbar from './ui/navbar_ui';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
   return (
     <div>
       <Modal/>
+      {/* <Navbar /> */}
       <header>
         {/* <Link to="/" className="header-link"> */}
         <NavbarContainer />

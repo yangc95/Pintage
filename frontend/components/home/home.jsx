@@ -16,6 +16,8 @@ class Home extends React.Component {
             pinIndex = <PinsIndex pins ={this.props.pins}/>
         }
 
+        // if (!currentUser) this.props.history.clear;
+
         return (
             <div className="home-div">
                 {pinIndex}
