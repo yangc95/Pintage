@@ -8,6 +8,11 @@ class Navbar extends React.Component {
             dropdown: false,
             home: false
         }
+        this.handleProfile = this.handleProfile.bind(this);
+    }
+
+    handleProfile() {
+        this.props.history.push(`/_saved`)
     }
 
     render () {
@@ -17,7 +22,7 @@ class Navbar extends React.Component {
         (this.state.dropdown) ? dropdownButton = 'dropdownActive' : dropdownButton = '' ;
 
         let homeButton;
-        (this.state.home) ? homeButton = 'homeActive' : homeButton = '' ;
+        (this.state.home) ? homeButton = 'homeActive' : homeButton = '' ; 
 
         let path;
         let pintage;
@@ -48,7 +53,7 @@ class Navbar extends React.Component {
                                 <Link onClick={logout} to="/">Log out</Link>
                             </button>
                         </span>
-                        <button className="profile-button" onClick={() => this.props.history.push(`/_saved`)}>
+                        <button className="profile-button" onClick={() => this.handleProfile()}>
                             <i className="fas fa-user-alt"></i>
                         </button>
                         <button className="angle-button" onClick={() => this.setState({dropdown: !this.state.dropdown})}>
@@ -65,7 +70,7 @@ class Navbar extends React.Component {
         }
 
         return (
-            <nav className="nav-bar">
+            <nav className="nav-bar"> 
                 {navLeft}
                 {navRight}
             </nav>
