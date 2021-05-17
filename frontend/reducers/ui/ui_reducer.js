@@ -7,7 +7,7 @@ import navbar from './navbar_reducer';
 
 export default combineReducers({
 //   filters,
-    modal,
-    navbar,
+  modal,
+  navbar,
     // help
 });

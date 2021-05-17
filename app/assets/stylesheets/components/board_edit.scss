@@ -1,85 +1,80 @@
+@import "variables";
+
 .board-index-li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .board-index-title {
-    font-size: 20px;
-    font-weight: 600;
-    margin-top: 5px;
-    margin-left: 25px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 5px;
+  margin-left: 25px;
 }
 
 .board-index-li p {
-    margin-top: 5px;
-    margin-left: 25px;
+  margin-top: 5px;
+  margin-left: 25px;
 }
 
 .board-index-img {
-    width: 240px;
-    height: 155px;
-    border-radius: 20px;
-    background-color: #f0ececf1;
-    cursor: pointer;
+  width: 240px;
+  height: 155px;
+  border-radius: 20px;
+  background-color: #f0ececf1;
+  cursor: pointer;
 }
 
 .board-index-img ~ button {
-    position: fixed;
-    border-radius: 50%;
-    background: white;
-    height: 35px;
-    width: 35px;
-    transform: translate(560%, -133%);
-    justify-content: center;
+  position: fixed;
+  border-radius: 50%;
+  background: white;
+  height: 35px;
+  width: 35px;
+  transform: translate(560%, -133%);
+  justify-content: center;
 }
 
 .board-index-img ~ button:active {
-    border: 2px solid white;
-    background: #f0ececf1;
+  border: 2px solid white;
+  background: #f0ececf1;
 
-    svg {
-        width: 18px;
-        height: 18px;
-    }
+  svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 .board-index-edit {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .board-index-img:hover {
-    background-color: #0000009f;
+  background-color: #0000009f;
 }
 
 .board-index-li:hover .board-index-edit {
-    visibility: unset;
+  visibility: unset;
 }
 
 .modal-background.editBoard {
 
-    .modal-child {
-        box-sizing: border-box;
-        border-radius: 30px;
-        background-color: white;
-        width: 45em;
-        height: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-// .board-edit-div {
-    
-//     button {
-        
-//     }
-// }
-
-.board-edit-form {
+  .modal-child {
+    box-sizing: border-box;
+    border-radius: 30px;
+    background-color: white;
+    width: 45em;
+    height: 50%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+  }
+}
 
-    input {
-        outline: none;
-    }
+.board-edit-form {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    outline: none;
+  }
 }
