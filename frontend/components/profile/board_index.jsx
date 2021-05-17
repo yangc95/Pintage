@@ -7,7 +7,8 @@ import { fetchBoard } from '../../actions/board_actions';
 class BoardIndex extends React.Component {
     constructor(props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
+        this.handleEdit = this.handleEdit.bind(this);
+        this.handleShow = this.handleShow.bind(this);
     }
 // export default ({ boards }) => {
     // componentDidUpdate(prevProps) {
@@ -16,9 +17,14 @@ class BoardIndex extends React.Component {
     //     }
     // }
 
-    handleClick(boardId) {
+    handleEdit(boardId) {
         dispatch(fetchBoard(boardId))
             .then(() => dispatch(openModal('editBoard')))
+    }
+
+    handleShow(boardId) {
+        dispatch(fetchBoard(boardId))
+            .then(this.props.history.push('/board'))
     }
 
     componentDidUpdate() {
@@ -34,12 +40,12 @@ class BoardIndex extends React.Component {
                         let editButton = "";
                         if (board.name !== "Saved") {
                             // editButton = <button className="board-index-edit"><HiPencil/></button>;
-                            editButton = <button className="board-index-edit" onClick={() => this.handleClick(board.id)}><HiPencil/></button>;
+                            editButton = <button className="board-index-edit" onClick={() => this.handleEdit(board.id)}><HiPencil/></button>;
                         };
 
                         return (
                                 <li className="board-index-li" key={board.id}>
-                                    <div className="board-index-img" onClick={() => this.props.history.push('/board')}></div>
+                                    <div className="board-index-img" onClick={() => this.handleShow(board.id)}></div>
                                     {editButton}
 
                                     <h2 className="board-index-title">{board.name}</h2>

@@ -6,9 +6,11 @@ class BoardShow extends React.Component {
     }
 
     render() {
+        const { board } = this.props;
+
         return (
             <div className="board-show">
-                <h1>Board Name</h1>
+                <h1>{board.name}</h1>
                 <h2>{0} Pins</h2>
 
                 <div className="board-show-pin-index">
