@@ -2,7 +2,7 @@
 
 .home-div {
     padding: 0 30px 0 30px;
-    margin-top: 5em;
+    margin-top: 6em;
 }
 
 .my-masonry-grid {
@@ -44,13 +44,30 @@
     // overflow: hidden;
 }
 
+
+// REPLACING IMAGE WITH PHOTO FOR LESS AWS GET REQUESTS
+
 .pin-index-photo {
-    // width: 10em;
-    // height: 10em;
-    // padding: 0px;
     margin: 15px 10px;
-    // grid-row-end: span var(--pin_medium);
     width: var(--pin_width);
     height: var(--pin_medium);
     border-radius: var(--pin_border_radius);
+
+    :hover {
+
+    }
+}
+
+.pin-index-image {
+    height: 20em;
+    width: 20em;
+    background-size: auto;
+    background-repeat: no-repeat;
+    border-radius: var(--pin_border_radius);
+    background-image: image-url('travel5.jpg');
+}
+
+.pin-index-image:hover {
+    // background-image: image-url('travel6.jpg');
+    background-color: rgba(0, 0, 0, 0.308);
 }
