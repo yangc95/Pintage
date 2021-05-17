@@ -1,12 +1,9 @@
 import React from 'react';
-import PinsIndex from './pin_index'
+import PinsIndex from './pin_index';
 
 class Home extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //     pins: null
-        // }
     }
 
     componentDidMount () {

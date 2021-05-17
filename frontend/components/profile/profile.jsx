@@ -2,7 +2,6 @@ import React from 'react';
 import { HiPlus } from 'react-icons/hi';
 import { BsQuestion } from 'react-icons/bs';
 
-
 import BoardIndex from './board_index';
 
 class Profile extends React.Component {
@@ -50,8 +49,38 @@ class Profile extends React.Component {
         let questionButton;
         (question) ? questionButton = 'isActive' : questionButton = '' ;
 
+        const addDropDown = 
+        <div className={`profile-add-buttons ${dropdownButton}`} onClick={() => this.setState({dropdown: !dropdown})}>
+            <p>Create</p>
+            <button className="profile-add-pin" onClick={() => openModal('addPin')}>Pin</button>
+            <button className="profile-add-board" onClick={() => openModal('addBoard')}>Board</button>
+        </div>;
+
+        let questionDropDown = "";
+        if (question) {
+            questionDropDown =
+            <div className="question-drop-down">
+                <div className="question-info">
+                    <p>Pintage is a Pinterest clone!</p>
+                    <p>Create a Board and add Pins to that Board</p>
+                </div>
+                <div className="question-social-links">
+                    <a target="_blank" href="https://github.com/yangc95/Pintage">Github</a>
+                    <a target="_blank" href="https://yangc95.github.io/">Portfolio</a>
+                    <a target="_blank" href="https://www.linkedin.com/in/yang-christine/">LinkedIn</a>
+                </div>
+            </div>
+        };
+
         return (
-            <div className="profile-div" onClick={() => dropdown === true ? this.setState({dropdown: !dropdown}) : null}>
+            <div className="profile-div" onClick={() => {
+                if (dropdown) {
+                    this.setState({dropdown: !dropdown})
+                } else if (question) {
+                    this.setState({question: !question})
+                } else {
+                    null
+                }}}>
                 <div className="profile-name">
                     <img src={window.profileURL}/>
                     {currentUser.username}
@@ -61,18 +90,15 @@ class Profile extends React.Component {
                     <button className={`profile-add-button ${dropdownButton}`} onClick={() => this.setState({dropdown: !dropdown})}>
                         <HiPlus />
                     </button>
-                    <div className={`profile-add-buttons ${dropdownButton}`} onClick={() => this.setState({dropdown: !dropdown})}>
-                        <p>Create</p>
-                        <button className="profile-add-pin" onClick={() => openModal('addPin')}>Pin</button>
-                        <button className="profile-add-board" onClick={() => openModal('addBoard')}>Board</button>
-                    </div>
+                    {addDropDown}
                 </div>
                 <span className="profile-board-index">
                     {boardIndex}
                 </span>
                 <button className={`profile-question-button ${questionButton}`} onClick={() => this.setState({question: !question})}>
-                        <BsQuestion />
+                    <BsQuestion />
                 </button>
+                {questionDropDown}
             </div>
         )
     }
