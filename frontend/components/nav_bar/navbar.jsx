@@ -6,13 +6,13 @@ class Navbar extends React.Component {
         super(props);
         this.state = {
             dropdown: false,
-            home: false,
+            home: this.props.navbar,
         }
         this.handleProfile = this.handleProfile.bind(this);
     }
 
     handleProfile() {
-        this.setState({ home: this.props.navbar });
+        this.setState({ home: false });
         this.props.history.push(`/_saved`);
     }
 
@@ -23,13 +23,13 @@ class Navbar extends React.Component {
         (this.state.dropdown) ? dropdownButton = 'dropdownActive' : dropdownButton = '' ;
 
         let homeButton;
-        (this.state.home) ? homeButton = 'homeActive' : homeButton = '' ; 
+        (this.props.navbar) ? homeButton = 'homeActive' : homeButton = '' ; 
 
         let path;
         let pintage;
         if (currentUser) {
             path = "/home";
-            pintage = <button onClick={() => this.setState({home: !this.state.home})} className={`nav-home-button ${homeButton}`}>Home</button>
+            pintage = <button onClick={() => this.setState({home: !this.props.navbar})} className={`nav-home-button ${homeButton}`}>Home</button>
         } else {
             path = "/"
             pintage = <h1 className="nav-logo">Pintage</h1>
@@ -38,7 +38,7 @@ class Navbar extends React.Component {
 
         const navLeft = 
         <span className="nav-left">
-            <Link className={`nav-home-buttons ${homeButton}`} onClick={() => this.setState({home: true})} to={path} >
+            <Link className={`nav-home-buttons ${homeButton}`} onClick={() => this.setState({home: this.props.navbar})} to={path} >
                 <img src={window.logoURL}/>
                 {pintage}
             </Link>

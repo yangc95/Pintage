@@ -15,6 +15,7 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
+        this.props.inactiveNavbar();
         this.props.fetchBoards(this.props.session)
             .then(() => this.setState({ boards: this.props.boards }))
     }

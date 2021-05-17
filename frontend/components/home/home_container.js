@@ -6,11 +6,12 @@ import { activeNavbar, inactiveNavbar } from '../../actions/navbar_actions';
 
 import Home from './home';
 
-const mSTP = ({ session, entities: { users, pins } }) => {
+const mSTP = ({ session, entities: { users, pins }, ui: { navbar } }) => {
   
   return {
     currentUser: users[session.currentUser],
-    pins: Object.values(pins)
+    pins: Object.values(pins),
+    navbar
   };
 };
 

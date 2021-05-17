@@ -7,7 +7,8 @@ class Home extends React.Component {
     }
 
     componentDidMount () {
-        this.props.fetchPins()
+        this.props.activeNavbar();
+        this.props.fetchPins();
     };
 
     render() {
