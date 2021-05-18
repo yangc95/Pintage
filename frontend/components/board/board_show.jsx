@@ -10,14 +10,15 @@ class BoardShow extends React.Component {
 
     // componentDidMount() {
         // if (this.props.board) this.setState({ board: this.props.board});
-        // if (!this.state.board) this.props.history.push('/_saved')
+        // if (!this.props.board.pins) this.props.history.push('/_saved')
     // }
 
     render() {
         const { board } = this.props;
-        debugger;
+        // debugger;
         let pinNum = '';
         if (board.pins) pinNum = Object.keys(board.pins).length;
+        // if (!board.pins) this.props.history.push('/_saved')
 
         return (
             <div className="board-show">
@@ -27,6 +28,7 @@ class BoardShow extends React.Component {
                 <div className="board-show-pin-index">
                     Pins
                 </div>
+                <button onClick={() => this.props.history.push('/_saved')}>Back to Boards</button>
             </div>
         )
     }
