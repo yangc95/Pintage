@@ -2,158 +2,158 @@
 
 // LANDING PAGE NOT LOGGED IN
 .landing {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    height: 100vh;
-    width: 100vw;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 100vh;
+  width: 100vw;
 
-    .fade {
-        position: absolute;
-        bottom: 0;
-        background: linear-gradient(180deg,rgba(255, 255, 255, 0), white);
-        height: 180px;
-        max-height: 20%;
-        width: 100%;
-        opacity: 1;
-    }
+  .fade {
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(180deg,rgba(255, 255, 255, 0), white);
+    height: 180px;
+    max-height: 20%;
+    width: 100%;
+    opacity: 1;
+  }
 }
 
 .landing-header {
-    display: grid;
-    justify-content: center;
-    font-weight: 500;
+  display: grid;
+  justify-content: center;
+  font-weight: 500;
 
-    .landing-title {
-        padding: 20px;
-        font-size: 60px;
-
-        h1 {
-            padding-top:10%;
-            font-size: 60px;
-            color: $black;
-            font-weight: 450;
-            text-align: center;
-        }
-
-        .idea-module {
-            text-align: center;
-            color: $faded-green;
-        }
-    }
+  .landing-title {
+    padding: 20px;
+    font-size: 60px;
+  }
+    
+  .landing-title h1{
+    padding-top:10%;
+    font-size: 60px;
+    color: $black;
+    font-weight: 450;
+    text-align: center;
+  }
+    
+  .landing-title .idea-module {
+    text-align: center;
+    color: $faded-green;
+  }
 }
 
 .landing-imgs {
-    grid-template-columns: repeat(7, 1fr);
-    display: grid;
-    gap: 1.28em;
-    position: relative;
-    top: -5em;
+  grid-template-columns: repeat(7, 1fr);
+  display: grid;
+  gap: 1.28em;
+  position: relative;
+  top: -5em;
     
-    div {
-        border: 1px solid white;
-        border-radius: 15px;
-        color: white;
-        height: 29em;
-        width: 20em;
-        background-size: auto;
-        background-repeat: no-repeat;
-}
+  div {
+    border: 1px solid white;
+    border-radius: 15px;
+    color: white;
+    height: 29em;
+    width: 20em;
+    background-size: auto;
+    background-repeat: no-repeat;
+  }
 
-    .one {
-        background-image: image-url('travel.jpg');
-        animation: slide-up-fade-in ease 0.25s;
-    }
+  .one {
+    background-image: image-url('travel.jpg');
+    animation: slide-up-fade-in ease 0.25s;
+  }
 
-    .two {
-        background-image: image-url('travel1.jpg');
-        margin-top: 55%;
-        animation: slide-up-fade-in ease 0.75s;
-    }
+  .two {
+    background-image: image-url('travel1.jpg');
+    margin-top: 55%;
+    animation: slide-up-fade-in ease 0.75s;
+  }
 
-    .three {
-        background-image: image-url('travel2.jpg');
-        margin-top: 90%;
-        animation: slide-up-fade-in ease 1.25s;
-    }
+  .three {
+    background-image: image-url('travel2.jpg');
+    margin-top: 90%;
+    animation: slide-up-fade-in ease 1.25s;
+  }
 
-    .four {
-        background-image: image-url('travel3.jpg');
-        margin-top: 150%;
-        animation: slide-up-fade-in ease 1.75s;
-    }
+  .four {
+    background-image: image-url('travel3.jpg');
+    margin-top: 150%;
+    animation: slide-up-fade-in ease 1.75s;
+  }
 
-    .five {
-        background-image: image-url('travel4.jpg');
-        margin-top: 90%;
-        animation: slide-up-fade-in ease 2.25s;
-    }
+  .five {
+    background-image: image-url('travel4.jpg');
+    margin-top: 90%;
+    animation: slide-up-fade-in ease 2.25s;
+  }
 
-    .six {
-        background-image: image-url('travel5.jpg');
-        margin-top: 55%;
-        animation: slide-up-fade-in ease 2.75s;
-    }
+  .six {
+    background-image: image-url('travel5.jpg');
+    margin-top: 55%;
+    animation: slide-up-fade-in ease 2.75s;
+  }
 
-    .seven {
-        background-image: image-url('travel6.jpg');
-        animation: slide-up-fade-in ease 3.25s;
-    }
+  .seven {
+    background-image: image-url('travel6.jpg');
+    animation: slide-up-fade-in ease 3.25s;
+  }
 
-    .eight {
-        background-image: image-url('travel7.jpg');
-        margin-top: -150%;
-        animation: slide-up-fade-in ease 0.5s;
-    }
+  .eight {
+    background-image: image-url('travel7.jpg');
+    margin-top: -150%;
+    animation: slide-up-fade-in ease 0.5s;
+  }
 
-    .nine {
-        background-image: image-url('travel8.png');
-        margin-top: -95%;
-        animation: slide-up-fade-in ease 1s;
-    }
+  .nine {
+    background-image: image-url('travel8.png');
+    margin-top: -95%;
+    animation: slide-up-fade-in ease 1s;
+  }
 
-    .ten {
-        background-image: image-url('travel9.jpg');
-        margin-top: -60%;
-        animation: slide-up-fade-in ease 1.5s;
-    }
+  .ten {
+    background-image: image-url('travel9.jpg');
+    margin-top: -60%;
+    animation: slide-up-fade-in ease 1.5s;
+  }
 
-    .eleven {
-        background-image: image-url('travel10.jpg');
-        animation: slide-up-fade-in ease 2s;
-    }
+  .eleven {
+    background-image: image-url('travel10.jpg');
+    animation: slide-up-fade-in ease 2s;
+  }
 
-    .twelve {
-        background-image: image-url('travel11.jpg');
-        margin-top: -60%;
-        animation: slide-up-fade-in ease 2.5s;
-    }
+  .twelve {
+    background-image: image-url('travel11.jpg');
+    margin-top: -60%;
+    animation: slide-up-fade-in ease 2.5s;
+  }
 
-    .thirteen {
-        background-image: image-url('travel12.jpg');
-        margin-top: -95%;
-        animation: slide-up-fade-in ease 3s;
-    }
+  .thirteen {
+    background-image: image-url('travel12.jpg');
+    margin-top: -95%;
+    animation: slide-up-fade-in ease 3s;
+  }
 
-    .fourteen {
-        background-image: image-url('travel13.jpg');
-        margin-top: -150%;
-        animation: slide-up-fade-in ease 3.5s;
-    }
+  .fourteen {
+    background-image: image-url('travel13.jpg');
+    margin-top: -150%;
+    animation: slide-up-fade-in ease 3.5s;
+  }
 
-    .fifteen {
-        background-image: image-url('travel14.png');
-        margin-top: -150%;
-        animation: slide-up-fade-in ease 0.35s;
-    }
+  .fifteen {
+    background-image: image-url('travel14.png');
+    margin-top: -150%;
+    animation: slide-up-fade-in ease 0.35s;
+  }
 
-    .sixteen {
-        background-image: image-url('travel15.png');
-        margin-top: -150%;
-        animation: slide-up-fade-in ease 3.7s;
-    }
+  .sixteen {
+    background-image: image-url('travel15.png');
+    margin-top: -150%;
+    animation: slide-up-fade-in ease 3.7s;
+  }
 }
 
 // .carousel-nav-button {

@@ -6,24 +6,30 @@ class Navbar extends React.Component {
         super(props);
         this.state = {
             dropdown: false,
-            home: false
+            home: this.props.navbar,
         }
+        this.handleProfile = this.handleProfile.bind(this);
+    }
+
+    handleProfile() {
+        this.setState({ home: false });
+        this.props.history.push(`/_saved`);
     }
 
     render () {
-        const { currentUser, logout, openModal } = this.props;
+        const { currentUser, logout, openModal, navbar, activeNavbar, inactiveNavbar } = this.props;
         
         let dropdownButton;
         (this.state.dropdown) ? dropdownButton = 'dropdownActive' : dropdownButton = '' ;
 
         let homeButton;
-        (this.state.home) ? homeButton = 'homeActive' : homeButton = '' ;
+        (this.props.navbar) ? homeButton = 'homeActive' : homeButton = '' ; 
 
         let path;
         let pintage;
         if (currentUser) {
             path = "/home";
-            pintage = <button onClick={() => this.setState({home: !this.state.home})} className={`nav-home-button ${homeButton}`}>Home</button>
+            pintage = <button onClick={() => this.setState({home: !this.props.navbar})} className={`nav-home-button ${homeButton}`}>Home</button>
         } else {
             path = "/"
             pintage = <h1 className="nav-logo">Pintage</h1>
@@ -32,11 +38,11 @@ class Navbar extends React.Component {
 
         const navLeft = 
         <span className="nav-left">
-                <Link className={`nav-home-buttons ${homeButton}`} onClick={() => this.setState({home: !this.state.home})} to={path} >
-                    <img src={window.logoURL}/>
-                    {pintage}
-                </Link>
-            </span>;
+            <Link className={`nav-home-buttons ${homeButton}`} onClick={() => this.setState({home: this.props.navbar})} to={path} >
+                <img src={window.logoURL}/>
+                {pintage}
+            </Link>
+        </span>;
             
         let navRight;
         if (currentUser) {
@@ -48,7 +54,7 @@ class Navbar extends React.Component {
                                 <Link onClick={logout} to="/">Log out</Link>
                             </button>
                         </span>
-                        <button className="profile-button" onClick={() => this.props.history.push(`/_saved`)}>
+                        <button className="profile-button" onClick={() => this.handleProfile()}>
                             <i className="fas fa-user-alt"></i>
                         </button>
                         <button className="angle-button" onClick={() => this.setState({dropdown: !this.state.dropdown})}>
@@ -65,7 +71,7 @@ class Navbar extends React.Component {
         }
 
         return (
-            <nav className="nav-bar">
+            <nav className="nav-bar"> 
                 {navLeft}
                 {navRight}
             </nav>

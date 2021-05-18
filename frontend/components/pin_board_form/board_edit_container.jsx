@@ -11,9 +11,9 @@ class BoardEdit extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    componentWillUnmount() {
-        console.log('unmount')
-    }
+    // componentWillUnmount() {
+    //     console.log('unmount')
+    // }
 
     update(field) {
         return e => this.setState({

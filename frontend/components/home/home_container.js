@@ -1,19 +1,26 @@
 import { connect } from 'react-redux';
-import { fetchPins } from '../../actions/pin_actions'
+import { withRouter } from 'react-router-dom';
+
+import { fetchPins } from '../../actions/pin_actions';
+import { activeNavbar, inactiveNavbar } from '../../actions/navbar_actions';
+
 import Home from './home';
 
-const mSTP = ({ session, entities: { users, pins } }) => {
+const mSTP = ({ session, entities: { users, pins }, ui: { navbar } }) => {
   
   return {
     currentUser: users[session.currentUser],
-    pins: Object.values(pins)
+    pins: Object.values(pins),
+    navbar
   };
 };
 
 const mDTP = dispatch => {
 	return {
-    fetchPins: () => dispatch(fetchPins())
+    fetchPins: () => dispatch(fetchPins()),
+    activeNavbar: () => dispatch(activeNavbar()),
+    inactiveNavbar: () => dispatch(inactiveNavbar()),
 	};
 };
 
-export default connect(mSTP, mDTP)(Home);
+export default withRouter(connect(mSTP, mDTP)(Home));
