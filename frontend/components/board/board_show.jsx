@@ -4,11 +4,19 @@ import Masonry from 'react-masonry-css';
 class BoardShow extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //     board: null,
-    // }
+    this.state = {
+        pins: [],
+    }
+    this.handleBack = this.handleBack.bind(this);
   }
 
+  componentWillUnmount() {
+    this.setState({ pins: [] })
+  }
+
+  handleBack() {
+    this.props.history.push('/_saved')
+  }
   // componentDidMount() {
     // if (this.props.board) this.setState({ board: this.props.board});
     // if (!this.props.board.pins) this.props.history.push('/_saved')
@@ -18,11 +26,11 @@ class BoardShow extends React.Component {
     const { board } = this.props;
     // debugger;
     let pinNum = '';
-    let pinArray = [];
+    // let pinArray = [];
     if (board.pins) {
       let pinKeys = Object.keys(board.pins);
       pinNum = pinKeys.length;
-      pinKeys.forEach(key => pinArray.push(board.pins[key]));
+      pinKeys.forEach(key => this.state.pins.push(board.pins[key]));
     };
     // if (!board.pins) this.props.history.push('/_saved')
     const breakpoints = {
@@ -42,7 +50,7 @@ class BoardShow extends React.Component {
           className="my-masonry-grid"
           columnClassName="my-masonry-grid_column">
           {
-            pinArray.map(pin => {
+            this.state.pins.map(pin => {
               return (
                 <div className="board-show-pin-index">
                   <div className="pin-index-image"></div>
@@ -54,7 +62,7 @@ class BoardShow extends React.Component {
           }
         </Masonry>
 
-        <button onClick={() => this.props.history.push('/_saved')}>Back to Boards</button>
+        <button onClick={() => this.handleBack()}>Back to Boards</button>
       </div>
     )
   }

@@ -23,7 +23,7 @@ class BoardIndex extends React.Component {
 
   handleShow(boardId) {
     dispatch(fetchBoard(boardId))
-      .then(this.props.history.push('/board'))
+      .then(this.props.history.push(`/board/${boardId}`))
   }
 
   componentDidUpdate() {
