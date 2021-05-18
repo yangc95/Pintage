@@ -1,10 +1,13 @@
 import { connect } from 'react-redux';
-
+import { withRouter } from 'react-router-dom';
+ 
 import BoardShow from './board_show';
 
 const mSTP = ({ entities: { boards } }) => {
+    // debugger;
     return {
-        board: boards
+        board: boards,
+        // pinNum: Object.keys(boards.pins).length,
     }
 }
 
@@ -14,4 +17,4 @@ const mDTP = dispatch => {
     }
 }
 
-export default connect(mSTP, mDTP)(BoardShow);
+export default withRouter(connect(mSTP, mDTP)(BoardShow));
