@@ -31,7 +31,8 @@ class BoardIndex extends React.Component {
   }
 
   render() {
-    const {boards} = this.props;
+    const { boards, pinNums} = this.props;
+
     return (
       <div className="profile-div-container">
         {
@@ -48,7 +49,7 @@ class BoardIndex extends React.Component {
                 {editButton}
 
                 <h2 className="board-index-title">{board.name}</h2>
-                <p>{0} pins {1} w</p>
+                <p>{pinNums.shift()}pins {1} w</p>
               </li>
             );
           })

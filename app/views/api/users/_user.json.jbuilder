@@ -1,6 +1,7 @@
-json.extract! user, :id, :username, :email, :pin_ids
+json.extract! user, :id, :username, :email
+
 json.boards do 
-    json.array! user.boards
+    json.array! user.boards, :id, :name, :pins
 end
 
 # json.pins do 

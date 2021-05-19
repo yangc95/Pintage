@@ -8,10 +8,14 @@ import { fetchBoards } from '../../actions/board_actions';
 import Profile from './profile';
 
 const mSTP = ({ session, entities: { users }}) => {
+  // debugger;
   return {
     session: session.id,
     currentUser: users[session.id],
-    boards: users[session.id].boards
+    boards: users[session.id].boards,
+    pinNums: (Object.keys(users[session.id].boards)).map(key => (
+      users[session.id].boards[key].pins.length
+    ))
   }
 }
 

@@ -39,9 +39,7 @@ class Profile extends React.Component {
         const userEmail = currentUser.email.split("@")[0].split(".").join(""); 
             
         let boardIndex = "";
-        if (boards) {
-            boardIndex = <BoardIndex boards={this.props.boards} history={this.props.history}/>
-        }
+        if (boards) boardIndex = <BoardIndex boards={this.props.boards} history={this.props.history} pinNums={this.props.pinNums}/>;
 
         let dropdownButton;
         (dropdown) ? dropdownButton = 'isActive' : dropdownButton = '' ;
@@ -82,12 +80,18 @@ class Profile extends React.Component {
                     null
                 }}}>
                 <div className="profile-name">
-                    <img src={window.profileURL}/>
+                    <div className="profile-image">
+                        {currentUser.username.split("")[0]}
+                    </div>
                     {currentUser.username}
-                    <span className="profile-user-name">@{userEmail}</span>
+                    <span className="profile-user-name">
+                        @{userEmail}
+                    </span>
                 </div>
                 <div className="profile-add-button-wrapper">
-                    <button className={`profile-add-button ${dropdownButton}`} onClick={() => this.setState({dropdown: !dropdown})}>
+                    <button 
+                      className={`profile-add-button ${dropdownButton}`} 
+                      onClick={() => this.setState({dropdown: !dropdown})}>
                         <HiPlus />
                     </button>
                     {addDropDown}
@@ -95,7 +99,9 @@ class Profile extends React.Component {
                 <span className="profile-board-index">
                     {boardIndex}
                 </span>
-                <button className={`profile-question-button ${questionButton}`} onClick={() => this.setState({question: !question})}>
+                <button 
+                  className={`profile-question-button ${questionButton}`} 
+                  onClick={() => this.setState({question: !question})}>
                     <BsQuestion />
                 </button>
                 {questionDropDown}

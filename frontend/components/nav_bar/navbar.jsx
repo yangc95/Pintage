@@ -55,7 +55,7 @@ class Navbar extends React.Component {
                             </button>
                         </span>
                         <button className="profile-button" onClick={() => this.handleProfile()}>
-                            <i className="fas fa-user-alt"></i>
+                            {currentUser.username.split("")[0]}
                         </button>
                         <button className="angle-button" onClick={() => this.setState({dropdown: !this.state.dropdown})}>
                             <i className="fas fa-angle-down"/>

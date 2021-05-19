@@ -92,6 +92,11 @@
     .nav-right {
 
         .profile-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            color: $grey-hover;
             top: 10px;
             right: 20px;
             height: 35px;
@@ -101,13 +106,12 @@
         }
 
         .profile-button:hover {
-            background-color: $grey-hover;
+            // background-color: $grey-hover;
         }
 
         button.profile-button:active {
             // border:black;
             // outline-color: blue;
-
             box-shadow: 0 0 0 5px rgba(0, 132, 255, 0.514);
         }
         

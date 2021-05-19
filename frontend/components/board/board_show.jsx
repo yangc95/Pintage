@@ -4,35 +4,27 @@ import Masonry from 'react-masonry-css';
 class BoardShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-        pins: [],
-    }
     this.handleBack = this.handleBack.bind(this);
-  }
-
-  componentWillUnmount() {
-    this.setState({ pins: [] })
   }
 
   handleBack() {
     this.props.history.push('/_saved')
+    this.setState({ pins: null })
   }
-  // componentDidMount() {
-    // if (this.props.board) this.setState({ board: this.props.board});
-    // if (!this.props.board.pins) this.props.history.push('/_saved')
-  // }
 
   render() {
     const { board } = this.props;
     // debugger;
     let pinNum = '';
-    // let pinArray = [];
+    let pinArray = [];
+    console.log(pinArray)
     if (board.pins) {
       let pinKeys = Object.keys(board.pins);
       pinNum = pinKeys.length;
-      pinKeys.forEach(key => this.state.pins.push(board.pins[key]));
+      pinKeys.forEach(key => pinArray.push(board.pins[key]));
     };
-    // if (!board.pins) this.props.history.push('/_saved')
+    console.log(pinArray)
+
     const breakpoints = {
     default: 4,
     1085: 3,
@@ -50,7 +42,7 @@ class BoardShow extends React.Component {
           className="my-masonry-grid"
           columnClassName="my-masonry-grid_column">
           {
-            this.state.pins.map(pin => {
+            pinArray.map(pin => {
               return (
                 <div className="board-show-pin-index">
                   <div className="pin-index-image"></div>
