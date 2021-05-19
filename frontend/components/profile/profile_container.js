@@ -15,6 +15,9 @@ const mSTP = ({ session, entities: { users }}) => {
     boards: users[session.id].boards,
     pinNums: (Object.keys(users[session.id].boards)).map(key => (
       users[session.id].boards[key].pins.length
+    )),
+    lastUpdate: (Object.keys(users[session.id].boards)).map(key => (
+      users[session.id].boards[key].updated_at
     ))
   }
 }

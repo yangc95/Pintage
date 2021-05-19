@@ -39,7 +39,13 @@ class Profile extends React.Component {
         const userEmail = currentUser.email.split("@")[0].split(".").join(""); 
             
         let boardIndex = "";
-        if (boards) boardIndex = <BoardIndex boards={this.props.boards} history={this.props.history} pinNums={this.props.pinNums}/>;
+        if (boards) boardIndex = 
+        <BoardIndex 
+          boards={this.props.boards} 
+          history={this.props.history} 
+          pinNums={this.props.pinNums}
+          lastUpdate={this.props.lastUpdate}
+        />;
 
         let dropdownButton;
         (dropdown) ? dropdownButton = 'isActive' : dropdownButton = '' ;

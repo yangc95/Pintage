@@ -1,4 +1,6 @@
 import React from 'react';
+import TimeAgo from 'javascript-time-ago';
+import en from 'javascript-time-ago/locale/en';
 import { HiPencil } from 'react-icons/hi';
 import { openModal } from '../../actions/modal_actions';
 import { fetchBoard } from '../../actions/board_actions';
@@ -30,8 +32,19 @@ class BoardIndex extends React.Component {
     console.log('boardindex')
   }
 
+  lastUpdated(lastUpdatedArray) {
+    TimeAgo.addDefaultLocale(en);
+    const timeAgo = new TimeAgo('en-US');
+    
+    lastUpdatedArray.map(time => (
+      time
+    ))    
+  }
+
   render() {
-    const { boards, pinNums} = this.props;
+    const { boards, pinNums, lastUpdate } = this.props;
+
+    this.lastUpdated(lastUpdate);
 
     return (
       <div className="profile-div-container">
@@ -49,7 +62,7 @@ class BoardIndex extends React.Component {
                 {editButton}
 
                 <h2 className="board-index-title">{board.name}</h2>
-                <p>{pinNums.shift()}pins {1} w</p>
+                <p>{pinNums.shift()} pins {1} w</p>
               </li>
             );
           })
