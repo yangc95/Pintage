@@ -1,5 +1,4 @@
 import React from 'react';
-import TimeAgo from 'javascript-time-ago';
 import { HiPencil } from 'react-icons/hi';
 import { openModal } from '../../actions/modal_actions';
 import { fetchBoard } from '../../actions/board_actions';
