@@ -1,4 +1,4 @@
-json.extract! @board, :id, :name, :user_id
+json.extract! @board, :id, :name, :pins, :user_id
 json.pins do
   @board.pins.each do |pin|
       json.set! pin.id do 

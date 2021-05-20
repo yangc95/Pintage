@@ -62,7 +62,6 @@ class BoardIndex extends React.Component {
           boards.map(board => {
             let editButton = "";
             if (board.name !== "Saved") {
-            // editButton = <button className="board-index-edit"><HiPencil/></button>;
               editButton = <button className="board-index-edit" onClick={() => this.handleEdit(board.id)}><HiPencil/></button>;
             };
 
@@ -70,9 +69,10 @@ class BoardIndex extends React.Component {
               <li className="board-index-li" key={board.id}>
                 <div className="board-index-img" onClick={() => this.handleShow(board.id)}></div>
                 {editButton}
-
-                <h2 className="board-index-title">{board.name}</h2>
-                <p>{pinNumArr.shift()} pins {newTimes.shift()}</p>
+                <div className={`board-index-info ${editButton !== "" ? 'other-boards' : ''}`}>
+                  <h2 className="board-index-title">{board.name}</h2>
+                  <p>{pinNumArr.shift()} pins {newTimes.shift()}</p>
+                </div>
               </li>
             );
           })

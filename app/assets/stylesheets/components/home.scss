@@ -72,3 +72,27 @@
     // background-color: rgba(0, 0, 0, 0.308);
   background-size: cover;
 }
+
+.pin-index-div .profile-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: $grey-hover;
+  top: 10px;
+  right: 20px;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.pin-index-div .profile-button:hover {
+  // background-color: $grey-hover;
+}
+
+.pin-index-div button.profile-button:active {
+  // border:black;
+  // outline-color: blue;
+  // box-shadow: none;
+}

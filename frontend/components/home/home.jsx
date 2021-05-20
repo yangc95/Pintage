@@ -14,7 +14,7 @@ class Home extends React.Component {
   render() {
     let pinIndex = "";
     if (this.props.pins) {
-      pinIndex = <PinsIndex pins ={this.props.pins}/>
+      pinIndex = <PinsIndex pins ={this.props.pins} currentUser={this.props.currentUser}/>
     }
     // if (!currentUser) this.props.history.clear;
 

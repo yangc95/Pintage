@@ -1,7 +1,7 @@
 import React from 'react';
 import Masonry from 'react-masonry-css';
 
-export default ({ pins }) => {
+export default ({ pins, currentUser }) => {
   const breakpoints = {
     default: 10,
     2645: 9,
@@ -29,7 +29,10 @@ export default ({ pins }) => {
                 {/* <img className="pin-index-photo" src={pin.photoUrl}/> */}
                 <div className="pin-index-image"></div>
                 <h2 className="pin-index-title">{pin.title}</h2>
-                <p className="pin-index-about">{pin.about}</p>
+                <button className="profile-button" onClick={() => this.handleProfile()}>
+                  {currentUser.username.split("")[0]}
+                </button>
+                {/* <p className="pin-index-about">{pin.about}</p> */}
               </div>
             )
           })
