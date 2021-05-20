@@ -8,7 +8,6 @@ end
 #     user.pin_ids
 # end
 
-
 # json.pins do 
 #     json.array! user.pins.map { |pin| pin.id }
 # end

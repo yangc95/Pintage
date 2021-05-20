@@ -1,10 +1,8 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { activeNavbar, inactiveNavbar } from '../../actions/navbar_actions';
 import { fetchBoards } from '../../actions/board_actions';
-
 import Profile from './profile';
 
 const mSTP = ({ session, entities: { users }}) => {
