@@ -1,11 +1,20 @@
 import React from 'react';
 import { HiPencil } from 'react-icons/hi';
+
+import TimeAgo from 'javascript-time-ago';
+import en from 'javascript-time-ago/locale/en';
+import timeago from 'epoch-timeago';
+
+
 import { openModal } from '../../actions/modal_actions';
 import { fetchBoard } from '../../actions/board_actions';
 
 class BoardIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+
+    }
     this.handleEdit = this.handleEdit.bind(this);
     this.handleShow = this.handleShow.bind(this);
   }
@@ -26,19 +35,30 @@ class BoardIndex extends React.Component {
       .then(this.props.history.push(`/board/${boardId}`))
   }
 
-  componentDidUpdate() {
-    console.log('boardindex')
+  componentDidMount() {
+
   }
 
-  lastUpdated(lastUpdatedArray) {
-    lastUpdatedArray.map(time => (
-    ))    
+  componentDidUpdate() {
+  }
+
+  timeAgo(time) {
+    TimeAgo.addLocale(en);
+    const timeAgo = new TimeAgo('en-US');
+    let prevTime = Math.floor(new Date(time).getTime()/1000.0);
+    let currentTime = Math.floor(new Date().getTime()/1000.0)
+    
+    // debugger;
+    // // return newTime;
+    // return 1
+    return timeAgo.format(Date.now() - prevTime, 'mini')
   }
 
   render() {
     const { boards, pinNums, lastUpdate } = this.props;
 
-    this.lastUpdated(lastUpdate);
+    let newTimes = lastUpdate.map(time => (this.timeAgo(time)));
+    // this.lastUpdated(lastUpdate);
 
     return (
       <div className="profile-div-container">
@@ -56,7 +76,7 @@ class BoardIndex extends React.Component {
                 {editButton}
 
                 <h2 className="board-index-title">{board.name}</h2>
-                <p>{pinNums.shift()} pins {lastUpdate.shift()}</p>
+                <p>{pinNums.shift()} pins {newTimes.shift()}</p>
               </li>
             );
           })
