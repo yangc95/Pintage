@@ -73,6 +73,20 @@
   background-size: cover;
 }
 
+.profile-button-div {
+  display: flex;
+  align-items: center;
+}
+
+.profile-button-div > span {
+  margin-left: -5px;
+}
+
+.profile-button-div:hover span {
+  // text-decoration: underline;
+  cursor: pointer;
+}
+
 .pin-index-div .profile-button {
   display: flex;
   justify-content: center;
@@ -81,10 +95,12 @@
   color: $grey-hover;
   top: 10px;
   right: 20px;
-  height: 35px;
-  width: 35px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
   margin-right: 10px;
+  margin-left: 20px;
+  margin-top: 5px;
 }
 
 .pin-index-div .profile-button:hover {

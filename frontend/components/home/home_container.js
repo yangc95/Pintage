@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import { fetchPins } from '../../actions/pin_actions';
+// import { fetchUser } from '../../actions/user_actions';
 import { activeNavbar, inactiveNavbar } from '../../actions/navbar_actions';
 
 import Home from './home';

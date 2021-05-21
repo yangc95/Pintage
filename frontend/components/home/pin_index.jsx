@@ -29,9 +29,12 @@ export default ({ pins, currentUser }) => {
                 {/* <img className="pin-index-photo" src={pin.photoUrl}/> */}
                 <div className="pin-index-image"></div>
                 <h2 className="pin-index-title">{pin.title}</h2>
-                <button className="profile-button" onClick={() => this.handleProfile()}>
-                  {currentUser.username.split("")[0]}
-                </button>
+                <div className="profile-button-div">
+                  <button className="profile-button">
+                    {currentUser.username.split("")[0]}
+                  </button>
+                  <span>{currentUser.username}</span>
+                </div>
                 {/* <p className="pin-index-about">{pin.about}</p> */}
               </div>
             )
