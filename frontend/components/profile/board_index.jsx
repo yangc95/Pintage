@@ -71,7 +71,7 @@ class BoardIndex extends React.Component {
                 {editButton}
                 <div className={`board-index-info ${editButton !== "" ? 'other-boards' : ''}`}>
                   <h2 className="board-index-title">{board.name}</h2>
-                  <p>{pinNumArr.shift()} pins {newTimes.shift()}</p>
+                  <p>{pinNumArr.shift()} pins {}</p>
                 </div>
               </li>
             );
