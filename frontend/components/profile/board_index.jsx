@@ -65,13 +65,15 @@ class BoardIndex extends React.Component {
               editButton = <button className="board-index-edit" onClick={() => this.handleEdit(board.id)}><HiPencil/></button>;
             };
 
+            let pinNum = pinNumArr.shift() || 0;
+
             return (
               <li className="board-index-li" key={board.id}>
                 <div className="board-index-img" onClick={() => this.handleShow(board.id)}></div>
                 {editButton}
                 <div className={`board-index-info ${editButton !== "" ? 'other-boards' : ''}`}>
                   <h2 className="board-index-title">{board.name}</h2>
-                  <p>{pinNumArr.shift()} pins {}</p>
+                  <p>{ pinNum } pins {}</p>
                 </div>
               </li>
             );
