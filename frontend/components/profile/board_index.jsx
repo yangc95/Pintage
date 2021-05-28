@@ -40,14 +40,24 @@ class BoardIndex extends React.Component {
   }
 
   timeAgo(time) {
-    TimeAgo.addLocale(en);
-    const timeAgo = new TimeAgo('en-US');
-    let prevTime = Math.floor(new Date(time).getTime()/1000.0);
-    let currentTime = Math.floor(new Date().getTime()/1000.0)
+    const currentTime = new Date();
+    const prevTime = new Date(time);
+
+    let seconds = Math.floor((currentTime - prevTime) / 1000);
+    let minutes = Math.floor(seconds / 60);
+    let hours = Math.floor(minutes / 60);
+    let days = Math.floor(hours / 24);
+    let weeks = Math.floor(days / 7);
+
+    return weeks + 'w';
+
+    // TimeAgo.addLocale(en);
+    // const timeAgo = new TimeAgo('en-US');
+    // let currentTime = Math.floor(new Date().getTime()/1000.0)
     // debugger;
     // // return newTime;
     // return 1
-    return timeAgo.format(Date.now() - prevTime, 'mini')
+    // return timeAgo.format(Date.now() - prevTime, 'mini')
   }
 
   render() {
@@ -73,7 +83,7 @@ class BoardIndex extends React.Component {
                 {editButton}
                 <div className={`board-index-info ${editButton !== "" ? 'other-boards' : ''}`}>
                   <h2 className="board-index-title">{board.name}</h2>
-                  <p>{ pinNum } pins {}</p>
+                  <p>{ pinNum } pins { lastUpdate.shift() } </p>
                 </div>
               </li>
             );
