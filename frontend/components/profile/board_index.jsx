@@ -49,7 +49,20 @@ class BoardIndex extends React.Component {
     let days = Math.floor(hours / 24);
     let weeks = Math.floor(days / 7);
 
-    return weeks + 'w';
+    let timeAgoInWords;
+    if (weeks >= 1) {
+      timeAgoInWords = `${weeks}w`;
+    } else if (days >= 1) {
+      timeAgoInWords = `${days}d`;
+    } else if (hours >= 1) {
+      timeAgoInWords = `${hours}h`;
+    } else if (minutes >= 1) {
+      timeAgoInWords = `${minutes}m`;
+    } else {
+      timeAgoInWords = `${seconds}s`;
+    }
+
+    return timeAgoInWords;
 
     // TimeAgo.addLocale(en);
     // const timeAgo = new TimeAgo('en-US');
@@ -76,6 +89,7 @@ class BoardIndex extends React.Component {
             };
 
             let pinNum = pinNumArr.shift() || 0;
+            let newTime = newTimes.shift();
 
             return (
               <li className="board-index-li" key={board.id}>
@@ -83,7 +97,7 @@ class BoardIndex extends React.Component {
                 {editButton}
                 <div className={`board-index-info ${editButton !== "" ? 'other-boards' : ''}`}>
                   <h2 className="board-index-title">{board.name}</h2>
-                  <p>{ pinNum } pins { lastUpdate.shift() } </p>
+                  <p>{ pinNum } pins { newTime.includes("NaN") ? "0s" : newTime } </p>
                 </div>
               </li>
             );
