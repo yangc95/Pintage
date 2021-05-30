@@ -97,7 +97,7 @@ class BoardIndex extends React.Component {
                 {editButton}
                 <div className={`board-index-info ${editButton !== "" ? 'other-boards' : ''}`}>
                   <h2 className="board-index-title">{board.name}</h2>
-                  <p>{ pinNum } pins { newTime.includes("NaN") ? "0s" : newTime } </p>
+                  <p>{ pinNum } pins <span className="board-index-time-ago">{ newTime.includes("NaN") ? "0s" : newTime }</span></p>
                 </div>
               </li>
             );
