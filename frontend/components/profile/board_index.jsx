@@ -1,8 +1,8 @@
 import React from 'react';
 import { HiPencil } from 'react-icons/hi';
-import TimeAgo from 'javascript-time-ago';
-import en from 'javascript-time-ago/locale/en';
-import timeago from 'epoch-timeago';
+// import TimeAgo from 'javascript-time-ago';
+// import en from 'javascript-time-ago/locale/en';
+// import timeago from 'epoch-timeago';
 import { openModal } from '../../actions/modal_actions';
 import { fetchBoard } from '../../actions/board_actions';
 
@@ -36,8 +36,8 @@ class BoardIndex extends React.Component {
     this.setState({ pinNums: this.props.pinNums })
   }
 
-  componentDidUpdate() {
-  }
+  // componentDidUpdate() {
+  // }
 
   timeAgo(time) {
     const currentTime = new Date();

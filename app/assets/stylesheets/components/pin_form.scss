@@ -62,8 +62,13 @@
   background-color: rgb(235, 232, 232);
   border: 2px dashed rgb(204, 203, 203);
   box-shadow: 0 0 0 10px rgb(255, 255, 255);
+  // display: none;
   // border-radius: 2px;
   // justify-items: center;
+  
+  input.file-upload-button::before {
+    content: 'Select some files';
+  }
 }
 
 .pin-input-about {
