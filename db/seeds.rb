@@ -62,4 +62,8 @@ p = Pin.create(title: "Concert", about: "Lights galore", user_id: 1, board_id: 2
 #     {id: 7, title: "Gluten-free Waffles", about: "Yummy cinnamon butter crispy waffle with fruit", user_id: 1, board_id: 1},
 # ])
 
-
+b = Board.create(name: "Saved", user_id: 2)
+pins = Pin.create([
+    {id: 7, title: "Pin1", about: "Nicely battered crispy crunch", user_id: 2, board_id: 1},
+    {id: 8, title: "Pin2", about: "So light, fluffy, and creamy frosting", user_id: 2, board_id: 1},
+])
