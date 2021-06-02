@@ -1,8 +1,5 @@
 import React from 'react';
 import { HiPencil } from 'react-icons/hi';
-// import TimeAgo from 'javascript-time-ago';
-// import en from 'javascript-time-ago/locale/en';
-// import timeago from 'epoch-timeago';
 import { openModal } from '../../actions/modal_actions';
 import { fetchBoard } from '../../actions/board_actions';
 
@@ -63,14 +60,6 @@ class BoardIndex extends React.Component {
     }
 
     return timeAgoInWords;
-
-    // TimeAgo.addLocale(en);
-    // const timeAgo = new TimeAgo('en-US');
-    // let currentTime = Math.floor(new Date().getTime()/1000.0)
-    // debugger;
-    // // return newTime;
-    // return 1
-    // return timeAgo.format(Date.now() - prevTime, 'mini')
   }
 
   render() {
