@@ -9,7 +9,8 @@ class PinForm extends React.Component {
             photoUrl: null,
             photoFile: null,
             user_id: this.props.session,
-            board_id: 1 // this needs to be dynamic later
+            board_id: 1, // this needs to be dynamic later
+            error: true,
         };
         this.handleFile = this.handleFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -42,11 +43,20 @@ class PinForm extends React.Component {
         formData.append('pin[user_id]', this.state.user_id);
         formData.append('pin[title]', this.state.title);
         formData.append('pin[about]', this.state.about);
-        this.props.createPin(formData).then(this.props.closeModal());
+
+        if (!this.state.title || !this.state.about || !this.state.photoFile) {
+            console.log(this.state.error)
+            this.state.error = true;
+            console.log(this.state.error)
+            console.log('Must fill all fields');
+        } else {
+            this.state.error = false;
+            this.props.createPin(formData).then(this.props.closeModal());
+        }
     }
 
     render() {
-        const { title, about, photoUrl } = this.state;
+        const { title, about, photoUrl, photoFile, error } = this.state;
 
         return (
             <div className="pin-form-div">
@@ -82,6 +92,7 @@ class PinForm extends React.Component {
                             />
                         </label>
                     </span>
+                    <div>{error ? "Must fill out all fields" : ""}</div>
                     <button className="pin-input-button">Save</button>
                 </form>
             </div>
