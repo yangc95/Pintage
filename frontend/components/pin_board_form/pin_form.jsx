@@ -47,7 +47,8 @@ class PinForm extends React.Component {
         formData.append('pin[user_id]', this.state.user_id);
         formData.append('pin[title]', this.state.title);
         formData.append('pin[about]', this.state.about);
-
+        formData.append('pin[board_id]', this.state.board_id);
+        
         if (!this.state.title || !this.state.about || !this.state.photoFile) {
             console.log('Must fill all fields');
         } else {

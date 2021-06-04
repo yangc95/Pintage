@@ -2,7 +2,8 @@ import { merge } from 'lodash';
 
 import { RECEIVE_PINS } from '../../actions/pin_actions';
 import { 
-  RECEIVE_BOARDS, 
+  RECEIVE_BOARDS,
+  RECEIVE_BOARD, 
   RECEIVE_NEW_BOARD, 
   REMOVE_BOARD 
 } from '../../actions/board_actions';
@@ -20,13 +21,18 @@ const usersReducer = (state = {}, action) => {
     //   // ;
     //   return Object.assign({}, newState, { [action.user_id]: action.pins}); 
     case RECEIVE_NEW_BOARD:
-      const length = newState[action.board.user_id].boards.length;
-      newState[action.board.user_id].boards[length] = action.board;
+      debugger;
+      // const length = newState[action.board.user_id].boards.length;
+      // newState[action.board.user_id].boards[length] = action.board;
+      newState.boards.push(action.board);
       return newState;
     case RECEIVE_BOARDS:
       return merge({}, newState, action.boards);
+    case RECEIVE_BOARD:
+      debugger;
+      return merge({}, newState, action.board);
     case REMOVE_BOARD:
-      // debugger;
+      debugger;
       return merge({}, newState, action.boards);
     default: 
       return state;
