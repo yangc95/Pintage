@@ -1,10 +1,13 @@
 import React from 'react';
 import Masonry from 'react-masonry-css';
 
+// import BoardShowItem from './board_show_item';
+
 class BoardShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      // pins: []
     };
     this.handleBack = this.handleBack.bind(this);
   }
@@ -12,6 +15,10 @@ class BoardShow extends React.Component {
   handleBack() {
     this.props.history.push('/_saved')
     this.setState({ pins: null })
+  }
+
+  handlePinShow(pinId) {
+    this.props.history.push(`/pin/${pinId}`)
   }
 
   render() {
@@ -25,6 +32,7 @@ class BoardShow extends React.Component {
       pinNum = pinKeys.length;
       pinKeys.forEach(key => pinArray.push(board.pins[key]));
     };
+    // if (pinArray) {this.setState({pins: pinArray})}
     // console.log(pinArray)
 
     const breakpoints = {
@@ -56,7 +64,7 @@ class BoardShow extends React.Component {
           }
         </Masonry>
 
-        <button onClick={() => this.handleBack()}>Back to Boards</button>
+        <button onClick={() => this.handleBack()}>Back to Profile</button>
       </div>
     )
   }

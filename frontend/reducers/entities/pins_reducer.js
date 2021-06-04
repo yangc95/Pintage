@@ -10,6 +10,7 @@ const pinsReducer = (state = {}, action) => {
     case RECEIVE_PINS:
       return Object.assign({}, action.pins);
     case RECEIVE_PIN:
+      debugger;
       return Object.assign({}, newState, { [action.pin.id]: action.pin} )
     default:
       return state;
