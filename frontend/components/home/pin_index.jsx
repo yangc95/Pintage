@@ -24,7 +24,6 @@ export default ({ pins, currentUser }) => {
       columnClassName="my-masonry-grid_column">
         {
           pins.map(pin => {
-            console.log(pin.user_id)
             return (
               <div className="pin-index-div" key={pin.id}>
                 {/* <img className="pin-index-photo" src={pin.photoUrl}/> */}
