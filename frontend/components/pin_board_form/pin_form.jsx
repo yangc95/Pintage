@@ -9,11 +9,13 @@ class PinForm extends React.Component {
             photoUrl: null,
             photoFile: null,
             user_id: this.props.session,
-            board_id: 1, // this needs to be dynamic later
-            error: true,
+            boards: [],
+            board_id: 1,
+            // error: true,
         };
         this.handleFile = this.handleFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleShow = this.handleShow.bind(this);
     }
 
     handleFile(e) {
@@ -28,9 +30,11 @@ class PinForm extends React.Component {
     }
 
     update(field) {
-		return e => this.setState({
-			[field]: e.currentTarget.value
-		});
+        console.log(this.state.board_id)
+        return e =>
+        this.setState({
+            [field]: e.currentTarget.value
+        });
 	}
 
     handleSubmit(e) {
@@ -43,20 +47,29 @@ class PinForm extends React.Component {
         formData.append('pin[user_id]', this.state.user_id);
         formData.append('pin[title]', this.state.title);
         formData.append('pin[about]', this.state.about);
-
+        formData.append('pin[board_id]', this.state.board_id);
+        
         if (!this.state.title || !this.state.about || !this.state.photoFile) {
-            console.log(this.state.error)
-            this.state.error = true;
-            console.log(this.state.error)
             console.log('Must fill all fields');
         } else {
-            this.state.error = false;
-            this.props.createPin(formData).then(this.props.closeModal());
+            this.props.closeModal()
+            this.props.createPin(formData).then((pin) => {this.handleShow(pin.id)});
         }
     }
 
+    handleShow(pinId) {
+        // dispatch(fetchPin(pinId))
+            // .then(this.props.history.push(`/pin/${pinId}`))
+        this.props.history.push(`/pin/${pinId}`)
+    }
+
     render() {
-        const { title, about, photoUrl, photoFile, error } = this.state;
+        const { title, about, photoUrl, photoFile, board_id } = this.state;
+        const { boards } = this.props;
+
+        if (boards) {
+            this.state.boards = boards;
+        }
 
         return (
             <div className="pin-form-div">
@@ -91,8 +104,26 @@ class PinForm extends React.Component {
                                 placeholder="Tell everyone what your pin is about"
                             />
                         </label>
+                        <label>Choose a board
+                            <select 
+                              className="pin-input-board"
+                              value={board_id}
+                              onChange={this.update('board_id')}
+                            >
+                            {
+                                boards.map(board => {
+                                    return (
+                                      <option 
+                                        key={board.id} 
+                                        value={board.id}>
+                                        {board.name}
+                                      </option>
+                                    )
+                                })
+                            }
+                            </select>
+                        </label>
                     </span>
-                    <div>{error ? "Must fill out all fields" : ""}</div>
                     <button className="pin-input-button">Save</button>
                 </form>
             </div>

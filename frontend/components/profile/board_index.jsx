@@ -64,6 +64,8 @@ class BoardIndex extends React.Component {
 
   render() {
     const { boards, lastUpdate } = this.props;
+    // const { boards } = this.props;
+    
     const { pinNums } = this.state;
     let newTimes = lastUpdate.map(time => (this.timeAgo(time)));
     let pinNumArr = [...pinNums];
@@ -80,13 +82,15 @@ class BoardIndex extends React.Component {
             let pinNum = pinNumArr.shift() || 0;
             let newTime = newTimes.shift();
 
+            // debugger;
             return (
+              
               <li className="board-index-li" key={board.id}>
                 <div className="board-index-img" onClick={() => this.handleShow(board.id)}></div>
                 {editButton}
                 <div className={`board-index-info ${editButton !== "" ? 'other-boards' : ''}`}>
                   <h2 className="board-index-title">{board.name}</h2>
-                  <p>{ pinNum } pins <span className="board-index-time-ago">{ newTime.includes("NaN") ? "0s" : newTime }</span></p>
+                  <p>{ pinNum } pins <span className="board-index-time-ago">{ !newTime || newTime.includes("NaN") ? "0s" : newTime }</span></p>
                 </div>
               </li>
             );

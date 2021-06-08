@@ -3,6 +3,7 @@ import {
   RECEIVE_BOARD,
   RECEIVE_BOARDS
 } from '../../actions/board_actions';
+import { RECEIVE_PIN } from '../../actions/pin_actions';
 
 const boardsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -14,6 +15,9 @@ const boardsReducer = (state = {}, action) => {
       // return state;
     case RECEIVE_BOARD:
       return Object.assign({}, newState, action.board)
+    // case RECEIVE_PIN:
+    //   debugger;
+    //   return 
     default:
       return state;
   }

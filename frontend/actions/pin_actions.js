@@ -19,9 +19,15 @@ export const fetchPins = () => dispatch => (
   ), err => (null))
 );
 
+// export const fetchPin = () => dispatch => (
+//   PinAPIUtil.fetchPin().then(pin => (
+//       dispatch(receivePin(pin))
+//   ), err => (null))
+// );
+
 export const createPin = pin => dispatch => (
   PinAPIUtil.createPin(pin).then(pin => (
-    dispatch(receivePins(pin))
+    dispatch(receivePin(pin))
   ), err => (null))
 );
 

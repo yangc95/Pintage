@@ -31,9 +31,9 @@ export default ({ pins, currentUser }) => {
                 <h2 className="pin-index-title">{pin.title}</h2>
                 <div className="profile-button-div">
                   <button className="profile-button">
-                    {currentUser.username.split("")[0]}
+                    {pin.user_id === currentUser.id ? currentUser.username.split("")[0] : "O"}
                   </button>
-                  <span>{currentUser.username}</span>
+                  <span>{pin.user_id === currentUser.id ? currentUser.username : "OtherUser"}</span>
                 </div>
                 {/* <p className="pin-index-about">{pin.about}</p> */}
               </div>

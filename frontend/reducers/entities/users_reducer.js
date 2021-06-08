@@ -1,32 +1,32 @@
 import { merge } from 'lodash';
 
-import { RECEIVE_PINS } from '../../actions/pin_actions';
 import { 
-  RECEIVE_BOARDS, 
+  RECEIVE_BOARDS,
   RECEIVE_NEW_BOARD, 
   REMOVE_BOARD 
 } from '../../actions/board_actions';
 import { RECEIVE_CURRENT_USER } from '../../actions/session_actions';
 
+const nullUserState = Object.freeze({
+  id: null,
+  email: null,
+  username: null,
+  boards: null
+});
+
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
-  // ;
-  // let newState = Object.assign({}, state)
   let newState = merge({}, state);
   switch(action.type) {
-    case RECEIVE_CURRENT_USER:
-      return Object.assign({}, newState, { [action.currentUser.id]: action.currentUser }); 
-    // case RECEIVE_PINS:
-    //   // ;
-    //   return Object.assign({}, newState, { [action.user_id]: action.pins}); 
+    // case RECEIVE_CURRENT_USER:
+    //   return merge({}, newState, action.currentUser);
     case RECEIVE_NEW_BOARD:
-      const length = newState[action.board.user_id].boards.length;
-      newState[action.board.user_id].boards[length] = action.board;
+      newState.boards.push(action.board);
       return newState;
     case RECEIVE_BOARDS:
       return merge({}, newState, action.boards);
     case REMOVE_BOARD:
-      // debugger;
+      debugger;
       return merge({}, newState, action.boards);
     default: 
       return state;

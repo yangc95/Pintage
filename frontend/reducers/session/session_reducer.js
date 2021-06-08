@@ -1,3 +1,4 @@
+import { merge } from 'lodash';
 import {
   RECEIVE_CURRENT_USER,
   LOGOUT_CURRENT_USER,
@@ -9,6 +10,7 @@ const nullUser = Object.freeze({
 
 export default (state = nullUser, action) => {
   Object.freeze(state);
+  let newState = merge({}, state);
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
       return { id: action.currentUser.id };
