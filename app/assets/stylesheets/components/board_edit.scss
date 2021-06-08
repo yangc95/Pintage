@@ -79,7 +79,33 @@ board-index-edit {
   }
 }
 
+.board-edit-div {
+  height: 97%;
+  width: 100%;
+  padding: 5px;
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: stretch;
+}
+
+.board-edit-header {
+  top: 0;
+  height: 10%;
+  width: 100%;
+  position: fixed;
+  padding: 25px 0 10px 0;
+  z-index: 10;
+  background-color: white;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+}
+
 .board-edit-form {
+  margin-top: 15%;
   display: flex;
   flex-direction: column;
 

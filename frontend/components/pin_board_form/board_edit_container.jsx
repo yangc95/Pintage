@@ -36,7 +36,7 @@ class BoardEdit extends React.Component {
 
         return (
             <div className="board-edit-div">
-                <h1>Edit your board</h1>
+                <h1 className="board-edit-header">Edit your board</h1>
                 <div className="x-close edit" onClick={closeModal}>
 					&times;
 				</div>

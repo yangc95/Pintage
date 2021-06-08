@@ -19,7 +19,8 @@
 }
 
 .x-close.edit {
-  transform: translateX(980%);
+  transform: translateX(700%);
+  z-index: 11;
 }
 
 .x-close.pinform {

@@ -10,13 +10,13 @@ const mSTP = ({ session, entities: { users }}) => {
   return {
     session: session.id,
     currentUser: users[session.id],
-    boards: users[session.id].boards,
-    // pinNums: (Object.keys(users.boards)).map(key => (
-    //   users[session.id].boards[key].pins.length
-    // )),
-    // lastUpdate: (Object.keys(users[session.id].boards)).map(key => (
-    //   users[session.id].boards[key].updated_at
-    // ))
+    boards: users.boards,
+    pinNums: (Object.keys(users[session.id].boards)).map(key => (
+      users[session.id].boards[key].pins.length
+    )),
+    lastUpdate: (Object.keys(users[session.id].boards)).map(key => (
+      users[session.id].boards[key].updated_at
+    ))
   }
 }
 
