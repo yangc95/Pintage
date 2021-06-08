@@ -42,21 +42,24 @@ class BoardEdit extends React.Component {
 				</div>
 
                 <form className="board-edit-form" onSubmit={this.handleSubmit}>
-                <label>Name</label>
-                <input
-                    className="board-edit-name"
-                    type="text"
-                    value={name}
-                    onChange={this.update('name')}
-                    placeholder='Like "Places to Go" or "Recipes to Make"'
-                />
+                    <label>Name</label>
+                    <input
+                        className="board-edit-name"
+                        type="text"
+                        value={name}
+                        onChange={this.update('name')}
+                        placeholder='Like "Places to Go" or "Recipes to Make"'
+                    />
+                    <button className="submit">Done</button>
                 </form>
-                <p>Action</p>
-                <button onClick={() => this.handleClick()}>
-                    Delete this board
-                </button>
-                <p>Delete this board and all it's Pin forever.</p>
-                <p>You can't undo this!</p>
+                <span className="board-edit-delete-span">
+                    <p>Action</p>
+                    <button onClick={() => this.handleClick()}>
+                        Delete this board
+                    </button>
+                    <p className="board-edit-delete-info">Delete this board and all it's Pin forever.</p>
+                    <p className="board-edit-delete-info">You can't undo this!</p>
+                </span>
             </div>
         )
     }
