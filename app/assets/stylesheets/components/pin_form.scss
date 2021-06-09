@@ -56,6 +56,12 @@
   border-radius: var(--pin_border_radius);
 }
 
+.pin-photo-info {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
 .pin-input-photo {
   height: 360px;
   width: 300px;
@@ -64,11 +70,29 @@
   box-shadow: 0 0 0 10px rgb(255, 255, 255);
   // display: none;
   // border-radius: 2px;
-  // justify-items: center;
-  
-  // input.file-upload-button::before {
-  //   content: 'Select some files';
-  // }
+  // justify-items: center;  
+}
+
+.pin-input-photo::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.pin-input-photo::before {
+  content: image-url('uparrow.png');
+  transform: scale(0.05) translate(-270em, -225em);
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-user-select: none;
+  outline: none;
+  white-space: nowrap;
+  position: fixed;
+  background-color: #767676;
+}
+
+.pin-input-photo:hover::before {
+  border-color: black;
 }
 
 .pin-input-about {

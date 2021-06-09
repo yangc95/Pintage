@@ -82,12 +82,14 @@ board-index-edit {
 .board-edit-div {
   height: 97%;
   width: 100%;
-  padding: 5px;
+  box-sizing: border-box;
   margin-top: 3%;
   display: flex;
   flex-direction: column;
   align-items: center;
   align-items: stretch;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 .board-edit-header {
@@ -95,6 +97,7 @@ board-index-edit {
   height: 10%;
   width: 100%;
   position: fixed;
+  transform: translateX(-32px);
   padding: 25px 0 10px 0;
   z-index: 10;
   background-color: white;
@@ -111,5 +114,38 @@ board-index-edit {
 
   input {
     outline: none;
+    width: 100%;
+    margin-bottom: 32px;
   }
+
+  button {
+    width: 15%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 0 32px 32px 0;
+  }
+
+  button:active {
+    width: 13%;
+  }
+}
+
+.board-edit-delete-span {
+  
+  button {
+    padding: unset;
+    padding-top: 10px;
+    padding-bottom: 3px;
+    text-align: left;
+    background-color: white;
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+.board-edit-delete-info {
+  font-size: 16px;
+  color: #767676;
+  font-weight: 400;
 }

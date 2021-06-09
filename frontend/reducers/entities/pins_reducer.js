@@ -6,6 +6,7 @@ import {
 } from '../../actions/pin_actions';
 
 const pinsReducer = (state = {}, action) => {
+  // debugger;
   Object.freeze(state);
   let newState = merge({}, state);
   switch(action.type) {
