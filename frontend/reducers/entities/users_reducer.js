@@ -7,19 +7,12 @@ import {
 } from '../../actions/board_actions';
 import { RECEIVE_CURRENT_USER } from '../../actions/session_actions';
 
-const nullUserState = Object.freeze({
-  id: null,
-  email: null,
-  username: null,
-  boards: null
-});
-
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
   switch(action.type) {
-    // case RECEIVE_CURRENT_USER:
-    //   return merge({}, newState, action.currentUser);
+    case RECEIVE_CURRENT_USER:
+      return merge({}, newState, action.currentUser);
     case RECEIVE_NEW_BOARD:
       newState.boards.push(action.board);
       return newState;

@@ -17,7 +17,8 @@ class Navbar extends React.Component {
     }
 
     render () {
-        const { currentUser, logout, openModal, navbar, activeNavbar, inactiveNavbar } = this.props;
+        // debugger;
+        const { session, currentUser, logout, openModal, navbar, activeNavbar, inactiveNavbar } = this.props;
         
         let dropdownButton;
         (this.state.dropdown) ? dropdownButton = 'dropdownActive' : dropdownButton = '' ;
@@ -27,7 +28,7 @@ class Navbar extends React.Component {
 
         let path;
         let pintage;
-        if (currentUser) {
+        if (session) {
             path = "/home";
             pintage = <button onClick={() => this.setState({home: !this.props.navbar})} className={`nav-home-button ${homeButton}`}>Home</button>
         } else {
@@ -45,7 +46,7 @@ class Navbar extends React.Component {
         </span>;
             
         let navRight;
-        if (currentUser) {
+        if (session) {
             navRight = 
                 <span className="nav-right">
                     <ul className="nav-right-icons">
