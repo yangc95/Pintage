@@ -1,7 +1,8 @@
 import React from 'react';
 import Masonry from 'react-masonry-css';
 
-export default ({ pins, currentUser }) => {
+export default ({ pins, currentUser, session }) => {
+  // debugger;
   const breakpoints = {
     default: 10,
     2645: 9,
@@ -31,9 +32,9 @@ export default ({ pins, currentUser }) => {
                 <h2 className="pin-index-title">{pin.title}</h2>
                 <div className="profile-button-div">
                   <button className="profile-button">
-                    {pin.user_id === currentUser.id ? currentUser.username.split("")[0] : "O"}
+                    {pin.user_id === session ? currentUser.username.split("")[0] : "O"}
                   </button>
-                  <span>{pin.user_id === currentUser.id ? currentUser.username : "OtherUser"}</span>
+                  <span>{pin.user_id === session ? currentUser.username : "OtherUser"}</span>
                 </div>
                 {/* <p className="pin-index-about">{pin.about}</p> */}
               </div>

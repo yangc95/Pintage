@@ -10,7 +10,6 @@ const mSTP = ({ session, entities: { users }, ui: { navbar} }) => {
   return {
     session: session.id,
     currentUser: users[session.id],
-    users,
     navbar
   };
 };

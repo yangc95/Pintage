@@ -18,8 +18,13 @@ class Navbar extends React.Component {
 
     render () {
         // debugger;
-        const { session, currentUser, logout, openModal, navbar, activeNavbar, inactiveNavbar } = this.props;
+        const { session, logout, openModal, navbar, activeNavbar, inactiveNavbar } = this.props;
         
+        let currentUser = "";
+        if (this.props.currentUser) {
+            currentUser = this.props.currentUser;
+        }
+
         let dropdownButton;
         (this.state.dropdown) ? dropdownButton = 'dropdownActive' : dropdownButton = '' ;
 

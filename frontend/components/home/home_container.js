@@ -10,7 +10,8 @@ import Home from './home';
 const mSTP = ({ session, entities: { users, pins }, ui: { navbar } }) => {
   // debugger;
   return {
-    currentUser: users,
+    session: session.id,
+    currentUser: users[session.id],
     pins: Object.values(pins),
     navbar
   };

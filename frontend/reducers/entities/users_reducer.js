@@ -5,22 +5,31 @@ import {
   RECEIVE_NEW_BOARD, 
   REMOVE_BOARD 
 } from '../../actions/board_actions';
-import { RECEIVE_CURRENT_USER } from '../../actions/session_actions';
+import {
+  RECEIVE_CURRENT_USER,
+  LOGOUT_CURRENT_USER,
+} from '../../actions/session_actions';
+
+const nullUser = Object.freeze({
+  id: null,
+  email: null,
+  username: null,
+  boards: null,
+});
 
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
-      return merge({}, newState, action.currentUser);
+      return Object.assign({}, newState, { [action.currentUser.id]: action.currentUser } );
     case RECEIVE_NEW_BOARD:
       newState.boards.push(action.board);
       return newState;
     case RECEIVE_BOARDS:
-      return merge({}, newState, action.boards);
+      return Object.assign({}, newState, action.boards);
     case REMOVE_BOARD:
-      debugger;
-      return merge({}, newState, action.boards);
+      return Object.assign({}, newState, action.boards);
     default: 
       return state;
   }
