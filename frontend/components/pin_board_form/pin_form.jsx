@@ -30,7 +30,6 @@ class PinForm extends React.Component {
     }
 
     update(field) {
-        console.log(this.state.board_id)
         return e =>
         this.setState({
             [field]: e.currentTarget.value
@@ -53,6 +52,7 @@ class PinForm extends React.Component {
             console.log('Must fill all fields');
         } else {
             this.props.closeModal()
+            debugger;
             this.props.createPin(formData).then((pin) => {this.handleShow(pin.id)});
         }
     }
@@ -81,10 +81,14 @@ class PinForm extends React.Component {
                         {photoUrl ?
                         <img className="pin-img" src={photoUrl} alt="Image handle"/> :
                         <input 
-                            className= "pin-input-photo"
-                            type="file"
-                            onChange={this.handleFile}
+                        className= "pin-input-photo"
+                        type="file"
+                        onChange={this.handleFile}
                         />}
+                        <div className={`pin-photo-info`}>
+                            <p>Drag and drop or click to upload</p>
+                            <p>Recommendation: Use high-quality .jpg files less than 200MB</p>
+                        </div>
                     </label>
                     <span className="pin-form-info">
                         <label >

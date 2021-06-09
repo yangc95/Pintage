@@ -54,7 +54,7 @@ class Navbar extends React.Component {
                                 <Link onClick={logout} to="/">Log out</Link>
                             </button>
                         </span>
-                        <button className="profile-button" onClick={() => this.handleProfile()}>
+                        <button className={`profile-button`} onClick={() => this.handleProfile()}>
                             {currentUser.username.split("")[0]}
                         </button>
                         <button className="angle-button" onClick={() => this.setState({dropdown: !this.state.dropdown})}>
