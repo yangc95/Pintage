@@ -1,4 +1,5 @@
 import React from 'react';
+import { fetchPin } from '../../actions/pin_actions';
 
 class PinForm extends React.Component {
   constructor(props) {
@@ -57,9 +58,9 @@ class PinForm extends React.Component {
   }
 
   handleShow(pinId) {
-    // dispatch(fetchPin(pinId))
-        // .then(this.props.history.push(`/pin/${pinId}`))
-    this.props.history.push(`/pin/${pinId}`)
+    dispatch(fetchPin(pinId))
+        .then(this.props.history.push(`/pin/${pinId}`))
+    // this.props.history.push(`/pin/${pinId}`)
   }
 
   render() {

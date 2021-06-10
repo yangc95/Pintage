@@ -6,14 +6,14 @@ import {
 } from '../../actions/pin_actions';
 
 const pinsReducer = (state = {}, action) => {
-  // debugger;
+  debugger;
   Object.freeze(state);
   let newState = merge({}, state);
   switch(action.type) {
     case RECEIVE_PINS:
       return merge({}, action.pins);
     case RECEIVE_PIN:
-      return merge({}, newState, { [action.pin.id]: action.pin} )
+      return merge({}, newState, action.pin)
     default:
       return state;
   }
