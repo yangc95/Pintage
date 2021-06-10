@@ -52,7 +52,6 @@ class PinForm extends React.Component {
       console.log('Must fill all fields');
     } else {
       this.props.closeModal()
-      debugger;
       this.props.createPin(formData).then((pin) => {this.handleShow(pin.id)});
     }
   }
@@ -64,6 +63,7 @@ class PinForm extends React.Component {
   }
 
   render() {
+    console.log(this.state.board_id)
     const { title, about, photoUrl, photoFile, board_id } = this.state;
     const { boards } = this.props;
 

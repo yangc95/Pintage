@@ -9,10 +9,10 @@ import { fetchBoards } from '../../actions/board_actions';
 import PinForm from './pin_form';
 
 const mSTP = ({ session, entities: {users, pins} }) => {
-  debugger;
+  // debugger;
   return {
     session: session.id,
-    boards: users[session.id].boards,
+    boards: users.boards,
     // pins:
   };
 };
