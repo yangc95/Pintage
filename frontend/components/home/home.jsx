@@ -17,7 +17,8 @@ class Home extends React.Component {
       pinIndex = <PinsIndex
         pins={this.props.pins}
         currentUser={this.props.currentUser}
-        session={this.props.session}/>
+        session={this.props.session}
+        fetchPin={this.props.fetchPin}/>
     }
 
     return (

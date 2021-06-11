@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'; 
 import PinShow from './pin_show';
+import { fetchPin } from '../../actions/pin_actions';
+
 
 const mSTP = ({session, entities: { user, pins } }) => {
   // debugger;
@@ -11,7 +13,7 @@ const mSTP = ({session, entities: { user, pins } }) => {
 
 const mDTP = dispatch => {
   return {
-      
+      fetchPin: (pinId) => dispatch(fetchPin(pinId)),
   }
 }
 

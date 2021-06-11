@@ -9,11 +9,11 @@ import { fetchBoards } from '../../actions/board_actions';
 import PinForm from './pin_form';
 
 const mSTP = ({ session, entities: {users, pins} }) => {
-  // debugger;
+  debugger;
   return {
     session: session.id,
     boards: users.boards,
-    // pins:
+    pins: pins
   };
 };
 
@@ -23,7 +23,7 @@ const mDTP = dispatch => {
     closeModal: () => dispatch(closeModal()),
     createPin: (pin) => dispatch(createPin(pin)),
     fetchBoards: () => dispatch(fetchBoards()),
-    // fetchPin: () => dispatch(fetchPin(pinId))
+    fetchPin: (pinId) => dispatch(fetchPin(pinId))
 	};
 };
 

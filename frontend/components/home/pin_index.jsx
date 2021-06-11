@@ -1,6 +1,8 @@
 import React from 'react';
 import Masonry from 'react-masonry-css';
 
+import {fetchPin} from '../../actions/pin_actions';
+
 export default ({ pins, currentUser, session }) => {
   // debugger;
   const breakpoints = {
@@ -15,6 +17,10 @@ export default ({ pins, currentUser, session }) => {
     825: 2,
     565: 1 
   }
+
+  const handleShow = (pinId) => {
+    dispatch(fetchPin(pinId)).then((pin) => this.history.push(`/pin/${pin.id}`))
+  }
   // {/* <img className="pin-index-photo pin_medium" src={pins[0].photoUrl}/> */}
   // <h2 className="pin-index-title">{pins[0][title]}</h2>
   // <p className="pin-index-about">{pins[0][about]}</p>
@@ -26,7 +32,7 @@ export default ({ pins, currentUser, session }) => {
         {
           pins.map(pin => {
             return (
-              <div className="pin-index-div" key={pin.id}>
+              <div className="pin-index-div" key={pin.id} onClick={handleShow(pin.id)}>
                 {/* <img className="pin-index-photo" src={pin.photoUrl}/> */}
                 <div className="pin-index-image"></div>
                 <h2 className="pin-index-title">{pin.title}</h2>

@@ -3,7 +3,14 @@ import React from 'react';
 class PinShow extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+          pin: null
+        }
         this.handleBack = this.handleBack.bind(this);
+    }
+
+    componentDidMount() {
+      this.props.fetchPin(pinId).then(pin => this.setState({pin: pin}))
     }
 
     handleBack() {
