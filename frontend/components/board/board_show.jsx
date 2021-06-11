@@ -10,6 +10,7 @@ class BoardShow extends React.Component {
       // pins: []
     };
     this.handleBack = this.handleBack.bind(this);
+    this.handlePinShow = this.handlePinShow.bind(this);
   }
 
   handleBack() {
@@ -18,7 +19,8 @@ class BoardShow extends React.Component {
   }
 
   handlePinShow(pinId) {
-    this.props.history.push(`/pin/${pinId}`)
+    this.props.fetchPin(pinId)
+      .then(() => this.props.history.push(`/pin/${pinId}`))
   }
 
   render() {
@@ -54,7 +56,7 @@ class BoardShow extends React.Component {
           {
             pinArray.map(pin => {
               return (
-                <div className="board-show-pin-index" key={pin.id}>
+                <div className="board-show-pin-index" key={pin.id} onClick={() => this.handlePinShow(pin.id)}>
                   <div className="pin-index-image"></div>
                   <h2 className="pin-index-title">{pin.title}</h2>
                   <p className="pin-index-about">{pin.about}</p>

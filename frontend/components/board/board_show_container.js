@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'; 
 import BoardShow from './board_show';
+import { fetchPin } from '../../actions/pin_actions';
 
 const mSTP = ({ entities: { boards } }) => {
   // debugger;
@@ -12,7 +13,7 @@ const mSTP = ({ entities: { boards } }) => {
 
 const mDTP = dispatch => {
   return {
-      
+    fetchPin: (pinId) => dispatch(fetchPin(pinId)),
   }
 }
 

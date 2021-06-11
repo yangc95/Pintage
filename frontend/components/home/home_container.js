@@ -18,7 +18,7 @@ const mSTP = ({ session, entities: { users, pins }, ui: { navbar } }) => {
 };
 
 const mDTP = dispatch => {
-  debugger;
+  // debugger;
 	return {
     fetchPins: () => dispatch(fetchPins()),
     fetchPin: (pinId) => dispatch(fetchPin(pinId)),

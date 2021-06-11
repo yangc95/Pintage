@@ -12,13 +12,15 @@ class Home extends React.Component {
   }
 
   render() {
+    // debugger;
     let pinIndex = "";
     if (this.props.pins) {
       pinIndex = <PinsIndex
         pins={this.props.pins}
         currentUser={this.props.currentUser}
         session={this.props.session}
-        fetchPin={this.props.fetchPin}/>
+        fetchPin={this.props.fetchPin}
+        history={this.props.history}/>
     }
 
     return (

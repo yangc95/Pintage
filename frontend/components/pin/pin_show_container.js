@@ -4,10 +4,11 @@ import PinShow from './pin_show';
 import { fetchPin } from '../../actions/pin_actions';
 
 
-const mSTP = ({session, entities: { user, pins } }) => {
+const mSTP = ({session, entities: { users, pins } }) => {
   // debugger;
   return {
-      pin: pins
+      pin: pins,
+      user: users[pins.user_id]
   }
 }
 
@@ -17,4 +18,4 @@ const mDTP = dispatch => {
   }
 }
 
-export default withRouter(connect(mSTP)(PinShow));
+export default withRouter(connect(mSTP, mDTP)(PinShow));

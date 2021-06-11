@@ -8,7 +8,7 @@ export const fetchPins = () => (
 export const fetchPin = (pinId) => (
     $.ajax({
         method: 'GET',
-        url:`/api/pins/${pin.id}`
+        url:`/api/pins/${pinId}`
     })
 );
 

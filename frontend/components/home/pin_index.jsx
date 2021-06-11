@@ -3,7 +3,7 @@ import Masonry from 'react-masonry-css';
 
 import {fetchPin} from '../../actions/pin_actions';
 
-export default ({ pins, currentUser, session }) => {
+export default ({ pins, currentUser, session, history }) => {
   // debugger;
   const breakpoints = {
     default: 10,
@@ -18,8 +18,8 @@ export default ({ pins, currentUser, session }) => {
     565: 1 
   }
 
-  const handleShow = (pinId) => {
-    dispatch(fetchPin(pinId)).then((pin) => this.history.push(`/pin/${pin.id}`))
+  const handlePinShow = (pinId) => {
+    dispatch(fetchPin(pinId)).then(() => history.push(`/pin/${pinId}`))
   }
   // {/* <img className="pin-index-photo pin_medium" src={pins[0].photoUrl}/> */}
   // <h2 className="pin-index-title">{pins[0][title]}</h2>
@@ -32,10 +32,12 @@ export default ({ pins, currentUser, session }) => {
         {
           pins.map(pin => {
             return (
-              <div className="pin-index-div" key={pin.id} onClick={handleShow(pin.id)}>
-                {/* <img className="pin-index-photo" src={pin.photoUrl}/> */}
-                <div className="pin-index-image"></div>
-                <h2 className="pin-index-title">{pin.title}</h2>
+              <div className="pin-index-div" key={pin.id}>
+                {/* <div> */}
+                  {/* <img className="pin-index-photo" src={pin.photoUrl}/> */}
+                  <div className="pin-index-image" onClick={() => handlePinShow(pin.id)}></div>
+                  <h2 className="pin-index-title">{pin.title}</h2>
+                {/* </div> */}
                 <div className="profile-button-div">
                   <button className="profile-button">
                     {pin.user_id === session ? currentUser.username.split("")[0] : "O"}
