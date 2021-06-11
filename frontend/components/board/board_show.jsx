@@ -1,5 +1,6 @@
 import React from 'react';
 import Masonry from 'react-masonry-css';
+import { HiArrowLeft } from 'react-icons/hi';
 
 // import BoardShowItem from './board_show_item';
 
@@ -47,6 +48,11 @@ class BoardShow extends React.Component {
     return (
       <div className="board-show">
         <h1>{board.name}</h1>
+        
+        <button className="hi-arrow-left" onClick={() => this.handleBack()}>
+          <HiArrowLeft />
+        </button>
+        
         <h2>{pinNum} Pins</h2>
 
         <Masonry
@@ -66,7 +72,6 @@ class BoardShow extends React.Component {
           }
         </Masonry>
 
-        <button onClick={() => this.handleBack()}>Back to Profile</button>
       </div>
     )
   }
