@@ -12,11 +12,9 @@ class PinForm extends React.Component {
       user_id: this.props.session,
       boards: [],
       board_id: 1,
-      // error: true,
     };
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleShow = this.handleShow.bind(this);
   }
 
   handleFile(e) {
@@ -53,14 +51,9 @@ class PinForm extends React.Component {
       console.log('Must fill all fields');
     } else {
       this.props.closeModal()
-      this.props.createPin(formData).then((pin) => {this.handleShow(pin.id)});
+      this.props.createPin(formData)
+        .then((pin) => {this.props.history.push(`/pin/${pin.id}`)});
     }
-  }
-
-  handleShow(pinId) {
-    dispatch(fetchPin(pinId))
-        .then(this.props.history.push(`/pin/${pinId}`))
-    // this.props.history.push(`/pin/${pinId}`)
   }
 
   render() {
