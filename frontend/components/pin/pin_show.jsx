@@ -12,6 +12,7 @@ class PinShow extends React.Component {
     }
 
     render() {
+      const { pin } = this.props;
 
       return (
           <div className="pin-show">
@@ -20,9 +21,9 @@ class PinShow extends React.Component {
             </button>
 
             <div className="pin-show-item">
-              {/* <img className="pin-index-photo" src={pin.photoUrl}/> */}
-              <h2 className="pin-index-title">{this.props.pin.title}</h2>
-              <h3>{this.props.pin.about}</h3>
+              <img className="pin-index-photo" src={pin.photoUrl}/>
+              <h2 className="pin-index-title">{pin.title}</h2>
+              <h3>{pin.about}</h3>
             </div>
           </div>
       )

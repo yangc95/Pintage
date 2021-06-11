@@ -34,8 +34,8 @@ export default ({ pins, currentUser, session, history }) => {
             return (
               <div className="pin-index-div" key={pin.id}>
                 {/* <div> */}
-                  {/* <img className="pin-index-photo" src={pin.photoUrl}/> */}
-                  <div className="pin-index-image" onClick={() => handlePinShow(pin.id)}></div>
+                  <img className="pin-index-photo" src={pin.photoUrl} onClick={() => handlePinShow(pin.id)}/>
+                  {/* <div className="pin-index-image" onClick={() => handlePinShow(pin.id)}></div> */}
                   <h2 className="pin-index-title">{pin.title}</h2>
                 {/* </div> */}
                 <div className="profile-button-div">

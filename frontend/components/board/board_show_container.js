@@ -7,7 +7,6 @@ const mSTP = ({ entities: { boards } }) => {
   // debugger;
   return {
       board: boards,
-      // pinNum: Object.keys(boards.pins).length,
   }
 }
 

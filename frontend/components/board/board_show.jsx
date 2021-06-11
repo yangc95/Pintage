@@ -48,7 +48,7 @@ class BoardShow extends React.Component {
     return (
       <div className="board-show">
         <h1>{board.name}</h1>
-        
+
         <button className="hi-arrow-left" onClick={() => this.handleBack()}>
           <HiArrowLeft />
         </button>
@@ -64,6 +64,7 @@ class BoardShow extends React.Component {
               return (
                 <div className="board-show-pin-index" key={pin.id} onClick={() => this.handlePinShow(pin.id)}>
                   <div className="pin-index-image"></div>
+                  {/* <img className="pin-index-photo" src={pin.photoUrl}/> */}
                   <h2 className="pin-index-title">{pin.title}</h2>
                   <p className="pin-index-about">{pin.about}</p>
                 </div>
