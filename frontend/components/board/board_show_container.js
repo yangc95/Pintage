@@ -4,7 +4,6 @@ import BoardShow from './board_show';
 import { fetchPin } from '../../actions/pin_actions';
 
 const mSTP = ({ entities: { boards } }) => {
-  // debugger;
   return {
       board: boards,
   }

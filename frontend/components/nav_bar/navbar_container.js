@@ -6,7 +6,6 @@ import { activeNavbar, inactiveNavbar } from '../../actions/navbar_actions';
 import Navbar from './navbar';
 
 const mSTP = ({ session, entities: { users }, ui: { navbar} }) => {
-  // debugger;
   return {
     session: session.id,
     currentUser: users[session.id],

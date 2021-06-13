@@ -3,7 +3,6 @@ import { merge } from 'lodash';
 import { 
   RECEIVE_PINS,
   RECEIVE_PIN,
-  // RECEIVE_ONE_PIN
 } from '../../actions/pin_actions';
 
 const pinsReducer = (state = {}, action) => {
@@ -15,8 +14,6 @@ const pinsReducer = (state = {}, action) => {
       return Object.assign({}, action.pins);
     case RECEIVE_PIN:
       return Object.assign({}, action.pin)
-    // case RECEIVE_ONE_PIN:
-    //   return Object.assign({}, action.pin)
     default:
       return state;
   }

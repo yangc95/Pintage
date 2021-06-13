@@ -4,17 +4,16 @@ import PinShow from './pin_show';
 import { fetchPin } from '../../actions/pin_actions';
 
 
-const mSTP = ({session, entities: { users, pins } }) => {
-  // debugger;
+const mSTP = ({ session, entities: { users, pins }}) => {
   return {
-      pin: pins,
-      user: users[pins.user_id]
+    pin: pins,
+    user: users[pins.user_id]
   }
 }
 
 const mDTP = dispatch => {
   return {
-      fetchPin: (pinId) => dispatch(fetchPin(pinId)),
+    fetchPin: (pinId) => dispatch(fetchPin(pinId)),
   }
 }
 

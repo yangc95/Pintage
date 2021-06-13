@@ -21,6 +21,7 @@ class PinShow extends React.Component {
             </button>
 
             <div className="pin-show-item">
+              <div className="pin-index-image"></div>
               <img className="pin-index-photo" src={pin.photoUrl}/>
               <h2 className="pin-index-title">{pin.title}</h2>
               <h3>{pin.about}</h3>

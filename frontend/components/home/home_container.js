@@ -8,7 +8,6 @@ import { activeNavbar, inactiveNavbar } from '../../actions/navbar_actions';
 import Home from './home';
 
 const mSTP = ({ session, entities: { users, pins }, ui: { navbar } }) => {
-  // debugger;
   return {
     session: session.id,
     currentUser: users[session.id],
@@ -18,7 +17,6 @@ const mSTP = ({ session, entities: { users, pins }, ui: { navbar } }) => {
 };
 
 const mDTP = dispatch => {
-  // debugger;
 	return {
     fetchPins: () => dispatch(fetchPins()),
     fetchPin: (pinId) => dispatch(fetchPin(pinId)),

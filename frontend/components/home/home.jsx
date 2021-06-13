@@ -12,7 +12,6 @@ class Home extends React.Component {
   }
 
   render() {
-    // debugger;
     let pinIndex = "";
     if (this.props.pins) {
       pinIndex = <PinsIndex

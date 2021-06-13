@@ -4,12 +4,10 @@ import { connect } from 'react-redux';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { createPin } from '../../actions/pin_actions'
 import { fetchBoards } from '../../actions/board_actions';
-// import { fetchPin } from '../../actions/pin_actions';
 
 import PinForm from './pin_form';
 
 const mSTP = ({ session, entities: {users, pins} }) => {
-  // debugger;
   return {
     session: session.id,
     boards: users.boards,

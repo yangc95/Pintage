@@ -12,21 +12,15 @@ import ProfileContainer from './profile/profile_container';
 import BoardShowContainer from './board/board_show_container';
 import PinShowContainer from './pin/pin_show_container';
 import Modal from './ui/modal';
-// import Navbar from './ui/navbar_ui';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {
-  // ;
   return (
     <div>
       <Modal/>
-      {/* <Navbar /> */}
       <header>
-        {/* <Link to="/" className="header-link"> */}
         <NavbarContainer />
-        {/* </Link> */}
       </header>
-      {/* <body> */}
         <Switch>
           <AuthRoute exact path="/" component={Landing} />
           <ProtectedRoute path={`/_saved`} component={ProfileContainer} />
@@ -34,8 +28,7 @@ const App = () => {
           <ProtectedRoute path="/board" component={BoardShowContainer} />
           <ProtectedRoute path="/pin" component={PinShowContainer} />
         </Switch>
-      {/* </body> */}
-    </div>
+=    </div>
   )
 };
 

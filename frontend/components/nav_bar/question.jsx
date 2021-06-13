@@ -1,20 +1,19 @@
 import React from 'react';
 
 class QuestionHelp extends React.component {
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        const { currentUser } = this.props;
-        
+  render() {
+    const { currentUser } = this.props; 
 
-        return (
-            <div>
+    return (
+      <div>
 
-            </div>
-        )
-    }
+      </div>
+    )
+  }
 
 }
 
