@@ -48,4 +48,50 @@ timeAgo(time) {
 }
 ```
 
-* Add info about mosaic layout
+Utilizing [React Masonary](https://www.npmjs.com/package/react-masonry-css) allowed for an efficient execution of the classic masonary layout. To use this package, simply run ```npm install react-masonary-css``` in your main project directory or add ```react-masonary-css``` to your dependencies in your ```package.json``` file.
+
+The functional component utilizes the ```<Masonary> </Masonary>``` tag to set a ```breakpoints``` object that sets a certain width in pixels to the number of items per row.
+
+```
+import Masonry from 'react-masonry-css';
+
+export default ({ pins, currentUser, session, history }) => {
+  const breakpoints = {
+    default: 10,
+    2645: 9,
+    2385: 8,
+    2125: 7,
+    1830: 6,
+    1570: 5,
+    1345: 4,
+    1085: 3,
+    825: 2,
+    565: 1 
+  }
+  
+  return (
+    <Masonry 
+      breakpointCols={breakpoints}
+      className="my-masonry-grid"
+      columnClassName="my-masonry-grid_column">
+        {
+          pins.map(pin => {
+            return (
+              <div className="pin-index-div" key={pin.id}>
+                <img className="pin-index-photo" src={pin.photoUrl} onClick={() => handlePinShow(pin.id)}/>
+                <h2 className="pin-index-title">{pin.title}</h2>
+                
+                <div className="profile-button-div">
+                  <button className="profile-button">
+                    {pin.user_id === session ? currentUser.username.split("")[0] : "O"}
+                  </button>
+                  <span>{pin.user_id === session ? currentUser.username : "OtherUser"}</span>
+                </div>
+              </div>
+            )
+          })
+        } 
+    </Masonry>
+  )
+}
+```
