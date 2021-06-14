@@ -28,7 +28,7 @@ const App = () => {
           <ProtectedRoute path="/board" component={BoardShowContainer} />
           <ProtectedRoute path="/pin" component={PinShowContainer} />
         </Switch>
-=    </div>
+    </div>
   )
 };
 
