@@ -19,7 +19,8 @@ class Home extends React.Component {
         currentUser={this.props.currentUser}
         session={this.props.session}
         fetchPin={this.props.fetchPin}
-        history={this.props.history}/>
+        history={this.props.history}
+        boards={this.props.boards}/>
     }
 
     return (

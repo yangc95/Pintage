@@ -7,9 +7,6 @@ import { HiArrowLeft } from 'react-icons/hi';
 class BoardShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      // pins: []
-    };
     this.handleBack = this.handleBack.bind(this);
     this.handlePinShow = this.handlePinShow.bind(this);
   }
@@ -26,17 +23,15 @@ class BoardShow extends React.Component {
 
   render() {
     const { board } = this.props;
-    // debugger;
+
     let pinNum = '';
     let pinArray = [];
-    // console.log(pinArray)
+
     if (board.pins) {
       let pinKeys = Object.keys(board.pins);
       pinNum = pinKeys.length;
       pinKeys.forEach(key => pinArray.push(board.pins[key]));
     };
-    // if (pinArray) {this.setState({pins: pinArray})}
-    // console.log(pinArray)
 
     const breakpoints = {
     default: 4,

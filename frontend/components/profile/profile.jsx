@@ -2,7 +2,7 @@ import React from 'react';
 import { HiPlus } from 'react-icons/hi';
 import { BsQuestion } from 'react-icons/bs';
 
-import BoardIndex from './board_index';
+import BoardIndex from '../board/board_index';
 
 class Profile extends React.Component {
   constructor(props) {

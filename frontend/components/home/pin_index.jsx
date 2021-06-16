@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Masonry from 'react-masonry-css';
 
 import {fetchPin} from '../../actions/pin_actions';
 
-export default ({ pins, currentUser, session, history }) => {
+export default ({ pins, currentUser, session, history, boards }) => {
   const breakpoints = {
     default: 10,
     2645: 9,
@@ -20,6 +20,13 @@ export default ({ pins, currentUser, session, history }) => {
   const handlePinShow = (pinId) => {
     dispatch(fetchPin(pinId)).then(() => history.push(`/pin/${pinId}`))
   }
+
+  // useEffect() {
+
+  // }
+
+  let boardsArray = [];
+  Object.keys(boards).forEach(boardId => boardsArray.push(boards[boardId]));
  
   return (
     <Masonry
@@ -40,6 +47,31 @@ export default ({ pins, currentUser, session, history }) => {
                   </button>
                   <span>{pin.user_id === session ? currentUser.username : "OtherUser"}</span>
                 </div>
+
+                <div className="pin-form-board-save">
+                  <label>
+                    <select 
+                      className="pin-input-board"
+                      // value={board_id}
+                      // onChange={this.update('board_id')}
+                   >
+                    {
+                      boardsArray.map(board => {
+                          return (
+                            <option 
+                              key={board.id} 
+                              value={board.id}
+                            >
+                              {board.name}
+                            </option>
+                          )
+                      })
+                    }
+                  </select>
+                </label>
+                <button className="pin-input-button">Save</button>
+
+                </div>  
               </div>
             )
           })
@@ -47,4 +79,3 @@ export default ({ pins, currentUser, session, history }) => {
     </Masonry>
   )
 }
-

@@ -131,3 +131,16 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.pin-index-div
+.pin-form-board-save {
+  position: fixed;
+  visibility: hidden;
+}
+
+.pin-index-div:hover  
+.pin-form-board-save {
+  visibility: unset;
+  position: fixed;
+  transform: translate(9%, -646%);
+}

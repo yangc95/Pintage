@@ -12,7 +12,8 @@ const mSTP = ({ session, entities: { users, pins }, ui: { navbar } }) => {
     session: session.id,
     currentUser: users[session.id],
     pins: Object.values(pins),
-    navbar
+    boards: Object.values(users[session.id].boards),
+    navbar,
   };
 };
 
