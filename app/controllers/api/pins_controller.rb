@@ -21,17 +21,18 @@ class Api::PinsController < ApplicationController
     end
     
     def update
+        debugger;
         @pin = Pin.find(params[:id])
-        if @pin && @pin.update(pin_params)
-            render :show
+        if @pin && @pin.update(board_id: params[:board_id])
+            render "api/pins/show"
         else
             render json: ["Pin not found"]
         end
     end
 
     def destroy
-        @pin = Pin.find(params[:id])
-        @board = Board.find_by(board_id: params[:board_id])
+        @pin = Pin.find_by(id: params[:id])
+        @board = Board.find_by(id: @pin.board_id)
 
         if @pin.destroy
             render "api/boards/show"

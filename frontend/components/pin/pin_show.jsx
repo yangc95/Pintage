@@ -16,6 +16,8 @@ class PinShow extends React.Component {
   }
 
   handleBack() {
+    // this.props.fetchBoards()
+    //   .then(() => this.props.history.push('/_saved'))
     this.props.history.push('/_saved')
   }
 
@@ -50,7 +52,7 @@ class PinShow extends React.Component {
 
             {
               pin.user_id === session ?
-                <span className="edit-delete">
+                <span className="edit-delete" key={pin.id}>
                   <button onClick={() => this.handleDeletePin()} className="pin-show-delete">Delete Pin</button>
                   <p className="edit-delete-info">Are you sure?</p>
                   <p className="edit-delete-info">Once you delete a Pin, you can't undo it!</p> 

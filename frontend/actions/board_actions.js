@@ -4,6 +4,8 @@ export const RECEIVE_BOARDS = 'RECEIVE_BOARDS'
 export const RECEIVE_NEW_BOARD = 'RECEIVE_NEW_BOARD'
 export const RECEIVE_BOARD = 'RECEIVE_BOARD'
 export const REMOVE_BOARD = 'REMOVE_BOARD'
+export const RECEIVE_FORM_ERRORS = 'RECEIVE_FORM_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 export const receiveBoards = boards => ({
   type: RECEIVE_BOARDS,
@@ -25,6 +27,15 @@ export const removeBoard = boards => ({
   boards
 });
 
+export const receiveErrors = errors => ({
+  type: RECEIVE_FORM_ERRORS,
+  errors
+});
+
+export const clearErrors = () => ({
+    type: CLEAR_ERRORS
+})
+
 export const fetchBoards = userId => dispatch => (
     BoardAPIUtil.fetchBoards(userId).then(boards => {
       return (
@@ -42,13 +53,16 @@ export const fetchBoard = boardId => dispatch => (
 export const createBoard = board => dispatch => (
   BoardAPIUtil.createBoard(board).then(board => (
     dispatch(receiveNewBoard(board))
-  ), err => (null))
+  ), err => (dispatch(receiveErrors(err.responseJSON))
+  ))
 )
 
 export const editBoard = board => dispatch => (
   BoardAPIUtil.editBoard(board).then(boards => (
     dispatch(receiveBoards(boards))
-  ), err => (null))
+  ), err => (
+    dispatch(receiveErrors(err.responseJSON))
+  ))
 )
 
 export const destroyBoard = board => dispatch => (

@@ -1,8 +1,4 @@
 import React from 'react';
-import {
-  Link, 
-  Route,
-  Redirect} from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -14,6 +10,10 @@ class SessionForm extends React.Component {
 	  };
 	this.handleSubmit = this.handleSubmit.bind(this);
 	this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
+  }
+
+  componentWillUnmount() {
+	this.props.clearErrors();
   }
 
   update(field) {
@@ -36,21 +36,21 @@ class SessionForm extends React.Component {
 	  .then(this.props.closeModal)
   }
 
-  renderErrors() {
-	const { errors } = this.props;
-	return(
-	  <ul>
-		{errors.map((error, i) => (
-		<li key={`error-${i}`}>
-		  {error}
-		</li>
-		))}
-	  </ul>
-	);
-  }
+//   renderErrors() {
+// 	const { errors } = this.props;
+// 	return(
+// 	  <ul>
+// 		{errors.map((error, i) => (
+// 		<li key={`error-${i}`}>
+// 		  {error}
+// 		</li>
+// 		))}
+// 	  </ul>
+// 	);
+//   }
 
   render() {
-	const { formType, otherForm, closeModal } = this.props; 
+	const { formType, otherForm, closeModal, errors } = this.props; 
 	const { username, email, password } = this.state;
 
 	let emailLabel = "";
@@ -79,6 +79,7 @@ class SessionForm extends React.Component {
 
 		  <div className="input">
 			{emailLabel}
+			<div className="errors">{errors.email}</div>
 
 			<label>
 			  <input 
@@ -88,7 +89,7 @@ class SessionForm extends React.Component {
 				placeholder="Username"
 			  />
 			</label>
-			<div className="errors">{this.renderErrors()}</div>
+			<div className="errors">{errors.username ? errors.username : errors}</div>
 
 			<label>
 			  <input 
@@ -98,6 +99,7 @@ class SessionForm extends React.Component {
 				placeholder="Password"
 			  />
 			</label>
+			<div className="errors">{errors.password}</div>
 		  </div>
 
 		  <button className="submit" type="submit">Continue</button>

@@ -5,9 +5,10 @@ import { fetchBoards, createBoard } from '../../actions/board_actions';
 
 import BoardForm from './board_form';
 
-const mSTP = ({ session }) => {
+const mSTP = ({ session, errors: { forms } }) => {
   return {
     session: session.id,
+    forms
   };
 };
 

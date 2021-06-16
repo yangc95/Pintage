@@ -9,6 +9,7 @@ import {
 
 import { signup } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
+import { clearErrors } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 const mSTP = ({entities, errors, session}) => {
@@ -27,7 +28,8 @@ const mDTP = dispatch => {
 		Already a member? Log in
 	  </button>
 	),
-	closeModal: () => dispatch(closeModal())
+	closeModal: () => dispatch(closeModal()),
+	clearErrors: () => dispatch(clearErrors())
   };
 };
 

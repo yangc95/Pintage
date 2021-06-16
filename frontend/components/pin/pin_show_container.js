@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'; 
 import PinShow from './pin_show';
 import { fetchPin, destroyPin } from '../../actions/pin_actions';
+import { fetchBoards } from '../../util/board_api_util';
 
 
 const mSTP = ({ session, entities: { users, pins }}) => {
@@ -15,7 +16,8 @@ const mSTP = ({ session, entities: { users, pins }}) => {
 const mDTP = dispatch => {
   return {
     fetchPin: (pinId) => dispatch(fetchPin(pinId)),
-    destroyPin: (pin) => dispatch(destroyPin(pin))
+    destroyPin: (pin) => dispatch(destroyPin(pin)),
+    fetchBoards: () => dispatch(fetchBoards)
   }
 }
 

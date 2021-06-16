@@ -12,9 +12,10 @@ class BoardForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
     const board = Object.assign({}, this.state);
     this.props.createBoard({ board })
-      .then(this.props.closeModal())
+      .then(() => this.props.closeModal())
     this.setState({
       name: "",
       user_id: this.props.session
@@ -29,6 +30,7 @@ class BoardForm extends React.Component {
 
   render () {
     const { name } = this.state;
+    const { forms } = this.props;
 
     return (
       <div>
@@ -42,6 +44,7 @@ class BoardForm extends React.Component {
               onChange={this.update('name')}
               placeholder='Like "Places to Go" or "Recipes to Make"'
             />
+            {forms.name}
           </label>
           <button className="board-form-button">Create</button>
         </form>

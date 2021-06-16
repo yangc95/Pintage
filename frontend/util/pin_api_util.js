@@ -22,6 +22,14 @@ export const createPin = (pin) => (
     })
 );
 
+export const editPin = (pin) => (
+    $.ajax({
+        method: 'PATCH',
+        url:`/api/pins/${pin.id}`,
+        data: pin
+    })
+);
+
 export const destroyPin = (pin) => (
     $.ajax({
         method: 'DELETE',

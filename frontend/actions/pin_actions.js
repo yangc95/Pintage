@@ -1,5 +1,4 @@
 import * as PinAPIUtil from '../util/pin_api_util';
-import { receiveBoard, REMOVE_BOARD } from './board_actions';
 
 export const RECEIVE_PINS = 'RECEIVE_PINS';
 export const RECEIVE_PIN = 'RECEIVE_PIN';
@@ -43,6 +42,14 @@ export const createPin = pin => dispatch => (
     dispatch(receivePin(pin))
   ), err => (null))
 );
+
+export const editPin = pin => dispatch => (
+  PinAPIUtil.editPin(pin).then(pin => (
+    dispatch(receivePin(pin))
+  ), err => (
+    null
+  ))
+)
 
 export const destroyPin = pin => dispatch => (
   PinAPIUtil.destroyPin(pin).then(board => (

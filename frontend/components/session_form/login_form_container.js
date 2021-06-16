@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { login } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
+import { clearErrors } from '../../actions/session_actions';
 import SessionForm from './session_form';
 import { withRouter } from 'react-router-dom'
 
@@ -20,7 +21,8 @@ const mDTP = dispatch => {
         Not on Pinterest yet? Sign up
       </button>
     ),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    clearErrors: () => dispatch(clearErrors())
   };
 };
 

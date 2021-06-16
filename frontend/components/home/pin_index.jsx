@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import Masonry from 'react-masonry-css';
 
-import {fetchPin} from '../../actions/pin_actions';
+import { fetchPin } from '../../actions/pin_actions';
+import { editPin } from '../../actions/pin_actions';
 
 export default ({ pins, currentUser, session, history, boards }) => {
   const breakpoints = {
@@ -16,17 +17,22 @@ export default ({ pins, currentUser, session, history, boards }) => {
     825: 2,
     565: 1 
   }
+  
+  let boardsArray = [];
+  Object.keys(boards).forEach(boardId => boardsArray.push(boards[boardId]));
+  const [ allBoards ] = React.useState(boardsArray);
+  const [ value, setValue ] = React.useState('1');
 
   const handlePinShow = (pinId) => {
     dispatch(fetchPin(pinId)).then(() => history.push(`/pin/${pinId}`))
   }
 
-  // useEffect() {
+  const handleBoardSave = (pin) => {
+    // debugger;
+    // Need to add a joins table in backend
+    // dispatch(editPin(pin)).then(() => history.push('/_saved'))
+  }
 
-  // }
-
-  let boardsArray = [];
-  Object.keys(boards).forEach(boardId => boardsArray.push(boards[boardId]));
  
   return (
     <Masonry
@@ -48,30 +54,22 @@ export default ({ pins, currentUser, session, history, boards }) => {
                   <span>{pin.user_id === session ? currentUser.username : "OtherUser"}</span>
                 </div>
 
-                <div className="pin-form-board-save">
+                <form className="pin-form-board-save">
                   <label>
-                    <select 
-                      className="pin-input-board"
-                      // value={board_id}
-                      // onChange={this.update('board_id')}
-                   >
-                    {
-                      boardsArray.map(board => {
-                          return (
-                            <option 
-                              key={board.id} 
-                              value={board.id}
-                            >
-                              {board.name}
-                            </option>
-                          )
-                      })
-                    }
-                  </select>
-                </label>
-                <button className="pin-input-button">Save</button>
+                    <select className="pin-input-board" value={value} onChange={e => setValue(e.currentTarget.value)}>
+                      {allBoards.map(({ id, name }) => (
+                        <option
+                          key={id}
+                          value={id}
+                        >
+                          {name}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                  <button className="pin-input-button" onClick={() => handleBoardSave(pin)}>Save</button>
 
-                </div>  
+                </form>  
               </div>
             )
           })
