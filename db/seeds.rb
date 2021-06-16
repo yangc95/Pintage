@@ -24,12 +24,17 @@ b = Board.create(name: "Saved", user_id: 1)
 b1 = Board.create(name: "Travel", user_id: 1)
 
 p1 = Pin.create!(title: "Japanese Night Walk", about: "Nice night", user_id: 1, board_id: 1)
-file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel.jpg")
-p1.photo.attach(io: file, filename: "travel.jpg")
+# file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel.jpg")
+# p1.photo.attach(io: file, filename: "travel.jpg")
 
 p2 = Pin.create!(title: "Japan Alter", about: "Sights", user_id: 1, board_id: 1)
-file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel1.jpg")
-p2.photo.attach(io: file, filename: "travel1.jpg")
+# file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel1.jpg")
+# p2.photo.attach(io: file, filename: "travel1.jpg")
+
+p3 = Pin.create!(title: "Hills", about: "Over the mountain and through the woods", user_id: 1, board_id: 2)
+# file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel12.jpg")
+# p3.photo.attach(io: file, filename: "travel12.jpg")
+
 
 # p = Pin.create(title: "Japan Day Walk", about: "Sights", user_id: 1, board_id: 1)
 # file /= URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel2.jpg")
@@ -39,9 +44,6 @@ p2.photo.attach(io: file, filename: "travel1.jpg")
 # file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel3.jpg")
 # p.photo.attach(io: file, filename: "travel3.jpg")
 
-p3 = Pin.create!(title: "Hills", about: "Over the mountain and through the woods", user_id: 1, board_id: 2)
-file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel12.jpg")
-p3.photo.attach(io: file, filename: "travel12.jpg")
 
 # p = Pin.create(title: "Concert", about: "Lights galore", user_id: 1, board_id: 2)
 # file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel10.jpg")
@@ -62,8 +64,8 @@ p3.photo.attach(io: file, filename: "travel12.jpg")
 #     {id: 7, title: "Gluten-free Waffles", about: "Yummy cinnamon butter crispy waffle with fruit", user_id: 1, board_id: 1},
 # ])
 
-# b = Board.create(name: "Saved", user_id: 2)
-# pins = Pin.create([
-#     {title: "Pin1", about: "Nicely battered crispy crunch", user_id: 2, board_id: 3},
-#     {title: "Pin2", about: "So light, fluffy, and creamy frosting", user_id: 2, board_id: 3},
-# ])
+b = Board.create(name: "Saved", user_id: 2)
+pins = Pin.create([
+    {title: "Pin1", about: "Nicely battered crispy crunch", user_id: 2, board_id: 3},
+    {title: "Pin2", about: "So light, fluffy, and creamy frosting", user_id: 2, board_id: 3},
+])

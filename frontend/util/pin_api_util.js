@@ -21,6 +21,14 @@ export const createPin = (pin) => (
         processData: false
     })
 );
+
+export const destroyPin = (pin) => (
+    $.ajax({
+        method: 'DELETE',
+        url:`/api/pins/${pin.id}`
+    })
+)
+
 // export const fetchUserPins = userId => (
 //     $.ajax({
 //         method: 'GET',

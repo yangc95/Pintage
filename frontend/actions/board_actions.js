@@ -45,6 +45,12 @@ export const createBoard = board => dispatch => (
   ), err => (null))
 )
 
+export const editBoard = board => dispatch => (
+  BoardAPIUtil.editBoard(board).then(boards => (
+    dispatch(receiveBoards(boards))
+  ), err => (null))
+)
+
 export const destroyBoard = board => dispatch => (
   BoardAPIUtil.destroyBoard(board).then(boards => (
     dispatch(removeBoard(boards))))

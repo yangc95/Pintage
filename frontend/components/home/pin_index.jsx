@@ -22,7 +22,7 @@ export default ({ pins, currentUser, session, history }) => {
   }
  
   return (
-    <Masonry 
+    <Masonry
       breakpointCols={breakpoints}
       className="my-masonry-grid"
       columnClassName="my-masonry-grid_column">

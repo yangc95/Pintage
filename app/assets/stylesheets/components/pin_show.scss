@@ -29,4 +29,22 @@
   box-shadow: 0px 0px 10px 1px rgb(196, 195, 195);
   border-radius: 3em;
   margin: 0 50px 0 50px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+
+  .pin-index-image {
+    width: 35em;
+    height: 49em;
+  }
+
+  .pin-index-title {
+    font-size: 36px;
+  }
+}
+
+.pin-show-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
 }

@@ -19,12 +19,14 @@ class Api::BoardsController < ApplicationController
         end
     end
 
-    def edit
-        @board = Board.find_by(id: params[:id])
-        if @board.save
-            render "api/users/index"
+    def update
+        @board = Board.find(params[:id])
+        @user = User.find(@board.user_id)
+
+        if @board && @board.update(name: params[:name])
+            render "api/users/show"
         else
-            render json: ["Board not found"]
+            render json: ["Could not edit board"]
         end
     end
     
@@ -42,7 +44,7 @@ class Api::BoardsController < ApplicationController
     private
     
     def board_params
-        params.require(:board).permit(:name, :user_id);
+        params.require(:board).permit(:id, :name, :user_id);
     end
 end
 

@@ -31,9 +31,10 @@ class Api::PinsController < ApplicationController
 
     def destroy
         @pin = Pin.find(params[:id])
-        
+        @board = Board.find_by(board_id: params[:board_id])
+
         if @pin.destroy
-            render "api/pins/show"
+            render "api/boards/show"
         end
     end
 

@@ -87,7 +87,11 @@
   cursor: pointer;
 }
 
-.pin-index-div .profile-button {
+.pin-index-div
+.profile-button {
+  margin-left: 20px;
+}
+.profile-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,7 +103,6 @@
   width: 30px;
   border-radius: 50%;
   margin-right: 10px;
-  margin-left: 20px;
   margin-top: 5px;
 }
 
