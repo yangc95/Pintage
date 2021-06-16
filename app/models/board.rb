@@ -6,8 +6,11 @@ class Board < ApplicationRecord
     belongs_to :user,
         foreign_key: :user_id,
         class_name: :User
-    has_many :pins,
+    has_many :pin_boards,
+        primary_key: :id,
         foreign_key: :board_id,
-        class_name: :Pin
-        
+        class_name: :PinBoard
+    has_many :pins,
+        through: :pin_boards, 
+        source: :pin
 end
