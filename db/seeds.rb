@@ -26,16 +26,16 @@ b = Board.create(name: "Saved", user_id: 1)
 b1 = Board.create(name: "Travel", user_id: 1)
 
 p1 = Pin.create!(title: "Japanese Night Walk", about: "Nice night", user_id: 1)
-# file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel.jpg")
-# p1.photo.attach(io: file, filename: "travel.jpg")
+file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel.jpg")
+p1.photo.attach(io: file, filename: "travel.jpg")
 
-# p2 = Pin.create!(title: "Japan Alter", about: "Sights", user_id: 1)
-# file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel1.jpg")
-# p2.photo.attach(io: file, filename: "travel1.jpg")
+p2 = Pin.create!(title: "Japan Alter", about: "Sights", user_id: 1)
+file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel1.jpg")
+p2.photo.attach(io: file, filename: "travel1.jpg")
 
-# p3 = Pin.create!(title: "Hills", about: "Over the mountain and through the woods", user_id: 1)
-# file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel12.jpg")
-# p3.photo.attach(io: file, filename: "travel12.jpg")
+p3 = Pin.create!(title: "Hills", about: "Over the mountain and through the woods", user_id: 1)
+file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel12.jpg")
+p3.photo.attach(io: file, filename: "travel12.jpg")
 
 # p4 = Pin.create(title: "Japan Day Walk", about: "Sights", user_id: 1)
 # file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel2.jpg")
@@ -50,21 +50,21 @@ p1 = Pin.create!(title: "Japanese Night Walk", about: "Nice night", user_id: 1)
 # p6.photo.attach(io: file, filename: "travel10.jpg")
 
 
-pins = Pin.create([
-    {title: "Korean Corndogs", about: "Nicely battered crispy crunch", user_id: 1},
-    {title: "Spring Cupcakes", about: "So light, fluffy, and creamy frosting", user_id: 1},
-    {title: "More Spring Cupcakes", about: "But from a different angle, haha", user_id: 1},
-    {title: "French Toast", about: "Boozy Sunday Brunch with polaroid", user_id: 1},
-    {title: "Soup Dumplings", about: "Chewy dumpling skin and hot delicious soup inside", user_id: 1},
-    {title: "Gluten-free Waffles", about: "Yummy cinnamon butter crispy waffle with fruit", user_id: 1},
-])
+# pins = Pin.create([
+#     {title: "Korean Corndogs", about: "Nicely battered crispy crunch", user_id: 1},
+#     {title: "Spring Cupcakes", about: "So light, fluffy, and creamy frosting", user_id: 1},
+#     {title: "More Spring Cupcakes", about: "But from a different angle, haha", user_id: 1},
+#     {title: "French Toast", about: "Boozy Sunday Brunch with polaroid", user_id: 1},
+#     {title: "Soup Dumplings", about: "Chewy dumpling skin and hot delicious soup inside", user_id: 1},
+#     {title: "Gluten-free Waffles", about: "Yummy cinnamon butter crispy waffle with fruit", user_id: 1},
+# ])
 
 pin_boards = PinBoard.create([
     {pin_id: 1, board_id: 1},
     {pin_id: 2, board_id: 1},
     {pin_id: 2, board_id: 2},
     {pin_id: 3, board_id: 2},
-    {pin_id: 4, board_id: 2},
+    # {pin_id: 4, board_id: 2},
 ])
 
 # b = Board.create(name: "Saved", user_id: 2)

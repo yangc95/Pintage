@@ -9,7 +9,8 @@ class Board < ApplicationRecord
     has_many :pin_boards,
         primary_key: :id,
         foreign_key: :board_id,
-        class_name: :PinBoard
+        class_name: :PinBoard,
+        dependent: :destroy
     has_many :pins,
         through: :pin_boards, 
         source: :pin

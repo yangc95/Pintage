@@ -24,7 +24,9 @@ class PinShow extends React.Component {
   handleDeletePin() {
     const { destroyPin } = this.props;
     destroyPin(this.state)
-      .then(() => this.handleBack())
+      .then(() => {
+        this.handleBack()
+      })
   }
 
   render() {
@@ -37,8 +39,8 @@ class PinShow extends React.Component {
         </button>
 
         <div className="pin-show-item">
-          <div className="pin-index-image"></div>
-          {/* <img className="pin-index-photo" src={pin.photoUrl}/> */}
+          {/* <div className="pin-index-image"></div> */}
+          <img className="pin-index-photo" src={pin.photoUrl}/>
           <div className="pin-show-item-info">
             <h2 className="pin-index-title">{pin.title}</h2>
             <h3>{pin.about}</h3>

@@ -52,7 +52,9 @@ class PinForm extends React.Component {
     } else {
       this.props.closeModal()
       this.props.createPin(formData)
-        .then((pin) => {this.props.history.push(`/pin/${pin.id}`)});
+        .then((pin) => {
+          this.props.history.push(`/pin/${pin.id}`)
+        });
     }
   }
 

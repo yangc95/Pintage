@@ -16,7 +16,7 @@ class Api::PinsController < ApplicationController
 
         if @pin.save
             if pin_params[:board_id].present?
-                @pin.pin_boards = PinBoard.create!(pin_id: @pin.id, board_id: pin_params[:board_id])
+                @pin_board = PinBoard.create!(pin_id: @pin.id, board_id: pin_params[:board_id])
             end
             render "api/pins/show"
         else
