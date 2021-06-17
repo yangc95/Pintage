@@ -7,8 +7,17 @@ class Api::PinsController < ApplicationController
     end
 
     def create
-        @pin = Pin.new(pin_params)
+        @pin = Pin.new({
+            title: pin_params[:title], 
+            about: pin_params[:about], 
+            photo: pin_params[:photo], 
+            user_id: pin_params[:user_id]
+        })
+
         if @pin.save
+            if pin_params[:board_id].present?
+                @pin.pin_boards = PinBoard.create!(pin_id: @pin.id, board_id: pin_params[:board_id])
+            end
             render "api/pins/show"
         else
             render json: ["Pin error"]
@@ -31,17 +40,19 @@ class Api::PinsController < ApplicationController
     end
 
     def destroy
+        # debugger;
         @pin = Pin.find_by(id: params[:id])
-        @board = Board.find_by(id: @pin.board_id)
+        @pin_boards = PinBoard.where(pin_id: @pin.id)
+        @user = User.find_by(id: @pin.user_id)
 
         if @pin.destroy
-            render "api/boards/show"
+            render "api/users/show"
         end
     end
 
     private
 
     def pin_params
-        params.require(:pin).permit(:title, :about, :user_id, :board_id, :photo);
+        params.require(:pin).permit(:title, :about, :user_id, :photo, :board_id)
     end
 end

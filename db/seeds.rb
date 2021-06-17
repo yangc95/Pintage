@@ -10,9 +10,11 @@ require 'open-uri'
 User.destroy_all
 Pin.destroy_all
 Board.destroy_all
+PinBoard.destroy_all
 ApplicationRecord.connection.reset_pk_sequence!('users')
 ApplicationRecord.connection.reset_pk_sequence!('pins')
 ApplicationRecord.connection.reset_pk_sequence!('boards')
+ApplicationRecord.connection.reset_pk_sequence!('pin_boards')
 
 users = User.create([
     {username: "DemoUser",  password: "hunter10", email: "test@gmail.com"},
@@ -49,12 +51,12 @@ p1 = Pin.create!(title: "Japanese Night Walk", about: "Nice night", user_id: 1)
 
 
 pins = Pin.create([
-    {id: 2, title: "Korean Corndogs", about: "Nicely battered crispy crunch", user_id: 1},
-    {id: 3, title: "Spring Cupcakes", about: "So light, fluffy, and creamy frosting", user_id: 1},
-    {id: 4, title: "More Spring Cupcakes", about: "But from a different angle, haha", user_id: 1},
-    {id: 5, title: "French Toast", about: "Boozy Sunday Brunch with polaroid", user_id: 1},
-    {id: 6, title: "Soup Dumplings", about: "Chewy dumpling skin and hot delicious soup inside", user_id: 1},
-    {id: 7, title: "Gluten-free Waffles", about: "Yummy cinnamon butter crispy waffle with fruit", user_id: 1},
+    {title: "Korean Corndogs", about: "Nicely battered crispy crunch", user_id: 1},
+    {title: "Spring Cupcakes", about: "So light, fluffy, and creamy frosting", user_id: 1},
+    {title: "More Spring Cupcakes", about: "But from a different angle, haha", user_id: 1},
+    {title: "French Toast", about: "Boozy Sunday Brunch with polaroid", user_id: 1},
+    {title: "Soup Dumplings", about: "Chewy dumpling skin and hot delicious soup inside", user_id: 1},
+    {title: "Gluten-free Waffles", about: "Yummy cinnamon butter crispy waffle with fruit", user_id: 1},
 ])
 
 pin_boards = PinBoard.create([
