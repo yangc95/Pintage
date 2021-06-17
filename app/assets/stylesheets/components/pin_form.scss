@@ -129,18 +129,33 @@
 
 .pin-form-board-save {
   display: flex;
-  justify-content: flex-end;
+  // justify-content: flex-end;
 }
 
 .pin-index-div
 .pin-form-board-save {
   position: fixed;
+  transform: translate(9%, 25%);
+  display: flex;
+  width: 18%;
+  justify-content: space-between;
   visibility: hidden;
+
+  .pin-input-board {
+    background-color: unset;
+    width: 108%;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.4px;
+  }
+
+  .pin-input-button {
+    border-radius: 5em;
+  }
 }
 
 .pin-index-div:hover  
 .pin-form-board-save {
   visibility: unset;
-  position: fixed;
-  // transform: translate(9%, -646%);
 }

@@ -43,17 +43,6 @@ export default ({ pins, currentUser, session, history, boards }) => {
           pins.map(pin => {
             return (
               <div className="pin-index-div" key={pin.id}>
-                {/* <img className="pin-index-photo" src={pin.photoUrl} onClick={() => handlePinShow(pin.id)}/> */}
-                <div className="pin-index-image" onClick={() => handlePinShow(pin.id)}></div>
-                <h2 className="pin-index-title">{pin.title}</h2>
-                
-                <div className="profile-button-div">
-                  <button className="profile-button">
-                    {pin.user_id === session ? currentUser.username.split("")[0] : "O"}
-                  </button>
-                  <span>{pin.user_id === session ? currentUser.username : "OtherUser"}</span>
-                </div>
-
                 <form className="pin-form-board-save">
                   <label>
                     <select className="pin-input-board" value={value} onChange={e => setValue(e.currentTarget.value)}>
@@ -68,8 +57,18 @@ export default ({ pins, currentUser, session, history, boards }) => {
                     </select>
                   </label>
                   <button className="pin-input-button" onClick={() => handleBoardSave(pin)}>Save</button>
-
                 </form>  
+                {/* <img className="pin-index-photo" src={pin.photoUrl} onClick={() => handlePinShow(pin.id)}/> */}
+                <div className="pin-index-image" onClick={() => handlePinShow(pin.id)}></div>
+                <h2 className="pin-index-title">{pin.title}</h2>
+                
+                <div className="profile-button-div">
+                  <button className="profile-button">
+                    {pin.user_id === session ? currentUser.username.split("")[0] : "O"}
+                  </button>
+                  <span>{pin.user_id === session ? currentUser.username : "OtherUser"}</span>
+                </div>
+
               </div>
             )
           })
