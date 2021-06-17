@@ -7,20 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 
-User.destroy_all
+# User.destroy_all
 Pin.destroy_all
 Board.destroy_all
 PinBoard.destroy_all
-ApplicationRecord.connection.reset_pk_sequence!('users')
+# ApplicationRecord.connection.reset_pk_sequence!('users')
 ApplicationRecord.connection.reset_pk_sequence!('pins')
 ApplicationRecord.connection.reset_pk_sequence!('boards')
 ApplicationRecord.connection.reset_pk_sequence!('pin_boards')
 
-users = User.create([
-    {username: "DemoUser",  password: "hunter10", email: "test@gmail.com"},
-    {username: "test1", password: "hunter11", email: "test1@gmail.com"},
-    {username: "test2", password: "hunter12", email: "test2@gmail.com"}
-])
+# users = User.create([
+    # {username: "DemoUser",  password: "hunter10", email: "test@gmail.com"},
+    # {username: "test1", password: "hunter11", email: "test1@gmail.com"},
+    # {username: "test2", password: "hunter12", email: "test2@gmail.com"}
+# ])
 
 b = Board.create(name: "Saved", user_id: 1)
 b1 = Board.create(name: "Travel", user_id: 1)
@@ -37,17 +37,17 @@ p3 = Pin.create!(title: "Hills", about: "Over the mountain and through the woods
 file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel12.jpg")
 p3.photo.attach(io: file, filename: "travel12.jpg")
 
-# p4 = Pin.create(title: "Japan Day Walk", about: "Sights", user_id: 1)
-# file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel2.jpg")
-# p4.photo.attach(io: file, filename: "travel2.jpg")
+p4 = Pin.create(title: "Japan Day Walk", about: "Sights", user_id: 1)
+file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel2.jpg")
+p4.photo.attach(io: file, filename: "travel2.jpg")
 
-# p5 = Pin.create(title: "Japanese Calligraphy", about: "Writing", user_id: 1)
-# file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel3.jpg")
-# p5.photo.attach(io: file, filename: "travel3.jpg")
+p5 = Pin.create(title: "Japanese Calligraphy", about: "Writing", user_id: 1)
+file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel3.jpg")
+p5.photo.attach(io: file, filename: "travel3.jpg")
 
-# p6 = Pin.create(title: "Concert", about: "Lights galore", user_id: 1)
-# file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel10.jpg")
-# p6.photo.attach(io: file, filename: "travel10.jpg")
+p6 = Pin.create(title: "Concert", about: "Lights galore", user_id: 1)
+file = URI.open("https://pin-tage-seeds.s3.amazonaws.com/travel10.jpg")
+p6.photo.attach(io: file, filename: "travel10.jpg")
 
 
 # pins = Pin.create([
