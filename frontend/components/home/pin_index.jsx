@@ -58,8 +58,8 @@ export default ({ pins, currentUser, session, history, boards }) => {
                   </label>
                   <button className="pin-input-button" onClick={() => handleBoardSave(pin)}>Save</button>
                 </form>  
-                <img className="pin-index-photo" src={pin.photoUrl} onClick={() => handlePinShow(pin.id)}/>
-                {/* <div className="pin-index-image" onClick={() => handlePinShow(pin.id)}></div> */}
+                {/* <img className="pin-index-photo" src={pin.photoUrl} onClick={() => handlePinShow(pin.id)}/> */}
+                <div className="pin-index-image" onClick={() => handlePinShow(pin.id)}></div>
                 <h2 className="pin-index-title">{pin.title}</h2>
                 
                 <div className="profile-button-div">
