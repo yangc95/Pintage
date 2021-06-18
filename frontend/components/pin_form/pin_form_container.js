@@ -10,7 +10,7 @@ import PinForm from './pin_form';
 const mSTP = ({ session, entities: {users, pins, boards} }) => {
   return {
     session: session.id,
-    boards,
+    boards: Object.values(boards),
     pins: pins
   };
 };

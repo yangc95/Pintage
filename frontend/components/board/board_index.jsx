@@ -54,11 +54,16 @@ class BoardIndex extends React.Component {
   }
 
   render() {
-    const { boards, lastUpdate } = this.props;
+    // const { boards, lastUpdate } = this.props;
+    const { boards} = this.props;
 
-    const { pinNums } = this.state;
-    let newTimes = lastUpdate.map(time => (this.timeAgo(time)));
-    let pinNumArr = [...pinNums];
+    // const { pinNums } = this.state;
+
+
+    // debugger;
+
+    // let newTimes = lastUpdate.map(time => (this.timeAgo(time)));
+    // let pinNumArr = [...pinNums];
 
     return (
       <div className="profile-div-container">
@@ -69,8 +74,8 @@ class BoardIndex extends React.Component {
               editButton = <button className="board-index-edit" onClick={() => this.handleEdit(board.id)}><HiPencil/></button>;
             };
 
-            let pinNum = pinNumArr.shift() || 0;
-            let newTime = newTimes.shift();
+            // let pinNum = pinNumArr.shift() || 0;
+            // let newTime = newTimes.shift();
 
             return (              
               <li className="board-index-li" key={board.id}>
@@ -78,7 +83,7 @@ class BoardIndex extends React.Component {
                 {editButton}
                 <div className={`board-index-info ${editButton !== "" ? 'other-boards' : ''}`}>
                   <h2 className="board-index-title">{board.name}</h2>
-                  <p>{ pinNum } pins <span className="board-index-time-ago">{ !newTime || newTime.includes("NaN") ? "0s" : newTime }</span></p>
+                  {/* <p>{ pinNum } pins <span className="board-index-time-ago">{ !newTime || newTime.includes("NaN") ? "0s" : newTime }</span></p> */}
                 </div>
               </li>
             );

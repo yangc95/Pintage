@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import { fetchPins, fetchPin } from '../../actions/pin_actions';
-// import { fetchUser } from '../../actions/user_actions';
 import { fetchBoards } from '../../actions/board_actions';
+import { createPinBoard } from '../../actions/pinboard_actions';
 import { activeNavbar, inactiveNavbar } from '../../actions/navbar_actions';
 
 import Home from './home';
@@ -26,6 +26,7 @@ const mDTP = dispatch => {
     fetchBoards: (userId) => dispatch(fetchBoards(userId)),
     activeNavbar: () => dispatch(activeNavbar()),
     inactiveNavbar: () => dispatch(inactiveNavbar()),
+    createPinBoard: (pinId, boardId) => dispatch(createPinBoard)
 	};
 };
 

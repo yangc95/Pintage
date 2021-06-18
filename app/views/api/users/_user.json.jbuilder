@@ -1,8 +1,11 @@
 json.extract! user, :id, :username, :email
 
-json.boards do 
-    json.array! user.boards, :id, :name, :pins, :updated_at
-end
+# user.boards.each do |board|
+#     json.set! board.id do
+#         json.extract! board, :id, :name, :pins, :updated_at
+#     end
+#     # json.array! user.boards, :id, :name, :pins, :updated_at
+# end
 
 # json.pins do 
 #     user.pin_ids

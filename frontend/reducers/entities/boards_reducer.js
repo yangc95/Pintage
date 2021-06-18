@@ -9,7 +9,7 @@ import {
 const boardsReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
-  ;
+  // debugger;
   switch(action.type) {
     case RECEIVE_BOARD:
       return Object.assign({}, newState, action.board)
@@ -18,7 +18,7 @@ const boardsReducer = (state = {}, action) => {
       return newState;
       case RECEIVE_BOARDS:
       // debugger;
-      return Object.assign({}, newState, action.boards.boards);
+      return Object.assign({}, newState, action.boards);
     case REMOVE_BOARD:
       return Object.assign({}, newState, action.boards);      
     default:

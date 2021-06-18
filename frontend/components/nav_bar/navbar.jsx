@@ -12,38 +12,35 @@ class Navbar extends React.Component {
   }
 
   handleProfile() {
+    const { history } = this.props;
+
     this.setState({ home: false });
-    this.props.history.push(`/_saved`);
+    history.push(`/_saved`);
   }
 
   render () {
-    const { session, logout, openModal, navbar, activeNavbar, inactiveNavbar } = this.props;
-    
-    let currentUser = "";
-    if (this.props.currentUser) {
-      currentUser = this.props.currentUser;
-    }
+    const { session, logout, openModal, navbar, currentUser, activeNavbar, inactiveNavbar } = this.props;
+    const { dropdown } = this.state;
 
     let dropdownButton;
-    (this.state.dropdown) ? dropdownButton = 'dropdownActive' : dropdownButton = '' ;
+    (dropdown) ? dropdownButton = 'dropdownActive' : dropdownButton = '' ;
 
     let homeButton;
-    (this.props.navbar) ? homeButton = 'homeActive' : homeButton = '' ; 
+    (navbar) ? homeButton = 'homeActive' : homeButton = '' ; 
 
     let path;
     let pintage;
     if (session) {
       path = "/home";
-      pintage = <button onClick={() => this.setState({home: !this.props.navbar})} className={`nav-home-button ${homeButton}`}>Home</button>
+      pintage = <button onClick={() => this.setState({home: !navbar})} className={`nav-home-button ${homeButton}`}>Home</button>
     } else {
       path = "/"
       pintage = <h1 className="nav-logo">Pintage</h1>
     }
 
-
     const navLeft = 
     <span className="nav-left">
-      <Link className={`nav-home-buttons ${homeButton}`} onClick={() => this.setState({home: this.props.navbar})} to={path} >
+      <Link className={`nav-home-buttons ${homeButton}`} onClick={() => this.setState({home: navbar})} to={path} >
         <img src={window.logoURL}/>
         {pintage}
       </Link>
@@ -54,7 +51,7 @@ class Navbar extends React.Component {
       navRight = 
         <span className="nav-right">
           <ul className="nav-right-icons">
-            <span className={`drop-down-buttons ${dropdownButton}`} onClick={() => this.setState({dropdown: !this.state.dropdown})}> 
+            <span className={`drop-down-buttons ${dropdownButton}`} onClick={() => this.setState({dropdown: !dropdown})}> 
               <button>   
                 <Link onClick={logout} to="/">Log out</Link>
               </button>
@@ -62,7 +59,7 @@ class Navbar extends React.Component {
             <button className={`profile-button`} onClick={() => this.handleProfile()}>
               {currentUser.username.split("")[0]}
             </button>
-            <button className="angle-button" onClick={() => this.setState({dropdown: !this.state.dropdown})}>
+            <button className="angle-button" onClick={() => this.setState({dropdown: !dropdown})}>
               <i className="fas fa-angle-down"/>
             </button>
           </ul>

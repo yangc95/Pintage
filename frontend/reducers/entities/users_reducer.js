@@ -21,12 +21,18 @@ const usersReducer = (state = {}, action) => {
   let newState = merge({}, state);
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
+      debugger;
       return Object.assign({}, newState, { [action.currentUser.id]: action.currentUser } );
     // case RECEIVE_NEW_BOARD:
     //   newState.boards.push(action.board);
     //   return newState;
-    case RECEIVE_BOARDS:
-      return Object.assign({}, newState, action.boards);
+    // case RECEIVE_BOARDS:
+    //   const user = {
+    //     id: action.boards.id,
+    //     email: action.boards.email,
+    //     username: action.boards.username
+    //   };
+    //   return Object.assign({}, newState, action.boards);
     // case REMOVE_BOARD:
     //   return Object.assign({}, newState, action.boards);
     default: 

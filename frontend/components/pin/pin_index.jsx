@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import Masonry from 'react-masonry-css';
 
-import { fetchPin } from '../../actions/pin_actions';
-import { editPin } from '../../actions/pin_actions';
 import PinIndexItem from './pin_index_item';
 
-export default ({ pins, currentUser, session, history, boards }) => {
+export default ({ pins, currentUser, session, history, boards, createPinBoard, fetchPin }) => {
   const breakpoints = {
     default: 10,
     2645: 9,
@@ -26,13 +24,13 @@ export default ({ pins, currentUser, session, history, boards }) => {
   // const [ allBoards, setAllBoards ] = useState(boardsArray);
 
   const handlePinShow = (pinId) => {
-    dispatch(fetchPin(pinId)).then(() => history.push(`/pin/${pinId}`))
+    fetchPin(pinId).then(() => history.push(`/pin/${pinId}`))
   }
 
-  const handleBoardSave = (pin) => {
+  const handleBoardSave = (pin, boardId) => {
     // debugger;
-    // Need to add a joins table in backend
-    dispatch(editPin(pin)).then(() => history.push('/_saved'))
+    createPinBoard(pin.id, boardId);
+    // add some 'successfully added pop-up
   }
 
   return (

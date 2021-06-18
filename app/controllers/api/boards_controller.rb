@@ -2,7 +2,7 @@ class Api::BoardsController < ApplicationController
     def index
         @board = Board.find_by(user_id: params[:user_id])
         @user = User.find(@board.user_id)
-        render "api/users/show"
+        render "api/boards/index"
     end
 
     def show

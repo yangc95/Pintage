@@ -10,19 +10,20 @@ class Profile extends React.Component {
     this.state = {
       dropdown: false,
       question: false,
-      boards: null
+      // boards: null
     }
   }
 
   componentDidMount() {
     this.props.inactiveNavbar();
     this.props.fetchBoards(this.props.session)
-      .then(() => this.setState({ boards: this.props.boards }))
+      // .then(() => this.setState({ boards: this.props.boards }))
   }
  
   render() {
-    const { openModal, currentUser} = this.props;
-    const { boards, dropdown, question } = this.state;
+    // debugger;
+    const { openModal, currentUser, boards } = this.props;
+    const { dropdown, question } = this.state;
     const userEmail = currentUser.email.split("@")[0].split(".").join(""); 
         
     let boardIndex = "";

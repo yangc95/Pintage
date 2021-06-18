@@ -1,16 +1,16 @@
 import React from 'react';
 import { useState } from 'react';
 
-export default ({ pin, boardsArray, handleBoardSave, handlePinShow, session, currentUser}) => { 
+export default ({ pin, boardsArray, handleBoardSave, handlePinShow, session, currentUser }) => { 
   const [ value, setValue ] = useState('1');
-  debugger;
+
   return (    
-    <div className="pin-index-div" key={pin.id}>
+      <div className="pin-index-div" key={pin.id}>
         <form className="pin-form-board-save">
             <label>
             <select className="pin-input-board" value={value} onChange={e => setValue(e.currentTarget.value)}>
                 {boardsArray.map(({ id, name }) => (
-                <option
+                    <option
                     key={id}
                     value={id}>
                     {name}
@@ -18,7 +18,7 @@ export default ({ pin, boardsArray, handleBoardSave, handlePinShow, session, cur
                 ))}
             </select>
             </label>
-            <button className="pin-input-button" onClick={() => handleBoardSave(pin)}>Save</button>
+            <button className="pin-input-button" onClick={() => handleBoardSave(pin, value)}>Save</button>
         </form>  
         {/* <img className="pin-index-photo" src={pin.photoUrl} onClick={() => handlePinShow(pin.id)}/> */}
         <div className="pin-index-image" onClick={() => handlePinShow(pin.id)}></div>

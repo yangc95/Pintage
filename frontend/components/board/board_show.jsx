@@ -2,13 +2,16 @@ import React from 'react';
 import Masonry from 'react-masonry-css';
 import { HiArrowLeft } from 'react-icons/hi';
 
-// import BoardShowItem from './board_show_item';
+import BoardShowItem from './board_show_item';
 
 class BoardShow extends React.Component {
   constructor(props) {
     super(props);
     this.handleBack = this.handleBack.bind(this);
     this.handlePinShow = this.handlePinShow.bind(this);
+  }
+
+  componentWillUnmount() {
   }
 
   handleBack() {
@@ -28,9 +31,8 @@ class BoardShow extends React.Component {
     let pinArray = [];
 
     if (board.pins) {
-      let pinKeys = Object.keys(board.pins);
-      pinNum = pinKeys.length;
-      pinKeys.forEach(key => pinArray.push(board.pins[key]));
+      pinNum = Object.keys(board.pins).length;
+      pinArray = Object.values(board.pins);
     };
 
     const breakpoints = {
@@ -57,18 +59,20 @@ class BoardShow extends React.Component {
           {
             pinArray.map(pin => {
               return (
-                <div className="board-show-pin-index" key={pin.id} onClick={() => this.handlePinShow(pin.id)}>
-                  <div className="pin-index-image"></div>
-                  {/*  */}
-                  {/* <img className="pin-index-photo" src={pin.photoUrl}/> */}
-                  <h2 className="pin-index-title">{pin.title}</h2>
-                  <p className="pin-index-about">{pin.about}</p>
-                </div>
+                <BoardShowItem
+                  pin={pin}
+                />
+                // <div className="board-show-pin-index" key={pin.id} onClick={() => this.handlePinShow(pin.id)}>
+                //   <div className="pin-index-image"></div>
+                //   {/*  */}
+                //   {/* <img className="pin-index-photo" src={pin.photoUrl}/> */}
+                //   <h2 className="pin-index-title">{pin.title}</h2>
+                //   <p className="pin-index-about">{pin.about}</p>
+                // </div>
               )
             })
           }
         </Masonry>
-
       </div>
     )
   }

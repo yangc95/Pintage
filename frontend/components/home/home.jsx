@@ -7,22 +7,29 @@ class Home extends React.Component {
   }
 
   componentDidMount () {
-    this.props.activeNavbar();
-    this.props.fetchBoards(this.props.currentUser.id)
-      .then(() => this.props.fetchPins());
+    const { activeNavbar, fetchBoards, fetchPins, currentUser } = this.props;
+
+    activeNavbar();
+    fetchBoards(currentUser.id)
+      .then(() => fetchPins());
   }
 
   render() {
+    const { pins, boards, currentUser, session, fetchPin, history, createPinBoard} = this.props;
     // debugger;
+    
+    // Object.keys(boards).forEach( key => { if (typeof boards[key] !== 'object') delete boards[key] })
+
     let pinIndex = "";
-    if (this.props.pins && this.props.boards) {
+    if (pins && boards) {
       pinIndex = <PinsIndex
-        pins={this.props.pins}
-        currentUser={this.props.currentUser}
-        session={this.props.session}
-        fetchPin={this.props.fetchPin}
-        history={this.props.history}
-        boards={this.props.boards}/>
+        pins={pins}
+        currentUser={currentUser}
+        session={session}
+        fetchPin={fetchPin}
+        history={history}
+        boards={boards}
+        createPinBoard={createPinBoard}/>
     }
 
     return (
