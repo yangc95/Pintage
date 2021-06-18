@@ -5,12 +5,12 @@ import { activeNavbar, inactiveNavbar } from '../../actions/navbar_actions';
 import { fetchBoards } from '../../actions/board_actions';
 import Profile from './profile';
 
-const mSTP = ({ session, entities: { users }}) => {
+const mSTP = ({ session, entities: { users, boards }}) => {
   // debugger;
   return {
     session: session.id,
     currentUser: users[session.id],
-    boards: users.boards,
+    boards: Object.values(boards),
     pinNums: (Object.keys(users[session.id].boards)).map(key => (
       users[session.id].boards[key].pins.length
     )),

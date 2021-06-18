@@ -5,13 +5,13 @@ import { fetchPin } from '../../actions/pin_actions';
 
 const mSTP = ({ entities: { boards } }) => {
   return {
-      board: boards,
+    board: boards,
   }
 }
 
 const mDTP = dispatch => {
   return {
-    fetchPin: (pinId) => dispatch(fetchPin(pinId)),
+    fetchPin: (pinId) => dispatch(fetchPin(pinId))
   }
 }
 

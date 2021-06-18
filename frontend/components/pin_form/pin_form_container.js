@@ -7,10 +7,10 @@ import { fetchBoards } from '../../actions/board_actions';
 
 import PinForm from './pin_form';
 
-const mSTP = ({ session, entities: {users, pins} }) => {
+const mSTP = ({ session, entities: {users, pins, boards} }) => {
   return {
     session: session.id,
-    boards: users.boards,
+    boards,
     pins: pins
   };
 };

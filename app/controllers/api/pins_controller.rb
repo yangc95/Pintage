@@ -10,7 +10,7 @@ class Api::PinsController < ApplicationController
         @pin = Pin.new({
             title: pin_params[:title], 
             about: pin_params[:about], 
-            photo: pin_params[:photo], 
+            photo: pin_params[:photo],
             user_id: pin_params[:user_id]
         })
 
@@ -30,7 +30,6 @@ class Api::PinsController < ApplicationController
     end
     
     def update
-        debugger;
         @pin = Pin.find(params[:id])
         if @pin && @pin.update(board_id: params[:board_id])
             render "api/pins/show"

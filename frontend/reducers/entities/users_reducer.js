@@ -22,13 +22,13 @@ const usersReducer = (state = {}, action) => {
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
       return Object.assign({}, newState, { [action.currentUser.id]: action.currentUser } );
-    case RECEIVE_NEW_BOARD:
-      newState.boards.push(action.board);
-      return newState;
+    // case RECEIVE_NEW_BOARD:
+    //   newState.boards.push(action.board);
+    //   return newState;
     case RECEIVE_BOARDS:
       return Object.assign({}, newState, action.boards);
-    case REMOVE_BOARD:
-      return Object.assign({}, newState, action.boards);
+    // case REMOVE_BOARD:
+    //   return Object.assign({}, newState, action.boards);
     default: 
       return state;
   }

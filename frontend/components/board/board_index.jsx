@@ -55,7 +55,7 @@ class BoardIndex extends React.Component {
 
   render() {
     const { boards, lastUpdate } = this.props;
-    
+
     const { pinNums } = this.state;
     let newTimes = lastUpdate.map(time => (this.timeAgo(time)));
     let pinNumArr = [...pinNums];

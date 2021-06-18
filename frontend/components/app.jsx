@@ -14,7 +14,7 @@ import PinShowContainer from './pin/pin_show_container';
 import Modal from './ui/modal';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
-const App = () => {
+const App = () => { 
   return (
     <div>
       <Modal/>

@@ -1,7 +1,9 @@
 class Api::UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
+		
 		if @user.save
+			@board = Board.create!(name: "Saved", user_id: @user.id)
 			login(@user)
 			render "api/users/show"
 		else
