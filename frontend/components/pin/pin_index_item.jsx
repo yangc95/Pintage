@@ -2,23 +2,23 @@ import React from 'react';
 import { useState } from 'react';
 
 export default ({ pin, boardsArray, handleBoardSave, handlePinShow, session, currentUser }) => { 
-  const [ value, setValue ] = useState('1');
-
+  const [ value, setValue ] = useState(boardsArray[0].id);
+  
   return (    
       <div className="pin-index-div" key={pin.id}>
         <form className="pin-form-board-save">
             <label>
             <select className="pin-input-board" value={value} onChange={e => setValue(e.currentTarget.value)}>
                 {boardsArray.map(({ id, name }) => (
-                    <option
+                  <option
                     key={id}
                     value={id}>
                     {name}
-                </option>
+                  </option>
                 ))}
             </select>
             </label>
-            <button className="pin-input-button" onClick={() => handleBoardSave(pin, value)}>Save</button>
+            <button className="pin-input-button" onClick={() => handleBoardSave({ pin_id: pin.id, board_id: value })}>Save</button>
         </form>  
         {/* <img className="pin-index-photo" src={pin.photoUrl} onClick={() => handlePinShow(pin.id)}/> */}
         <div className="pin-index-image" onClick={() => handlePinShow(pin.id)}></div>

@@ -1,7 +1,7 @@
-export const createPinBoard = (pinId, boardId) => (
+export const createPinBoard = (pinboard) => (
     $.ajax({
         method: 'POST',
-        url:`/api/pinboards`,
-        data: board
+        url:`/api/pin_boards`,
+        data: pinboard
     })
 )

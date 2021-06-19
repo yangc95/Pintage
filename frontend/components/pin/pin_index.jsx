@@ -27,12 +27,13 @@ export default ({ pins, currentUser, session, history, boards, createPinBoard, f
     fetchPin(pinId).then(() => history.push(`/pin/${pinId}`))
   }
 
-  const handleBoardSave = (pin, boardId) => {
+  const handleBoardSave = (pinboard) => {
     // debugger;
-    createPinBoard(pin.id, boardId);
+    createPinBoard(pinboard);
     // add some 'successfully added pop-up
   }
 
+  // debugger;
   return (
     <Masonry
       breakpointCols={breakpoints}
@@ -42,6 +43,7 @@ export default ({ pins, currentUser, session, history, boards, createPinBoard, f
           pins.map(pin => {
             return (
               <PinIndexItem 
+                key={pin.id}
                 pin={pin}
                 boardsArray={boardsArray}
                 handleBoardSave={handleBoardSave}

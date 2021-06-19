@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 
-# User.destroy_all
+User.destroy_all
 Pin.destroy_all
 Board.destroy_all
 PinBoard.destroy_all
-# ApplicationRecord.connection.reset_pk_sequence!('users')
+ApplicationRecord.connection.reset_pk_sequence!('users')
 ApplicationRecord.connection.reset_pk_sequence!('pins')
 ApplicationRecord.connection.reset_pk_sequence!('boards')
 ApplicationRecord.connection.reset_pk_sequence!('pin_boards')

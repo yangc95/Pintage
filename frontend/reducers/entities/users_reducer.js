@@ -21,7 +21,7 @@ const usersReducer = (state = {}, action) => {
   let newState = merge({}, state);
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
-      debugger;
+      // debugger;
       return Object.assign({}, newState, { [action.currentUser.id]: action.currentUser } );
     // case RECEIVE_NEW_BOARD:
     //   newState.boards.push(action.board);

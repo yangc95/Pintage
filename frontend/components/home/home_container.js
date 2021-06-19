@@ -26,7 +26,7 @@ const mDTP = dispatch => {
     fetchBoards: (userId) => dispatch(fetchBoards(userId)),
     activeNavbar: () => dispatch(activeNavbar()),
     inactiveNavbar: () => dispatch(inactiveNavbar()),
-    createPinBoard: (pinId, boardId) => dispatch(createPinBoard)
+    createPinBoard: (pinboard) => dispatch(createPinBoard(pinboard))
 	};
 };
 

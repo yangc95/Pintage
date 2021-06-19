@@ -6,7 +6,7 @@ import { fetchBoards } from '../../actions/board_actions';
 import Profile from './profile';
 
 const mSTP = ({ session, entities: { users, boards }}) => {
-  debugger; 
+  // debugger; 
   return {
     session: session.id,
     currentUser: users[session.id],
