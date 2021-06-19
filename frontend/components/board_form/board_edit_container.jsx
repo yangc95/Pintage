@@ -41,6 +41,7 @@ class BoardEdit extends React.Component {
   }
 
   render() {
+    // debugger;
     const { closeModal, board } = this.props;
     const { name } = this.state;
 
@@ -77,9 +78,10 @@ class BoardEdit extends React.Component {
 }
 
 const mSTP = ({ session, entities: { boards }}) => {
+  debugger;
   return {
     session: session.id,
-    board: boards
+    board: { id: boards.id, name: boards.name }
   };
 };
 

@@ -6,17 +6,23 @@ import { fetchBoards } from '../../actions/board_actions';
 import Profile from './profile';
 
 const mSTP = ({ session, entities: { users, boards }}) => {
+  delete(boards.id)
+  delete(boards.name)
+  delete(boards.pins)
+  delete(boards.updated_at)
+  delete(boards.user_id)
+
   // debugger; 
   return {
     session: session.id,
     currentUser: users[session.id],
     boards: Object.values(boards),
-    // pinNums: (Object.keys(boards)).map(key => ( 
-    //   boards[key].pins.length
-    // )),
-    // lastUpdate: (Object.keys(boards)).map(key => (
-    //   boards[key].updated_at
-    // ))
+    pinNums: (Object.keys(boards)).map(key => (
+      boards[key].pins.length
+    )),
+    lastUpdate: (Object.keys(boards)).map(key => (
+      boards[key].updated_at
+    ))
   }
 }
 

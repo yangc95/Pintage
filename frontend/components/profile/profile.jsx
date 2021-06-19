@@ -10,30 +10,19 @@ class Profile extends React.Component {
     this.state = {
       dropdown: false,
       question: false,
-      // boards: null
     }
   }
 
   componentDidMount() {
     this.props.inactiveNavbar();
     this.props.fetchBoards(this.props.session)
-      // .then(() => this.setState({ boards: this.props.boards }))
   }
  
   render() {
     // debugger;
-    const { openModal, currentUser, boards } = this.props;
+    const { openModal, currentUser, boards, history, pinNums, lastUpdate } = this.props;
     const { dropdown, question } = this.state;
     const userEmail = currentUser.email.split("@")[0].split(".").join(""); 
-        
-    let boardIndex = "";
-    if (boards) boardIndex = 
-    <BoardIndex 
-      boards={this.props.boards} 
-      history={this.props.history} 
-      pinNums={this.props.pinNums}
-      lastUpdate={this.props.lastUpdate}
-    />;
 
     let dropdownButton;
     (dropdown) ? dropdownButton = 'isActive' : dropdownButton = '' ;
@@ -91,7 +80,12 @@ class Profile extends React.Component {
           {addDropDown}
         </div>
         <span className="profile-board-index">
-          {boardIndex}
+          <BoardIndex 
+            boards={boards} 
+            history={history} 
+            pinNums={pinNums}
+            lastUpdate={lastUpdate}
+          />
         </span>
         <button 
           className={`profile-question-button ${questionButton}`} 

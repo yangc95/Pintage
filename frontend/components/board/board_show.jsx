@@ -11,9 +11,6 @@ class BoardShow extends React.Component {
     this.handlePinShow = this.handlePinShow.bind(this);
   }
 
-  componentWillUnmount() {
-  }
-
   handleBack() {
     this.props.history.push('/_saved')
     this.setState({ pins: null })
