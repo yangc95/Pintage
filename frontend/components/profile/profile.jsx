@@ -15,7 +15,7 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-    debugger;
+    // debugger;
     this.props.inactiveNavbar();
     this.props.fetchBoards(this.props.session)
   }
