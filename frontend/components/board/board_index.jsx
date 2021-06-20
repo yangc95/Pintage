@@ -1,7 +1,5 @@
 import React from 'react';
 import { HiPencil } from 'react-icons/hi';
-import { openModal } from '../../actions/modal_actions';
-import { fetchBoard } from '../../actions/board_actions';
 
 class BoardIndex extends React.Component {
   constructor(props) {
@@ -14,12 +12,13 @@ class BoardIndex extends React.Component {
   }
 
   handleEdit(boardId) {
-    dispatch(fetchBoard(boardId))
-      .then(() => dispatch(openModal('editBoard')))
+    this.props.fetchBoard(boardId)
+      .then(() => this.props.openModal('editBoard'))
+    // this.props.openModal(`editBoard`)
   }
 
   handleShow(boardId) {
-    dispatch(fetchBoard(boardId))
+    this.props.fetchBoard(boardId)
       .then(this.props.history.push(`/board/${boardId}`))
   }
 

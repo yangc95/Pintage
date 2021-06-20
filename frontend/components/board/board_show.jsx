@@ -57,6 +57,7 @@ class BoardShow extends React.Component {
             pinArray.map(pin => {
               return (
                 <BoardShowItem
+                  key={pin.id}
                   pin={pin}
                 />
                 // <div className="board-show-pin-index" key={pin.id} onClick={() => this.handlePinShow(pin.id)}>

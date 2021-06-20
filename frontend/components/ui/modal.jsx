@@ -23,7 +23,7 @@ function Modal({ modal, closeModal }) {
     case 'addPin':
       component = <PinFormContainer />;
       break;
-    case 'editBoard':
+    case `editBoard`:
       component = <BoardEditContainer />;
       break;
     default:

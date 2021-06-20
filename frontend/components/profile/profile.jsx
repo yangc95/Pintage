@@ -3,6 +3,7 @@ import { HiPlus } from 'react-icons/hi';
 import { BsQuestion } from 'react-icons/bs';
 
 import BoardIndex from '../board/board_index';
+import { fetchBoard } from '../../util/board_api_util';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -14,13 +15,14 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
+    debugger;
     this.props.inactiveNavbar();
     this.props.fetchBoards(this.props.session)
   }
  
   render() {
     // debugger;
-    const { openModal, currentUser, boards, history, pinNums, lastUpdate } = this.props;
+    const { openModal, currentUser, boards, history, pinNums, lastUpdate, fetchBoard } = this.props;
     const { dropdown, question } = this.state;
     const userEmail = currentUser.email.split("@")[0].split(".").join(""); 
 
@@ -85,6 +87,8 @@ class Profile extends React.Component {
             history={history} 
             pinNums={pinNums}
             lastUpdate={lastUpdate}
+            openModal={openModal}
+            fetchBoard={fetchBoard}
           />
         </span>
         <button 

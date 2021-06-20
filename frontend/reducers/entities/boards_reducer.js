@@ -7,18 +7,21 @@ import {
 } from '../../actions/board_actions';
 
 const boardsReducer = (state = {}, action) => {
-  Object.freeze(state);
+  // Object.freeze(state);
   let newState = merge({}, state);
   // debugger;
   switch(action.type) {
-    case RECEIVE_BOARD:
-      return Object.assign({}, newState, action.board)
     case RECEIVE_NEW_BOARD:
-      newState.boards.push(action.board);
+      newState[action.board.id] = action.board;
       return newState;
-      case RECEIVE_BOARDS:
+    case RECEIVE_BOARDS:
       // debugger;
-      return Object.assign({}, newState, action.boards);
+      Object.assign(newState, action.boards);
+      return newState
+    case RECEIVE_BOARD:
+      // debugger;
+      Object.assign(newState, action.board)
+      return newState;
     case REMOVE_BOARD:
       return Object.assign({}, newState, action.boards);      
     default:

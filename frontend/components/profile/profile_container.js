@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { activeNavbar, inactiveNavbar } from '../../actions/navbar_actions';
-import { fetchBoards } from '../../actions/board_actions';
+import { fetchBoards, fetchBoard } from '../../actions/board_actions';
 import Profile from './profile';
 
 const mSTP = ({ session, entities: { users, boards }}) => {
@@ -31,6 +31,7 @@ const mDTP = dispatch => {
     openModal: modal => dispatch(openModal(modal)),
     closeModal: () => dispatch(closeModal()),
     fetchBoards: userId => dispatch(fetchBoards(userId)),
+    fetchBoard: boardId => dispatch(fetchBoard(boardId)),
     activeNavbar: () => dispatch(activeNavbar()),
     inactiveNavbar: () => dispatch(inactiveNavbar())
 	}
