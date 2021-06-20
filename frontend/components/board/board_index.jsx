@@ -1,19 +1,23 @@
 import React from 'react';
 import { HiPencil } from 'react-icons/hi';
 
+import BoardEditContainer from '../board_form/board_edit';
+
 class BoardIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pinNums: []
+      pinNums: [],
+      boardId: '',
+      modal: false
     }
     this.handleEdit = this.handleEdit.bind(this);
     this.handleShow = this.handleShow.bind(this);
   }
 
   handleEdit(boardId) {
-    this.props.fetchBoard(boardId)
-      .then(() => this.props.openModal('editBoard'))
+    // this.props.fetchBoard(boardId)
+    //   .then(() => this.props.openModal('editBoard'))
     // this.props.openModal(`editBoard`)
   }
 
@@ -71,7 +75,7 @@ class BoardIndex extends React.Component {
                 <div className="board-index-img" onClick={() => this.handleShow(board.id)}></div>
                 {
                   board.name !== "Saved" ? 
-                    <button className="board-index-edit" onClick={() => this.handleEdit(board.id)}><HiPencil/></button>
+                    <button className="board-index-edit" onClick={() => this.setState({boardId: board.id})}><HiPencil/></button>
                     : ""
                 }
                 <div className={`board-index-info ${board.name !== "Saved" ? 'other-boards' : ''}`}>
@@ -82,6 +86,13 @@ class BoardIndex extends React.Component {
             );
           })
         }
+        <div className={`modal-background editBoard ${this.state.modal}`} onClick={closeModal}>
+          <span className="modal-child" onClick={e => e.stopPropagation()}>
+            <BoardEditContainer
+              board={boards[this.state.boardId]}
+            />
+          </span>
+        </div>
       </div>
     )
   }

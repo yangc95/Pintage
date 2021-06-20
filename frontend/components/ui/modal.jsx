@@ -5,7 +5,7 @@ import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import BoardFormContainer from '../board_form/board_form_container';
 import PinFormContainer from '../pin_form/pin_form_container';
-import BoardEditContainer from '../board_form/board_edit_container.jsx';
+// import BoardEditContainer from '../board_form/board_edit_container.jsx';
 
 function Modal({ modal, closeModal }) {
   if (!modal) return null;
@@ -23,9 +23,9 @@ function Modal({ modal, closeModal }) {
     case 'addPin':
       component = <PinFormContainer />;
       break;
-    case `editBoard`:
-      component = <BoardEditContainer />;
-      break;
+    // case `editBoard`:
+    //   component = <BoardEditContainer />;
+    //   break;
     default:
       return null;
   }
