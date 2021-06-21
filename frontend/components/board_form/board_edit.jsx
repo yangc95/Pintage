@@ -14,9 +14,9 @@ class BoardEdit extends React.Component {
 
   componentDidMount() {
     this.setState({ 
-      id: this.props.board.id,
-      name: this.props.board.name,
-      user_id: this.props.board.user_id
+      // id: this.props.board.id,
+      // name: this.props.board.name,
+      // user_id: this.props.board.user_id
     })
   }
 
@@ -49,7 +49,7 @@ class BoardEdit extends React.Component {
         <div className="x-close edit" onClick={closeModal}>
           &times;
         </div>
-
+{/* 
         <form className="board-edit-form">
           <label>Name</label>
           <input
@@ -60,7 +60,7 @@ class BoardEdit extends React.Component {
             placeholder={board.name}
           />
           <button onClick={() => this.handleEditBoard()} className="submit">Done</button>
-        </form>
+        </form> */}
 
         <span className="edit-delete">
           <p>Action</p>

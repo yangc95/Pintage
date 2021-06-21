@@ -53,7 +53,7 @@ class BoardIndex extends React.Component {
   }
 
   render() {
-    const { boards, lastUpdate, pinNums } = this.props;
+    const { boards, lastUpdate, pinNums, closeModal } = this.props;
 
     let newTimes = lastUpdate.map(time => (this.timeAgo(time)));
     let pinNumArr = [...pinNums];
@@ -86,13 +86,13 @@ class BoardIndex extends React.Component {
             );
           })
         }
-        <div className={`modal-background editBoard ${this.state.modal}`} onClick={closeModal}>
+        {/* <div className={`modal-background editBoard ${this.state.modal}`} onClick={closeModal}>
           <span className="modal-child" onClick={e => e.stopPropagation()}>
             <BoardEditContainer
               board={boards[this.state.boardId]}
             />
           </span>
-        </div>
+        </div> */}
       </div>
     )
   }
