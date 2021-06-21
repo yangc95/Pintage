@@ -19,7 +19,6 @@ const boardsReducer = (state = {}, action) => {
       Object.assign(newState, action.boards);
       return newState
     case RECEIVE_BOARD:
-      // debugger;
       Object.assign(newState, action.board)
       return newState;
     case REMOVE_BOARD:

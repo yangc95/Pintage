@@ -4,20 +4,12 @@ class BoardEdit extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: '',
-      name: '',
-      user_id: ''
-    };
-    this.handleEditBoard = this.handleEditBoard.bind(this);
-    this.handleDeleteBoard = this.handleDeleteBoard.bind(this);
-  }
-
-  componentDidMount() {
-    this.setState({ 
       id: this.props.board.id,
       name: this.props.board.name,
       user_id: this.props.board.user_id
-    })
+    };
+    this.handleEditBoard = this.handleEditBoard.bind(this);
+    this.handleDeleteBoard = this.handleDeleteBoard.bind(this);
   }
 
   update(field) {
@@ -39,9 +31,9 @@ class BoardEdit extends React.Component {
   }
 
   render() {
-    // debugger;
-    const { closeModal, board } = this.props;
-    const { name } = this.state;
+    debugger;
+    const { closeModal } = this.props;
+    const { id, name, user_id } = this.state;
 
     return (
       <div className="board-edit-div">
@@ -57,7 +49,7 @@ class BoardEdit extends React.Component {
             type="text"
             value={name}
             onChange={this.update('name')}
-            placeholder={board.name}
+            placeholder={name}
           />
           <button onClick={() => this.handleEditBoard()} className="submit">Done</button>
         </form>

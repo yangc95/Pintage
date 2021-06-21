@@ -59,6 +59,7 @@ class BoardShow extends React.Component {
                 <BoardShowItem
                   key={pin.id}
                   pin={pin}
+                  handlePinShow={this.handlePinShow}
                 />
                 // <div className="board-show-pin-index" key={pin.id} onClick={() => this.handlePinShow(pin.id)}>
                 //   <div className="pin-index-image"></div>
